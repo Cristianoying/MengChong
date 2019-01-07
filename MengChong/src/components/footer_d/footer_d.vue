@@ -1,7 +1,7 @@
 <template>
     <div class="footer_d">
       <ul class="footer_ul_d">
-        <li class="footer_li_d" v-for="(item,index) in footer_list_d" >
+        <li class="footer_li_d" v-for="(item,index) in footer_list_d" :key="index">
           <router-link :to="{name:item.url}">
             <i class="iconfont" v-html="item.icon"></i>
             <span>{{item.title}}</span>
@@ -84,18 +84,25 @@
     align-items: center;
     text-decoration: none;
   }
-  .footer_li_d i{
+   i{
    font-size:.6rem;
-    color:#C8C8C8
+    color:#C8C8C8;
+     font-weight: 800;
   }
-  .footer_li_d span{
+  span{
     color:#C8C8C8;
     font-size:.22rem;
     width:.46rem;
+    font-weight: 800;
   }
   .footer_ul_d li:nth-child(3) i{
     font-size:1.1rem;
     position: relative;
     top:-.4rem;
   }
+  .footer_li_d>.router-link-active i,
+  .footer_li_d>.router-link-active span{
+    color: #E83F39;
+  }
+/*}*/
 </style>
