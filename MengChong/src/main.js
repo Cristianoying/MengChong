@@ -5,8 +5,10 @@ import App from './App'
 import router from './router'
 import './common/js/flexble'
 import './common/css/reset.css'
-import './common/css/footer_icon_d/iconfont.css'
-import './common/css/mine_icon_d/iconfont.css'
+import './common/css/footer_icon_d/iconfont.css';
+import './common/css/petlist_icon_b/iconfont.css';
+import './common/css/mine_icon_d/iconfont.css';
+
 Vue.config.productionTip = false
 import axios from 'axios'
 import MintUi from 'mint-ui'

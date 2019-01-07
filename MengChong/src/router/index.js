@@ -15,6 +15,11 @@ import MineSetUp from "@/components/mine/mineSetUp"
 
 Vue.use(Router)
 
+//petlist下的二级路由
+import Doglist from "@/components/petlist/components/petlist_list/dog_list"
+import Catlist from "@/components/petlist/components/petlist_list/cat_list"
+import Foodlist from "@/components/petlist/components/petlist_list/food_list"
+
 export default new Router({
   routes: [
     {
@@ -40,7 +45,21 @@ export default new Router({
     {
       path: '/petlist',
       name: 'petlist',
+      redirect: '/petlist/doglist',
       component: Petlist,
+      children: [{
+        path: '/petlist/doglist',
+        name: 'doglist',
+        component: Doglist,
+      }, {
+        path: '/petlist/catlist',
+        name: 'catlist',
+        component: Catlist,
+      }, {
+        path: '/petlist/foodlist',
+        name: 'foodlist',
+        component: Foodlist,
+      }],
       meta: {
         isFooter: true
       }
