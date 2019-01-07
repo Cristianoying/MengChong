@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import petlist from './petlist/index.js'
 Vue.use(Vuex);
 let state={
 
@@ -19,7 +20,7 @@ const store=new Vuex.Store({
   mutations,
   getters,
   modules:{
-
+		petlist
   }
 })
 export default store;

@@ -1,15 +1,20 @@
 <template>
 	<div id="search_b">
-		<div class="searchborder_b">
+		<div class="searchborder_b" @click="searchPage()">
 			<i class="iconfont icon_glass_b">&#xe62d;</i>
-			<input type="text" class="search_frame_b" placeholder="搜索..."/>
+			<!--<input type="text" class="search_frame_b" placeholder="搜索..."/>-->
+			<p class="search_frame_b">搜索...</p>
 		</div>
 	</div>
 </template>
 
 <script>
 export default{
-	
+	methods:{
+		searchPage(){
+			this.$router.push("/home")
+		}
+	}
 }
 </script>
 
@@ -42,23 +47,24 @@ export default{
 			border: none;
 			font-size: 0.22rem;
 			background: #C93934;
-			padding: 0.20rem 0 0.19rem;
+			line-height: 0.6rem;
+			/*padding: 0.20rem 0 0.19rem;*/
 			width: 100%;
 			color: #FFFFFF;
 			font-weight: 400;
 			font-family:PingFang-SC-Regular; 
-			&::-webkit-input-placeholder{
+			/*&::-webkit-input-placeholder{
            		 color:#fff;
         	}
-	        &::-moz-placeholder{   /* Mozilla Firefox 19+ */
+	        &::-moz-placeholder{   
 	            color:#fff;
 	        }
-	        &:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+	        &:-moz-placeholder{    
 	            color:#fff;
 	        }
-	        &:-ms-input-placeholder{  /* Internet Explorer 10-11 */ 
+	        &:-ms-input-placeholder{  
 	            color:#fff;
-	        }
+	        }*/
 	    }    
 	}
 }
