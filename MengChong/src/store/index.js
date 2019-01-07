@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import login from './Login'
+import mine from './mine'
 Vue.use(Vuex);
 let state={
 
@@ -19,7 +21,8 @@ const store=new Vuex.Store({
   mutations,
   getters,
   modules:{
-
+      login,
+      mine
   }
 })
 export default store;
