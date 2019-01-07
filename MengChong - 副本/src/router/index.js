@@ -33,7 +33,6 @@ export default new Router({
     {
     	path:'/petlist',
     	name:'petlist',
-    	redirect:'/petlist/doglist',
     	component:Petlist,
     	children:[{
     		path:'/petlist/doglist',

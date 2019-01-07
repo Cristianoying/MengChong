@@ -22,9 +22,6 @@ export default{
 #petlist_b{
 	background: #eee;
 	.top_red_b{
-		display: flex;
-		top: 0;
-		left: 0;
 		width: 100%;
 		height: 0.4rem;
 		background: #E83F39;
