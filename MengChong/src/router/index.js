@@ -6,7 +6,10 @@ import Petlist from "@/components/petlist/petlist"
 import Mine from "@/components/mine/mine"
 import Login from "@/components/login/login"
 import Shopcart from "@/components/shopcart/shopcart"
-import Publish from "@/components/publish/publish"
+import Publish from "@/components/publish/public/publish"
+import Publicvideo from "@/components/publish/video/publicvideo"
+import Publictrends from "@/components/publish/trends/publictrends"
+import Publicarticle from "@/components/publish/article/publicarticle"
 Vue.use(Router)
 
 export default new Router({
@@ -50,6 +53,23 @@ export default new Router({
     	name:'publish',
     	component:Publish
 
+    },
+    {
+    	path:'/publish/trends',
+    	name:'trends',
+    	component:Publictrends
+    },
+    {
+    	path:'/publish/video',
+    	name:'video',
+    	component:Publicvideo
+    },
+    {
+    	path:'/publish/article',
+    	name:'article',
+    	component:Publicarticle
     }
+    
+    
   ]
 })
