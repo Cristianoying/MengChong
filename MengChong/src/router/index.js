@@ -12,95 +12,96 @@ import LoginUser from '@/components/login/loginuser.vue'
 import Register from '@/components/login/register'
 import MineIndex from "@/components/mine/mineIndex"
 import MineSetUp from "@/components/mine/mineSetUp"
+
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      redirect:'/home'
+      redirect: '/home'
     },
     {
-    	path:'/home',
-    	name:'home',
-      	component: Home,
-      meta:{
-        isFooter:true
+      path: '/home',
+      name: 'home',
+      component: Home,
+      meta: {
+        isFooter: true
       }
     },
     {
-    	path:'/community',
-    	name:'community',
-    	component:Community,
-      meta:{
-        isFooter:true
+      path: '/community',
+      name: 'community',
+      component: Community,
+      meta: {
+        isFooter: true
       }
     },
     {
-    	path:'/petlist',
-    	name:'petlist',
-    	component:Petlist,
-      meta:{
-        isFooter:true
+      path: '/petlist',
+      name: 'petlist',
+      component: Petlist,
+      meta: {
+        isFooter: true
       }
     },
     {
-    	path:'/mine',
-    	component:Mine,
-      name:"mine",
-      redirect:'/mine/mineIndex',
-      meta:{
-        isFooter:true
+      path: '/mine',
+      component: Mine,
+      name: "mine",
+      redirect: '/mine/mineIndex',
+      meta: {
+        isFooter: true
       },
-      children:[
+      children: [
         {
-          path:"mineIndex",
-          name:'mineIndex',
-          component:MineIndex,
-          meta:{
-            isFooter:true,
+          path: "mineIndex",
+          name: 'mineIndex',
+          component: MineIndex,
+          meta: {
+            isFooter: true,
           }
         },
         {
-          path:'/minesetup',
-          name:"setUp",
-          component:MineSetUp
+          path: '/minesetup',
+          name: "setUp",
+          component: MineSetUp
         }
       ]
     },
     {
-    	path:'/login',
-    	component:Login,
-      meta:{
-    	  isFooter:false
+      path: '/login',
+      component: Login,
+      meta: {
+        isFooter: false
       },
-      children:[
+      children: [
         {
-          path:"/",
-          name:"userIndex",
-          component:UserIndex
+          path: "/",
+          name: "userIndex",
+          component: UserIndex
         },
         {
-          path:"loginuser",
-          name:"userlogin",
-          component:LoginUser
+          path: "loginuser",
+          name: "userlogin",
+          component: LoginUser
         },
         {
-          path:"register",
-          name:"register",
-          component:Register
+          path: "register",
+          name: "register",
+          component: Register
         }
       ]
     },
     {
-    	path:'/shopcart',
-    	name:'shopcart',
-    	component:Shopcart
+      path: '/shopcart',
+      name: 'shopcart',
+      component: Shopcart
     },
     {
-    	path:'/publish',
-    	name:'publish',
-    	component:Publish
+      path: '/publish',
+      name: 'publish',
+      component: Publish
 
     }
   ]
