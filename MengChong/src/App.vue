@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
-    <footer_com></footer_com>
+    <footer_com v-if="this.$route.meta.isFooter"></footer_com>
   </div>
 </template>
 
@@ -16,4 +16,8 @@ export default {
 </script>
 
 <style>
+  #app{
+    height:100%;
+    width:100%;
+  }
 </style>

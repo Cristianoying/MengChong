@@ -77,7 +77,6 @@
   .footer_li_d a{
     height:100%;
     width:100%;
-    display: block;
     display: flex;
     flex-direction: column;
     justify-content: center;
