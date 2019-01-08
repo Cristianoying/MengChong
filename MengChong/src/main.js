@@ -14,15 +14,12 @@ Vue.config.productionTip = false
 import MintUi from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import './common/css/mine_icon_d/iconfont'
-Vue.use(MintUi);
+Vue.use(MintUi)
 
 import './common/css/footer_icon_d/iconfont.css'
-import MintUi from 'mint-ui';
-import 'mint-ui/lib/style.min.css'
 import axios from 'axios'
 
 Vue.config.productionTip = false
-Vue.use( MintUi );
 
 Vue.prototype.$axios=axios
 import store from './store'

@@ -1,35 +1,39 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/home/home'
-import Community from "@/components/community/community"
-import Petlist from "@/components/petlist/petlist"
-import Mine from "@/components/mine/mine"
-import Login from "@/components/login/login"
-import Shopcart from "@/components/shopcart/shopcart"
 
+
+import Home from '@/components/home/home'
+
+
+import Community from "@/components/community/community"
+
+
+import Login from "@/components/login/login"
 import UserIndex from '@/components/login/loginIndex'
 import LoginUser from '@/components/login/loginuser.vue'
 import Register from '@/components/login/register'
+
+import Mine from "@/components/mine/mine"
 import MineIndex from "@/components/mine/mineIndex"
 import MineSetUp from "@/components/mine/mineSetUp"
 
-
+import Publish from "@/components/publish/public/publish"
 import Publicvideo from "@/components/publish/video/publicvideo"
 import Publictrends from "@/components/publish/trends/publictrends"
 import Publicarticle from "@/components/publish/article/publicarticle"
 
+import Shopcart from "@/components/shopcart/shopcart"
 import Cart from '@/components/shopcart/cart_c/Cart'
-import Publish from "@/components/publish/publish"
 import Submitorder from '@/components/shopcart/submitOrder_c/submitOrder'
 
-
-Vue.use(Router)
-
 //petlist下的二级路由
+import Petlist from "@/components/petlist/petlist"
 import Doglist from "@/components/petlist/components/petlist_list/dog_list"
 import Catlist from "@/components/petlist/components/petlist_list/cat_list"
 import Foodlist from "@/components/petlist/components/petlist_list/food_list"
 
+
+Vue.use(Router)
 export default new Router({
     routes: [
         {
@@ -95,7 +99,7 @@ export default new Router({
                     }
                 },
                 {
-                    path: '/minesetup',
+                    path: 'minesetup',
                     name: "setUp",
                     component: MineSetUp
                 }
@@ -127,20 +131,13 @@ export default new Router({
 
         },
         {
-            path: '/mine',
-            name: 'mine',
-            component: Mine
-        },
-        {
             path: '/login',
             name: "login",
             component: Login
         },
         {
             path: '/shopcart',
-            name: 'shopcart',
             component: Shopcart,
-
             children: [
                 {
                     path: '/',

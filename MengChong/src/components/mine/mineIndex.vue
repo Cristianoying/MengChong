@@ -1,8 +1,8 @@
 <template>
   <div class="mine_d">
-    <mt-header title="个人中心" class="mine_header_d">
-      <mt-button class="iconfont mine_header_set_up_d" slot="right" @click="go_set_up()">&#xe610;</mt-button>
-    </mt-header>
+      <mt-header title="个人中心" class="mine_header_d">
+          <router-link :to="{name:'setUp'}" slot="right" class="iconfont mine_header_set_up_d">&#xe610;</router-link>
+      </mt-header>
     <div class="mine_head_appear_d">
       <div class="mine_head_apper_img_d">
         <img :src="mine_info_d.userPhoto" alt="">
@@ -20,7 +20,6 @@
       <div class="mine_personl_d">
         <span>个人主页</span><span>></span>
       </div>
-
     </div>
     <div class="mine_allMessage_d">
       <ul>
