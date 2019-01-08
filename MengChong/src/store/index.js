@@ -1,25 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import select from "./selected"
 Vue.use(Vuex);
-let state={
 
-}
-let actions={
 
-}
-let mutations={
 
-}
-let getters={
-
-}
 const store=new Vuex.Store({
-  state,
-  actions,
-  mutations,
-  getters,
   modules:{
-
+    select
   }
 })
 export default store;
