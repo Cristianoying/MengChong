@@ -33,6 +33,7 @@
 <script>
 import Vuex from "vuex";
 export default {
+  
     computed:{
         ...Vuex.mapState({
            selectList:state=>state.select.selectList
