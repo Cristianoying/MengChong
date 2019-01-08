@@ -18,7 +18,10 @@ Vue.use(MintUi);
 import axios from 'axios'
 
 Vue.config.productionTip = false
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5e68fa2eef25732f8947e5685a67076fdf6ad8ec
 
 Vue.prototype.$axios=axios
 import store from './store'

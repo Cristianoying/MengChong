@@ -1,15 +1,17 @@
 <template>
 	<div id="petlist_list_b">
-		<router-view>
-			<ul class="petlist_list_tab_b" slot="pet_list_tab_b">
-				<li v-for="(item,index) in tabs" 
-					:key="index">
-					<router-link :to="item.tolink">
-						{{item.name}}
-					</router-link>
-				</li>
-			</ul>
-		</router-view>
+		<!--<keep-alive>-->
+			<router-view>
+				<ul class="petlist_list_tab_b" slot="pet_list_tab_b">
+					<li v-for="(item,index) in tabs" 
+						:key="index">
+						<router-link :to="item.tolink">
+							{{item.name}}
+						</router-link>
+					</li>
+				</ul>
+			</router-view>
+		<!--</keep-alive>-->
 	</div>
 	
 </template>

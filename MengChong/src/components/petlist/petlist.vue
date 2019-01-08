@@ -1,9 +1,9 @@
 <template>
 	<div id="petlist_b">
-		<div class="top_red_b"></div>
+		<div class="red_top_b"></div>
 		<search-com></search-com>
 		<div class="wrapper main_height_b" ref="scrollWrapper">
-			<lists-com class="content"></lists-com>
+			<lists-com class="content scrollContent_b"></lists-com>
 		</div>
 	</div>
 </template>
@@ -21,32 +21,36 @@ export default{
 		this.scroll = new BScroll(this.$refs.scrollWrapper,{
 			click:true
 		})
+    },
+    activated(){
+    	console.log(1)
+    },
+    deactivated(){
+    	console.log(2)
     }
 }
 
 </script>
 
 <style lang="scss">
+.red_top_b{
+	width: 100%;
+	height: 0.4rem;
+	background:#E83F39 ;
+}
 #petlist_b{
 	background: #eee;
 	width: 100%;
 	height: 100%;
-	.top_red_b{
-		display: flex;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 0.4rem;
-		background: #E83F39;
-	}
 	.main_height_b{
 		height: 100%;
 		position: fixed;
 		overflow: hidden;
 		top: 1.46rem;
+		left: 0;
 		width: 100%;
-		.content{
-			padding-bottom: 2.2rem;
+		.scrollContent_b{
+			padding-bottom: 2rem;
 		}
 	}
 }
