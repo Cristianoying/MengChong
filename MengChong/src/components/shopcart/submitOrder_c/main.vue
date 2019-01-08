@@ -14,7 +14,7 @@
         </p>
         <div class="goodsmsg">
           <div class="goodspic">
-            <img src="../../../assets/logo.png" alt="">
+            <!-- <img src="../../../assets/logo.png" alt=""> -->
           </div>
           <div class="goodsname">
             <p><span>鸿星尔克与东邪秋季网鞋鞋子跑步鞋旅游休闲鞋椰子鞋潮时尚男鞋</span></p>
