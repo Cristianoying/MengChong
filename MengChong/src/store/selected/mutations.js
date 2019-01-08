@@ -3,7 +3,6 @@ export default{
         state.selectList=params;
 
         // console.log(state);
-        console.log(state.selectList)
         
     }
 }

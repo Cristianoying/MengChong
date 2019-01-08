@@ -14,7 +14,6 @@ export default{
 #banner_food_b{
 	width: 6.98rem;
 	height: 3.12rem;
-	margin-top: 0.18rem;
 	background: #fff;
 }
 </style>
