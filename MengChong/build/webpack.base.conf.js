@@ -66,13 +66,8 @@ module.exports = {
         }
       },
       {
-<<<<<<< HEAD
-        test:/\.scss/,
-        loader:["style-loader","css-loader","sass-loader"]
-=======
       	test:/\.scss/,
       		loader:["style-loader","css-loader","sass-loader"]
->>>>>>> htm
       }
     ]
   },
