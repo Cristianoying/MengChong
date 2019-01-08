@@ -1,13 +1,23 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import select from "./selected"
+import petlist from './petlist/index.js'
+import login from './Login'
+import mine from './mine'
+
 Vue.use(Vuex);
-
-
-
-const store=new Vuex.Store({
-  modules:{
-    select
+let state = {}
+let actions = {}
+let mutations = {}
+let getters = {}
+const store = new Vuex.Store({
+  state,
+  actions,
+  mutations,
+  getters,
+  modules: {
+    petlist,
+    login,
+    mine
   }
 })
 export default store;
