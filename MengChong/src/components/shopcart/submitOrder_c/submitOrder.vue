@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="orderall">
         <Header></Header>
         <Main></Main>
         <Footer></Footer>
@@ -21,5 +21,10 @@
 </script>
 
 <style scoped>
+    #orderall{
+      width: 100%;
+      height: 100%;
+      background:#f6f6f6;
 
+    }
 </style>

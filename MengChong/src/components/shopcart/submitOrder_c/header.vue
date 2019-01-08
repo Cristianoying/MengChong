@@ -1,8 +1,8 @@
 <template>
     <div>
         <mt-header id="order">
-            <div slot="left">
-                确认订单
+            <div class="order" slot="left">
+                &lt; 确认订单
             </div>
         </mt-header>
     </div>
@@ -21,7 +21,8 @@
         box-sizing: border-box;
         background:rgba(237,60,60,1);
     }
-    #order>div{
-        font-size: .36rem;
+    #order .order{
+        font-size: .34rem;
+      font-weight: bold;
     }
 </style>
