@@ -52,6 +52,11 @@ export default{
 		.router-link-active{
 			color: #FF1515;
 		}
+		>a{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 </style>
