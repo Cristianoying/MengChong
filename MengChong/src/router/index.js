@@ -15,6 +15,13 @@ import MineSetUp from "@/components/mine/mineSetUp"
 import Personalinfo from '@/components/mine/personalinfo'
 import Person from '@/components/mine/person'
 import PersonPage from '@/components/mine/personalPage'
+import accountSecurity from '@/components/mine/setUp/Account_security/account_security'
+import Phone_d from '@/components/mine/setUp/Account_security/phone'
+import accountSecurityIndex from '@/components/mine/setUp/Account_security/account_security_index'
+import password_d from '@/components/mine/setUp/Account_security/password'
+import Comment from '@/components/mine/setUp/comment/comment_d'
+
+
 
 import Publicvideo from "@/components/publish/video/publicvideo"
 import Publictrends from "@/components/publish/trends/publictrends"
@@ -114,8 +121,34 @@ export default new Router({
                       path:'personpage',
                       name:'personpage',
                       component:PersonPage
-                    }]
-                }
+                    },
+                      {
+                        path:'account_security',
+                        name:"account_security",
+                        component:accountSecurity,
+                        redirect:'account_security/account_security_index',
+                        children:[{
+                          path:'account_security_index',
+                          component:accountSecurityIndex,
+                          name:'account_security_index'
+                        },
+                          {
+                            path:'phone',
+                            name:'phone_d',
+                            component:Phone_d,
+                          },{
+                          path:'password_d',
+                            name:'password_d',
+                            component:password_d,
+                          }
+                        ]
+                      }]
+                },
+              {
+                path:'comment_d',
+                name:'comment_d',
+                component:Comment,
+              }
             ]
         },
         {

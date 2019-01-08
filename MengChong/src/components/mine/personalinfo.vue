@@ -10,10 +10,12 @@
           <span class="mine_set_up_li_span_two_d">></span>
         </li>
       </router-link>
-      <li class="mine_set_up_li_d">
-        <span class="mine_set_up_li_span_d">账号安全</span>
-        <span class="mine_set_up_li_span_two_d">></span>
-      </li>
+      <router-link :to="{name:'account_security_index'}">
+        <li class="mine_set_up_li_d">
+            <span class="mine_set_up_li_span_d">账号安全</span>
+            <span class="mine_set_up_li_span_two_d">></span>
+        </li>
+      </router-link>
     </ul>
     <ul class="mine_set_up_ul_d">
       <li class="mine_set_up_li_d">

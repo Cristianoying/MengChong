@@ -24,11 +24,13 @@
     </div>
     <div class="mine_allMessage_d">
       <ul>
-        <li class="mine_message_d" v-for="(item,index) in mine_message_d">
-          <svg class="icon mine_allMessage_icon_d" aria-hidden="true" >
-            <use :href="item.icon"></use>
-          </svg>
-          <span>{{item.message}}</span>
+        <li class="mine_message_d"
+            v-for="(item,index) in mine_message_d"
+            @click="gonextpage_d(item.url)">
+            <svg class="icon mine_allMessage_icon_d" aria-hidden="true" >
+              <use :href="item.icon"></use>
+            </svg>
+            <span>{{item.message}}</span>
         </li>
       </ul>
     </div>
@@ -60,7 +62,7 @@
           {
             message:"信息",
             icon:"#icon-xinxi",
-            url:'',
+            url:'comment_d',
           },
           {
             message:"获赞",
@@ -98,6 +100,8 @@
     methods:{
       go_set_up(){
         this.$router.push({name:"setUp"})
+      },gonextpage_d(url){
+        this.$router.push({name:url})
       }
     },
     computed:{
