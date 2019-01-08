@@ -23,6 +23,7 @@ import Publish from "@/components/publish/public/publish"
 import Submitorder from '@/components/shopcart/submitOrder_c/submitOrder'
 
 
+
 Vue.use(Router)
 
 //petlist下的二级路由
@@ -127,11 +128,6 @@ export default new Router({
 
         },
         {
-            path: '/login',
-            name: "login",
-            component: Login
-        },
-        {
             path: '/shopcart',
             name: 'shopcart',
             component: Shopcart,
@@ -170,7 +166,5 @@ export default new Router({
             name: 'article',
             component: Publicarticle
         }
-
-
-    ]
+      ]
 })

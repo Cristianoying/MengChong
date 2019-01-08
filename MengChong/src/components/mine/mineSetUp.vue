@@ -1,9 +1,7 @@
 <template>
     <div>
       <mt-header title="相关设置" class="mine_set_up_d">
-        <router-link to="/" slot="left">
-          <mt-button class="mine_set_up_goback_d"><</mt-button>
-        </router-link>
+           <router-link to="/mine/mineIndex" slot="left"><</router-link>
       </mt-header>
     </div>
 </template>
