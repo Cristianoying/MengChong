@@ -33,8 +33,9 @@
 <script>
 import Vuex from "vuex";
 export default {
+  
     computed:{
-        ...Vuex.mapState({
+         ...Vuex.mapState({
             selectList:state=>state.select.selectList
         })
     }
