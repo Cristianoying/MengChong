@@ -10,7 +10,7 @@
       <div class="mine_head_apper_name_d">
         <p>
           <span>{{mine_info_d.userName}}</span>
-          <span class="iconfont mine_head_apper_sex" v-if="mine_info_d.sex=='女'">&#xe654;</span>
+          <span class="iconfont mine_head_apper_sex" v-if="mine_info_d.userSex=='女'">&#xe654;</span>
           <span class="iconfont mine_head_apper_sex" v-else>&#xe653;</span>
         </p>
         <p class="mine_head_anmailId_d">
@@ -93,7 +93,6 @@
       }
     },
     mounted(){
-      console.log(this);
       this.$store.dispatch("mine/getmineInfoActions_d")
     },
     methods:{
