@@ -28,9 +28,9 @@
                       url:"community"
                     },
                     {
-                      title:"",
+                      title:"发布",
                       icon:"&#xe728;",
-                      url:""
+                      url:"publish"
                     },
                     {
                       title:"淘宠",
@@ -77,7 +77,6 @@
   .footer_li_d a{
     height:100%;
     width:100%;
-    display: block;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,9 +99,15 @@
     position: relative;
     top:-.4rem;
   }
+<<<<<<< HEAD
   .footer_li_d>.router-link-active i,
   .footer_li_d>.router-link-active span{
     color: #E83F39;
   }
 /*}*/
+=======
+  .footer_ul_d>.router-link-active{
+        color: #ffc700;
+    }
+>>>>>>> htm
 </style>

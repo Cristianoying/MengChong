@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import petlist from './petlist/index.js'
+import login from './Login'
+import mine from './mine'
 Vue.use(Vuex);
 let state={
 
@@ -21,6 +23,8 @@ const store=new Vuex.Store({
   getters,
   modules:{
 		petlist
+    login,
+    mine
   }
 })
 export default store;
