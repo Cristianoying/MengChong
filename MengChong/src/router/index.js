@@ -19,7 +19,7 @@ import Publictrends from "@/components/publish/trends/publictrends"
 import Publicarticle from "@/components/publish/article/publicarticle"
 
 import Cart from '@/components/shopcart/cart_c/Cart'
-import Publish from "@/components/publish/publish"
+import Publish from "@/components/publish/public/publish"
 import Submitorder from '@/components/shopcart/submitOrder_c/submitOrder'
 
 
@@ -125,11 +125,6 @@ export default new Router({
                 }
             ]
 
-        },
-        {
-            path: '/mine',
-            name: 'mine',
-            component: Mine
         },
         {
             path: '/login',
