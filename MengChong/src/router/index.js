@@ -6,20 +6,17 @@ import Petlist from "@/components/petlist/petlist"
 import Mine from "@/components/mine/mine"
 import Login from "@/components/login/login"
 import Shopcart from "@/components/shopcart/shopcart"
-<<<<<<< HEAD
-import Publish from "@/components/publish/publish"
+
 import UserIndex from '@/components/login/loginIndex'
 import LoginUser from '@/components/login/loginuser.vue'
 import Register from '@/components/login/register'
 import MineIndex from "@/components/mine/mineIndex"
 import MineSetUp from "@/components/mine/mineSetUp"
 
-=======
 import Publish from "@/components/publish/public/publish"
 import Publicvideo from "@/components/publish/video/publicvideo"
 import Publictrends from "@/components/publish/trends/publictrends"
 import Publicarticle from "@/components/publish/article/publicarticle"
->>>>>>> htm
 Vue.use(Router)
 
 //petlist下的二级路由
@@ -145,7 +142,7 @@ export default new Router({
     	name:'article',
     	component:Publicarticle
     }
-    
-    
+
+
   ]
 })
