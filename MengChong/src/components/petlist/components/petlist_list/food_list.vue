@@ -1,5 +1,5 @@
 <template>
-	<div id="food_list_b" class="list_common_b">
+	<div id="food_list_b">
 		<foodbanner-com></foodbanner-com>
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
@@ -39,6 +39,20 @@ export default{
 }
 </script>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+#food_list_b{
+	padding: 0 0.26rem 0;
+	.list_common_ulb{
+		display: flex;
+		width: 100%;
+		flex-wrap:wrap;
+		justify-content:space-between;
+		>li{
+			width: 6.98rem;
+			height: 2.3rem;
+			background: #fff;
+			margin-bottom: 0.18rem;
+		}
+	}
+}
 </style>
