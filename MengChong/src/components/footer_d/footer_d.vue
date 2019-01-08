@@ -12,41 +12,42 @@
 </template>
 
 <script>
-  export default {
-    name: "footer_d",
-    data() {
-      return {
-        footer_list_d: [
-          {
-            title: "首页",
-            icon: "&#xe61c;",
-            url: "home"
-          },
-          {
-            title: "社区",
-            icon: "&#xe62d;",
-            url: "community"
-          },
-          {
-            title: "",
-            icon: "&#xe728;",
-            url: "publish"
-          },
-          {
-            title: "淘宠",
-            icon: "&#xe61e;",
-            url: "petlist"
-          },
-          {
-            title: "我的",
-            icon: "&#xe65b;",
-            url: "mine"
-          }
-        ],
 
-      }
-    },
-    methods: {}
+    export default {
+        name: "footer_d",
+              data(){
+                return {
+                  footer_list_d:[
+                    {
+                      title:"首页",
+                      icon:"&#xe61c;",
+                      url:"home"
+                    },
+                    {
+                      title:"社区",
+                      icon:"&#xe62d;",
+                      url:"community"
+                    },
+                    {
+                      title:"",
+                      icon:"&#xe728;",
+                      url:"publish"
+                    },
+                    {
+                      title:"淘宠",
+                      icon:"&#xe61e;",
+                      url:"petlist"
+                    },
+                    {
+                      title:"我的",
+                      icon:"&#xe65b;",
+                      url:"mine"
+                    }
+                  ],
+
+                }
+              },
+      methods:{}
   }
 </script>
 
@@ -103,11 +104,15 @@
     position: relative;
     top: -.4rem;
   }
+  .footer_li_d>.router-link-active i,
+  .footer_li_d>.router-link-active span{
+    color: #E83F39;
+  }
+
 
   .footer_li_d > .router-link-active i,
   .footer_li_d > .router-link-active span {
     color: #E83F39;
   }
-
 
 </style>

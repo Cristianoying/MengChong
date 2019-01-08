@@ -14,10 +14,15 @@ import MineIndex from "@/components/mine/mineIndex"
 import MineSetUp from "@/components/mine/mineSetUp"
 
 
-import Publish from "@/components/publish/public/publish"
 import Publicvideo from "@/components/publish/video/publicvideo"
 import Publictrends from "@/components/publish/trends/publictrends"
 import Publicarticle from "@/components/publish/article/publicarticle"
+
+import Cart from '@/components/shopcart/cart_c/Cart'
+import Publish from "@/components/publish/public/publish"
+import Submitorder from '@/components/shopcart/submitOrder_c/submitOrder'
+
+
 
 Vue.use(Router)
 //petlist下搜索路由
@@ -32,6 +37,7 @@ import Goods_intro from "@/components/petlist/components/goods_details/goods_int
 import Goods_detailed from "@/components/petlist/components/goods_details/goods_detailed.vue"
 
 export default new Router({
+
   routes: [
     {
       path: '/',
@@ -126,72 +132,84 @@ export default new Router({
         isFooter: true
       },
       children: [
-        {
-          path: "mineIndex",
-          name: 'mineIndex',
-          component: MineIndex,
-          meta: {
-            isFooter: true,
-          }
+                {
+                    path: "mineIndex",
+                    name: 'mineIndex',
+                    component: MineIndex,
+                    meta: {
+                        isFooter: true,
+                    }
+                },
+                {
+                    path: '/minesetup',
+                    name: "setUp",
+                    component: MineSetUp
+                }
+            ]
         },
         {
-          path: '/minesetup',
-          name: "setUp",
-          component: MineSetUp
+            path: '/login',
+            component: Login,
+            meta: {
+                isFooter: false
+            },
+            children: [
+                {
+                    path: "/",
+                    name: "userIndex",
+                    component: UserIndex
+                },
+                {
+                    path: "loginuser",
+                    name: "userlogin",
+                    component: LoginUser
+                },
+                {
+                    path: "register",
+                    name: "register",
+                    component: Register
+                }
+            ]
+
+        },
+        {
+            path: '/shopcart',
+            name: 'shopcart',
+            component: Shopcart,
+
+            children: [
+                {
+                    path: '/',
+                    name: 'cart',
+                    component: Cart
+                },
+                {
+                    path: 'submitorder',
+                    name: 'submitorder',
+                    component: Submitorder
+                }
+            ]
+        },
+        {
+            path: '/publish',
+            name: 'publish',
+            component: Publish
+
+        },
+        {
+            path: '/publish/trends',
+            name: 'trends',
+            component: Publictrends
+        },
+        {
+            path: '/publish/video',
+            name: 'video',
+            component: Publicvideo
+        },
+        {
+            path: '/publish/article',
+            name: 'article',
+            component: Publicarticle
         }
       ]
-    },
-    {
-      path: '/login',
-      component: Login,
-      meta: {
-        isFooter: false
-      },
-      children: [
-        {
-          path: "/",
-          name: "userIndex",
-          component: UserIndex
-        },
-        {
-          path: "loginuser",
-          name: "userlogin",
-          component: LoginUser
-        },
-        {
-          path: "register",
-          name: "register",
-          component: Register
-        }
-      ]
-    },
-    {
-      path: '/shopcart',
-      name: 'shopcart',
-      component: Shopcart
-    },
-    {
-      path: '/publish',
-      name: 'publish',
-      component: Publish
-
-    },
-    {
-    	path:'/publish/trends',
-    	name:'trends',
-    	component:Publictrends
-    },
-    {
-    	path:'/publish/video',
-    	name:'video',
-    	component:Publicvideo
-    },
-    {
-    	path:'/publish/article',
-    	name:'article',
-    	component:Publicarticle
-    }
-
-
-  ]
 })

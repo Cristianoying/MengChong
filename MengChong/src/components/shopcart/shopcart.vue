@@ -1,14 +1,17 @@
 <template>
-	<div>
-		
-	</div>
+    <div>
+        <router-view></router-view>
+    </div>
 </template>
 
-<script type="text/javascript">
-	
+<script>
+    import Cart from './cart_c/Cart'
+    import submitOrder from './submitOrder_c/submitOrder'
+    export default {
 
+    }
 </script>
 
-<style scoped>
-	
+<style>
+
 </style>
