@@ -1,8 +1,6 @@
 <template>
-    <div>
-      <mt-header title="相关设置" class="mine_set_up_d">
-           <router-link to="/mine/mineIndex" slot="left"><</router-link>
-      </mt-header>
+    <div class="mine_set_up">
+  <router-view></router-view>
     </div>
 </template>
 
@@ -13,12 +11,9 @@
 </script>
 
 <style scoped>
-.mine_set_up_d{
-  height:1rem;
-  font-size:.32rem;
-  background:#ED3C3C
+.mine_set_up{
+  height:100%;
+  width:100%;
+  background: #f6f6f6;
 }
-.mine_set_up_goback_d{
-    font-size:.5rem;
-  }
 </style>

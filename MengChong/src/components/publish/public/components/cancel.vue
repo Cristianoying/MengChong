@@ -1,7 +1,9 @@
 <template>
-	<div id="cancel">
-		
-	</div>
+	<router-link :to="{name:'home'}">
+		<div id="cancel">
+			
+		</div>
+	</router-link>
 </template>
 
 <script>
@@ -13,6 +15,7 @@
 	width:0.91rem;
 	height:0.91rem;
 	background:url(../../../../../static/publishs_img/publish_slices/cancel2x.png);
+	background-size: 100% 100%;
 	bottom:0.43rem;
 	position: absolute;
 	left: 50%;

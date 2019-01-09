@@ -10,7 +10,7 @@
       <div class="mine_head_apper_name_d">
         <p>
           <span>{{mine_info_d.userName}}</span>
-          <span class="iconfont mine_head_apper_sex" v-if="mine_info_d.sex=='女'">&#xe654;</span>
+          <span class="iconfont mine_head_apper_sex" v-if="mine_info_d.userSex=='女'">&#xe654;</span>
           <span class="iconfont mine_head_apper_sex" v-else>&#xe653;</span>
         </p>
         <p class="mine_head_anmailId_d">
@@ -24,11 +24,13 @@
     </div>
     <div class="mine_allMessage_d">
       <ul>
-        <li class="mine_message_d" v-for="(item,index) in mine_message_d">
-          <svg class="icon mine_allMessage_icon_d" aria-hidden="true" >
-            <use :href="item.icon"></use>
-          </svg>
-          <span>{{item.message}}</span>
+        <li class="mine_message_d"
+            v-for="(item,index) in mine_message_d"
+            @click="gonextpage_d(item.url)">
+            <svg class="icon mine_allMessage_icon_d" aria-hidden="true" >
+              <use :href="item.icon"></use>
+            </svg>
+            <span>{{item.message}}</span>
         </li>
       </ul>
     </div>
@@ -60,7 +62,7 @@
           {
             message:"信息",
             icon:"#icon-xinxi",
-            url:'',
+            url:'comment_d',
           },
           {
             message:"获赞",
@@ -93,12 +95,13 @@
       }
     },
     mounted(){
-      console.log(this);
       this.$store.dispatch("mine/getmineInfoActions_d")
     },
     methods:{
       go_set_up(){
         this.$router.push({name:"setUp"})
+      },gonextpage_d(url){
+        this.$router.push({name:url})
       }
     },
     computed:{

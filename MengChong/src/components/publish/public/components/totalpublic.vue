@@ -31,13 +31,16 @@
 			
 		}
 		.bgone{
-			background:url(../../../../../static/publishs_img/publish_slices/publictrends2x.png);
+			background:url(../../../../../static/publishs_img/publish_slices/publictrends2x.png)no-repeat;
+			background-size: 100% 100%;
 		}
 		.bgtwo{
-			background:url(../../../../../static/publishs_img/publish_slices/publicvideo2x.png);
+			background:url(../../../../../static/publishs_img/publish_slices/publicvideo2x.png)no-repeat;
+			background-size: 100% 100%;
 		}
-		.bgthree{
-			background:url(../../../../../static/publishs_img/publish_slices/publicarticle2x.png);
+		.bgthree{	
+			background:url(../../../../../static/publishs_img/publish_slices/publicarticle2x.png)no-repeat;
+			background-size: 100% 100%;
 		}
 		
 	}

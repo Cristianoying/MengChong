@@ -12,6 +12,15 @@ import LoginUser from '@/components/login/loginuser.vue'
 import Register from '@/components/login/register'
 import MineIndex from "@/components/mine/mineIndex"
 import MineSetUp from "@/components/mine/mineSetUp"
+import Personalinfo from '@/components/mine/personalinfo'
+import Person from '@/components/mine/person'
+import PersonPage from '@/components/mine/personalPage'
+import accountSecurity from '@/components/mine/setUp/Account_security/account_security'
+import Phone_d from '@/components/mine/setUp/Account_security/phone'
+import accountSecurityIndex from '@/components/mine/setUp/Account_security/account_security_index'
+import password_d from '@/components/mine/setUp/Account_security/password'
+import Comment from '@/components/mine/setUp/comment/comment_d'
+
 
 
 import Publicvideo from "@/components/publish/video/publicvideo"
@@ -141,10 +150,50 @@ export default new Router({
                     }
                 },
                 {
-                    path: '/minesetup',
+                    path: 'minesetup',
                     name: "setUp",
-                    component: MineSetUp
-                }
+                    component: MineSetUp,
+                    redirect:"minesetup/personalinfo",
+                    children:[{
+                        path:'personalinfo',
+                        name:"personalinfo",
+                        component:Personalinfo
+                    },{
+                      path:'person',
+                      name:"person",
+                      component:Person,
+                    },{
+                      path:'personpage',
+                      name:'personpage',
+                      component:PersonPage
+                    },
+                      {
+                        path:'account_security',
+                        name:"account_security",
+                        component:accountSecurity,
+                        redirect:'account_security/account_security_index',
+                        children:[{
+                          path:'account_security_index',
+                          component:accountSecurityIndex,
+                          name:'account_security_index'
+                        },
+                          {
+                            path:'phone',
+                            name:'phone_d',
+                            component:Phone_d,
+                          },{
+                          path:'password_d',
+                            name:'password_d',
+                            component:password_d,
+                          }
+                        ]
+                      }]
+                },
+              {
+                path:'comment_d',
+                name:'comment_d',
+                component:Comment,
+              }
             ]
         },
         {
@@ -176,10 +225,10 @@ export default new Router({
             path: '/shopcart',
             name: 'shopcart',
             component: Shopcart,
-
+            redirect:"/shopcart/cart",
             children: [
                 {
-                    path: '/',
+                    path: 'cart',
                     name: 'cart',
                     component: Cart
                 },
