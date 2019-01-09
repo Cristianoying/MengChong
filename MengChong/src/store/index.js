@@ -3,16 +3,8 @@ import Vuex from 'vuex'
 import petlist from './petlist/index.js'
 import login from './Login'
 import mine from './mine'
-<<<<<<< HEAD
-<<<<<<< HEAD
 import Home_w from './home'
-=======
-import select from './selected'
->>>>>>> 5e68fa2eef25732f8947e5685a67076fdf6ad8ec
-
-=======
-import select from "./selectedata";
->>>>>>> yangbo
+import select from "./selectedata"
 Vue.use(Vuex);
 let state = {}
 let actions = {}
@@ -27,15 +19,8 @@ const store = new Vuex.Store({
     petlist,
     login,
     mine,
-<<<<<<< HEAD
-<<<<<<< HEAD
-    Home_w
-=======
-    select
->>>>>>> 5e68fa2eef25732f8947e5685a67076fdf6ad8ec
-=======
-    select
->>>>>>> yangbo
+    Home_w,
+    select,
   }
 })
 export default store;

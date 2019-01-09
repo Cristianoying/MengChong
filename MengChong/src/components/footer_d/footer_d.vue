@@ -95,7 +95,6 @@
   span {
     color: #C8C8C8;
     font-size: .22rem;
-    width: .46rem;
     font-weight: 800;
   }
 
