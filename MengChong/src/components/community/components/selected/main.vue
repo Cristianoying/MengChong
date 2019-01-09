@@ -11,7 +11,6 @@
                 <p>在丑也要过节啊</p>
             <img :src="item.images" class="datu">
             </div>
-            
             <div class="navigation">
                 <img :src="item.smallimg1" alt="">
                 <img :src="item.smallimg2" alt="">
@@ -28,6 +27,7 @@
                 <span>{{item.thrusername}}</span>:<span>{{item.thrcontent}}</span>
             </div>
         </div> 
+       
     </div>
 </template>
 <script>
@@ -139,6 +139,8 @@ export default {
     .main_bottom{
         overflow: hidden;
         background: white;
-        
+        margin-bottom:1rem;
+       
     }
+  
 </style>

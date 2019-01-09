@@ -33,6 +33,11 @@ import Submitorder from '@/components/shopcart/submitOrder_c/submitOrder'
 
 
 
+import Communityind from '@/components/community/components/selected/index.vue'
+import Followind from '@/components/community/components/follow/index.vue'
+import Articleind from '@/components/community/components/article/index.vue'
+
+
 Vue.use(Router)
 //petlist下搜索路由
 import Search_b from "@/components/petlist/components/searchpage.vue"
@@ -60,14 +65,55 @@ export default new Router({
         isFooter: true
       }
     },
+
+
+
+
+
     {
       path: '/community',
       name: 'community',
+      redirect: '/community/selected',
       component: Community,
+      children:[
+        {
+          path:'/community/selected',
+          name:'selected',
+          component:Communityind,
+          meta: {
+            isFooter: true,
+            iscommuntop:true
+          }
+        },
+        {
+          path:'/community/follow',
+          name:'follow',
+          component:Followind,
+          meta: { 
+            isFooter: true,
+            iscommuntop:true
+          }
+        },
+        {
+          path:'/community/article_a',
+          name:'article_a',
+          component:Articleind,
+          meta: {
+            isFooter: true,
+            iscommuntop:false
+          }
+        }
+      ],
       meta: {
         isFooter: true
       }
     },
+
+
+
+
+
+
     {
       path: '/petlist',
       name: 'petlist',

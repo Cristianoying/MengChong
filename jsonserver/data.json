@@ -20,6 +20,43 @@
             "thrcontent":"加油",
             "lunimg":"static/img/9.png"
         },{
+            "id":1,
+            "username":"张三",
+            "address":"北京 昌平",
+            "headimg":"static/img/1.png",
+            "content":"再丑也要过节啊",
+            "images":"static/img/4.png",
+            "smallimg1":"static/img/2.png",
+            "smallimg2":"static/img/3.png",
+            "smallimg3":"static/img/1.png",
+            "zan":"123赞",
+            "zanimg":"static/img/5.png",
+            "pinlunimg":"static/img/6.png",
+            "enjoyimg":"static/img/8.png",
+            "twousername":"小拉拉-麻将",
+            "twocontent":"好可爱",
+            "thrusername":"看着天空发疯的呆子",
+            "thrcontent":"加油",
+            "lunimg":"static/img/10.png"
+        },
+        {
+            "id":2,
+            "username":"张三",
+            "address":"北京 昌平",
+            "headimg":"static/img/1.png",
+            "content":"再丑也要过节啊",
+            "images":"static/img/4.png",
+            "smallimg1":"static/img/2.png",
+            "smallimg2":"static/img/3.png",
+            "smallimg3":"static/img/1.png",
+            "zan":"123赞",
+            "zanimg":"static/img/5.png",
+            "pinlunimg":"static/img/6.png",
+            "enjoyimg":"static/img/8.png",
+            "twousername":"小拉拉-麻将",
+            "twocontent":"好可爱",
+            "thrusername":"看着天空发疯的呆子",
+            "thrcontent":"加油",
             "lunimg":"static/img/10.png"
         }
     ]
