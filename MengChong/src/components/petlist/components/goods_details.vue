@@ -76,6 +76,10 @@ export default{
 			flex-direction: row;
 			justify-content: space-around;
 			padding:  0.17rem 0 0.15rem 0;
+			img{
+				width: 2rem;
+				height: 0.6rem;
+			}
 		}
 	}
 	.details_foot_b{
