@@ -30,7 +30,7 @@
 <style scoped>
   #hd_c{
     width:7.5rem;
-    height:.82rem;
+    height:1rem;
     box-sizing: border-box;
     background:rgba(237,60,60,1);
   }
@@ -43,11 +43,10 @@
     color: #fff;
     font-size: .34rem;
     font-weight: bolder;
-    /*background: #000;*/
   }
   #top>.pagename_c{
     width: 100%;
-    height:.82rem;
+    height:1rem;
     display: flex;
     justify-content: center;
     align-items: center;

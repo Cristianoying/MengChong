@@ -30,7 +30,6 @@
       width: 2.2rem;
       height: .7rem;
       font-size: .38rem;
-      /*border: 0;*/
       background: orange;
 
 

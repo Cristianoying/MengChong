@@ -34,10 +34,10 @@
 
 <style scoped>
   #middle {
+
     width: 100%;
-    height: 13rem;
     padding-bottom: 1rem;
-    overflow:auto
+
   }
 
   #middle .recemsg {
