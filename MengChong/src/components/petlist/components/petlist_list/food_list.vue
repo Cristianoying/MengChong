@@ -21,16 +21,10 @@
 
 <script>
 import Foodbanner from "./components/banner_food.vue"
+import Vuex from "vuex"
 export default{
 	data(){
 		return{
-			lists:[{
-				id:"1",
-				name:""
-			},{
-			
-			},{},{}]
-			
 		}
 	},
 	components:{

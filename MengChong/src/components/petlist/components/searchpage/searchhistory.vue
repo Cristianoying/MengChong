@@ -2,7 +2,7 @@
 	<div id="searchhistory_b">
 		<h4>搜索历史</h4>
 		<ul class="searchhistory_b">
-			<li>柴犬</li>
+			<router-link :to="{name:'search_list'}"><li>柴犬</li></router-link>
 			<li>哈士奇</li>
 			<li>蓝猫</li>
 			<li>皇冠猫粮</li>
@@ -34,7 +34,7 @@ export default{
 			width: 100%;
 			border-bottom: 0.02rem #eee solid;
 			flex-wrap: wrap;
-			>li{
+			li{
 				font-size: 0.28rem;
 				height: 0.6rem;
 				line-height: 0.6rem;
