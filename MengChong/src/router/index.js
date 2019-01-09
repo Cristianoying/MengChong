@@ -36,6 +36,8 @@ import Submitorder from '@/components/shopcart/submitOrder_c/submitOrder'
 Vue.use(Router)
 //petlist下搜索路由
 import Search_b from "@/components/petlist/components/searchpage.vue"
+//搜索的商品列表
+import Search_list from "@/components/petlist/components/search_list.vue"
 //petlist下物品详情路由
 import Goods_details_b from "@/components/petlist/components/goods_details.vue"
 //petlist下的二级路由
@@ -108,29 +110,20 @@ export default new Router({
       },
     },
     {
-   		path: '/goods_details_b',
-      component: Goods_details_b,
-      redirect:'goods_details_b/goods_intro',
-      name: "goods_details_b",
+    	path: '/search_list',
+      component: Search_list,
+      name: "search_list",
       meta: {
         isFooter: false
       },
-      children:[{
-      	path: '/goods_details_b/goods_intro',
-	      component: Goods_intro,
-
-	      name: "goods_intro",
-	      meta: {
-	        isFooter: false
-	      }
-      },{
-      	path: '/goods_details_b/goods_detailed',
-	      component: Goods_detailed,
-	      name: "goods_detailed",
-	      meta: {
-	        isFooter: false
-	      }
-      }]
+    },
+    {
+   		path: '/goods_details_b',
+      component: Goods_details_b,
+      name: "goods_details_b",
+      meta: {
+        isFooter: false
+      }
     },
     {
       path: '/mine',

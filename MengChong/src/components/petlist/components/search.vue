@@ -1,19 +1,25 @@
 <template>
 	<div id="search_b">
-		<div class="searchborder_b" @click="searchPage()">
-			<i class="iconfont icon_glass_b">&#xe62d;</i>
-			<!--<input type="text" class="search_frame_b" placeholder="搜索..."/>-->
-			<p class="search_frame_b">搜索...</p>
+		<div id="searchtitle_b" @click="searchPage()">
+			<label for="search_page_b">
+				<i class="iconfont icon_glass_b">&#xe62d;</i>
+				<input id="search_page_b" placeholder="请搜索"></input>
+			</label>
 		</div>
 	</div>
 </template>
 
 <script>
 export default{
+	components:{
+	},
 	methods:{
 		searchPage(){
 			this.$router.push("/search_b")
 		}
+	},
+	computed:{
+		
 	}
 }
 </script>
@@ -29,7 +35,11 @@ export default{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	.searchborder_b{
+	#searchtitle_b{
+		label{
+			width: 100%;
+			display: flex;
+		}
 		width: 5.8rem;
 		height: 0.6rem;
 		background: #C93934;
@@ -43,17 +53,16 @@ export default{
 			color: #FAFEFA;
 			margin: 0.15rem 0.2rem 0 0.15rem;
 		}
-		.search_frame_b{
+		#search_page_b{
 			border: none;
 			font-size: 0.28rem;
 			background: #C93934;
 			line-height: 0.6rem;
-			/*padding: 0.20rem 0 0.19rem;*/
 			width: 100%;
 			color: #FFFFFF;
 			font-weight: 400;
 			font-family:PingFang-SC-Regular; 
-			/*&::-webkit-input-placeholder{
+			&::-webkit-input-placeholder{
            		 color:#fff;
         	}
 	        &::-moz-placeholder{   
@@ -64,7 +73,7 @@ export default{
 	        }
 	        &:-ms-input-placeholder{  
 	            color:#fff;
-	        }*/
+	        }
 	    }    
 	}
 }

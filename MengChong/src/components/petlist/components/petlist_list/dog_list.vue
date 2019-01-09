@@ -33,16 +33,10 @@
 
 <script>
 import Dogbanner from "./components/banner_dog.vue"
+import Vuex from "vuex"
 export default{
 	data(){
 		return{
-			lists:[{
-				id:"1",
-				name:""
-			},{
-			
-			},{},{}]
-			
 		}
 	},
 	components:{

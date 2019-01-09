@@ -21,12 +21,6 @@ export default{
 		this.scroll = new BScroll(this.$refs.scrollWrapper,{
 			click:true
 		})
-    },
-    activated(){
-    	console.log(1)
-    },
-    deactivated(){
-    	console.log(2)
     }
 }
 

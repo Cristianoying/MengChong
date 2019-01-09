@@ -1,5 +1,5 @@
 <template>
-	<div id="cat_list_b">
+	<keep-alive><div id="cat_list_b">
 		<catbanner-com></catbanner-com>
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
@@ -29,26 +29,21 @@
 			<li>112211</li>
 			<li>33</li>
 		</ul>
-	</div>
+	</div></keep-alive>
 </template>
 
 <script>
 import Catbanner from "./components/banner_cat.vue"
+import Vuex from "vuex"
 export default{
 	data(){
 		return{
-			lists:[{
-				id:"1",
-				name:""
-			},{
-			
-			},{},{}]
-			
+		
 		}
 	},
 	components:{
 		"catbanner-com":Catbanner
-	}
+	},
 }
 </script>
 
