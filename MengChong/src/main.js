@@ -5,19 +5,21 @@ import App from './App'
 import router from './router'
 import './common/js/flexble'
 import './common/css/reset.css'
+import "../node_modules/swiper/dist/css/swiper.css"
 import '../node_modules/swiper/dist/css/swiper.min.css';
 import './common/css/footer_icon_d/iconfont.css';
 import './common/css/petlist_icon_b/iconfont.css';
 import './common/css/mine_icon_d/iconfont.css';
 import './common/css/mine_icon_d/iconfont'
 Vue.config.productionTip = false
-import MintUi from 'mint-ui'
+import MintUi from 'mint-ui';
 import 'mint-ui/lib/style.css'
 Vue.use(MintUi);
 
 import axios from 'axios'
 
 Vue.config.productionTip = false
+
 
 Vue.prototype.$axios=axios
 import store from './store'

@@ -12,7 +12,7 @@
 export default{
 	methods:{
 		searchPage(){
-			this.$router.push("/home")
+			this.$router.push("/search_b")
 		}
 	}
 }
@@ -45,7 +45,7 @@ export default{
 		}
 		.search_frame_b{
 			border: none;
-			font-size: 0.22rem;
+			font-size: 0.28rem;
 			background: #C93934;
 			line-height: 0.6rem;
 			/*padding: 0.20rem 0 0.19rem;*/

@@ -1,6 +1,6 @@
 <template>
     <div class="main_a">
-        <div class="main_bottom" v-for="(item,index) in selectList">
+         <div class="main_bottom" v-for="(item,index) in selectList">
             <div class="top" >
                 <img :src="item.headimg" alt="">
                 <h3>{{item.username}}</h3>
@@ -27,7 +27,7 @@
                 <span>{{item.twousername}}</span>:<span>{{item.twocontent}}</span><br/>
                 <span>{{item.thrusername}}</span>:<span>{{item.thrcontent}}</span>
             </div>
-        </div>
+        </div> 
     </div>
 </template>
 <script>
@@ -35,8 +35,8 @@ import Vuex from "vuex";
 export default {
   
     computed:{
-         ...Vuex.mapState({
-            selectList:state=>state.select.selectList
+        ...Vuex.mapState({
+           selectList:state=>state.select.selectList
         })
     }
 }
