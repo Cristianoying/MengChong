@@ -3,13 +3,13 @@
 		<h4>搜索历史</h4>
 		<ul class="searchhistory_b">
 			<router-link :to="{name:'search_list'}"><li>柴犬</li></router-link>
-			<li>哈士奇</li>
-			<li>蓝猫</li>
-			<li>皇冠猫粮</li>
-			<li>蓝猫</li>
-			<li>皇冠猫粮</li>
-			<li>蓝猫</li>
-			<li>皇冠猫粮</li>
+			<router-link :to="{name:'search_list'}"><li>哈士奇</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>蓝猫</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>皇冠猫粮</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>蓝猫</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>皇冠猫粮</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>蓝猫</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>皇冠猫粮</li></router-link>
 		</ul>
 	</div>
 </template>
@@ -23,7 +23,7 @@ export default{
 <style lang="scss" scoped>
 	#searchhistory_b{
 		width: 100%;
-		margin-top: 0.3rem;
+		margin-top: 1.28rem;
 		padding: 0 0.26rem;
 		>h4{
 			font-size: 0.3rem;

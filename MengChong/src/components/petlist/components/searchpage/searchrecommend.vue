@@ -2,17 +2,17 @@
 	<div id="searchrecommend_b">
 		<h4>搜索推荐</h4>
 		<ul class="searchrecommend_b">
-			<li>猪猪</li>
-			<li>哈士奇</li>
-			<li>蓝猫</li>
-			<li>猪儿虫</li>
-			<li>蓝猫</li>
-			<li>老鼠</li>
-			<li>蓝猫</li>
-			<li>大福蝶</li>
-			<li>猪猪</li>
-			<li>哈士奇</li>
-			<li>猪儿虫</li>
+			<router-link :to="{name:'search_list'}"><li>猪猪</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>哈士奇</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>蓝猫</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>猪儿虫</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>蓝猫</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>老鼠</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>蓝猫</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>大福蝶</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>猪猪</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>哈士奇</li></router-link>
+			<router-link :to="{name:'search_list'}"><li>猪儿虫</li></router-link>
 		</ul>
 	</div>
 </template>
@@ -36,7 +36,7 @@ export default{
 			display: flex;
 			width: 100%;
 			flex-wrap: wrap;
-			>li{
+			li{
 				font-size: 0.28rem;
 				height: 0.6rem;
 				line-height: 0.6rem;
