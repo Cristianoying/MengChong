@@ -1,6 +1,5 @@
 <template>
 	<div id="goods_details_b">
-		<div class="red_top_b"></div>
 		<div class="details_head_b">
 			<div class="details_back_b" @click="detailsBack()"></div>
 			<span>英国短毛猫</span>
@@ -36,9 +35,9 @@
 	  				<p>支付宝</p>
 	  			</div>
   			</div>
-  			<div class="pay_b">
-  				<p>确认支付<span>20000</span></p>
-  			</div>
+			<div class="pay_b" @click="goPay()">  
+				<p>确认支付<span>20000</span></p>
+			</div>
 		</mt-popup>
 
 	</div>
@@ -47,19 +46,21 @@
 <script>
 import Goods_intro from "./goods_details/goods_intro.vue"
 import Goods_detailed from "./goods_details/goods_detailed.vue"
-import { Popup } from 'mint-ui';
+import Vue from "vue"
+import { Popup ,MessageBox } from 'mint-ui';
+//Vue.component(Popup.name, Popup);
 
 export default{
 	data(){
 		return{
 			goodscontent:'',
-			popupVisible:false
+			popupVisible:false,
 		}
 	},
 	components:{
 		"goods_intro-com":Goods_intro,
 		"goods_detailed-com":Goods_detailed,
-		"mt-popup":Popup
+		"mt-popup":Popup,
 	},
 	methods:{
 		detailsBack(){
@@ -67,12 +68,18 @@ export default{
 			this.$router.go(-1)
 			/*let len = history.length
 			history.go(-(len-1))*/
+			this.goodscontent = "";
 		},
 		goodsContent(val){
 			this.goodscontent = val
 		},
 		buyShow(){
 			this.popupVisible = true
+		},
+		goPay(){
+			this.$router.push('/pay_success')
+			this.popupVisible = false
+
 		}
 	}
 	
@@ -80,11 +87,6 @@ export default{
 </script>
 
 <style lang="scss" scoped>
-.red_top_b{
-	width: 100%;
-	height: 0.4rem;
-	background:#E83F39 ;
-}
 #goods_details_b{
 	width: 100%;
 	height: 100%;

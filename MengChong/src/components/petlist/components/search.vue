@@ -3,9 +3,10 @@
 		<div id="searchtitle_b" @click="searchPage()">
 			<label for="search_page_b">
 				<i class="iconfont icon_glass_b">&#xe62d;</i>
-				<input id="search_page_b" placeholder="请搜索"></input>
+				<input id="search_page_b" placeholder="请搜索">
 			</label>
 		</div>
+		<div class="back_index_b" v-show="this.$route.meta.isBack" @click="backGo()">取消</div>
 	</div>
 </template>
 
@@ -16,6 +17,12 @@ export default{
 	methods:{
 		searchPage(){
 			this.$router.push("/search_b")
+		},
+		backGo(){
+			this.$router.push('/petlist')
+			// let len = history.length;
+			// console.log(len)
+			// history.go(-(len-2))
 		}
 	},
 	computed:{
@@ -27,7 +34,7 @@ export default{
 <style scoped lang="scss">
 #search_b{
 	position: fixed;
-	top: 0.4rem;
+	top: 0;
 	left: 0;
 	width: 100%;
 	height: 0.88rem;
@@ -35,6 +42,18 @@ export default{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	.back_index_b{
+		position:absolute;
+		height: 100%;
+		width: 0.88rem;
+		line-height: 0.88rem;
+		text-align: center;
+		right: 0;
+		font-size: 0.28rem;
+		color: #FFFFFF;
+		font-weight: 400;
+		font-family: PingFang-SC-Regular;
+	}
 	#searchtitle_b{
 		label{
 			width: 100%;

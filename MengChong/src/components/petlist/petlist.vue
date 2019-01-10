@@ -1,6 +1,5 @@
 <template>
 	<div id="petlist_b">
-		<div class="red_top_b"></div>
 		<search-com></search-com>
 		<div class="wrapper main_height_b" ref="scrollWrapper">
 			<lists-com class="content scrollContent_b"></lists-com>
@@ -26,12 +25,7 @@ export default{
 
 </script>
 
-<style lang="scss">
-.red_top_b{
-	width: 100%;
-	height: 0.4rem;
-	background:#E83F39 ;
-}
+<style lang="scss" scoped>
 #petlist_b{
 	background: #eee;
 	width: 100%;
@@ -40,7 +34,7 @@ export default{
 		height: 100%;
 		position: fixed;
 		overflow: hidden;
-		top: 1.46rem;
+		top: 1.06rem;
 		left: 0;
 		width: 100%;
 		.scrollContent_b{

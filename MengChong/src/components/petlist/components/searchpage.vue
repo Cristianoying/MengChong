@@ -1,5 +1,6 @@
 <template>
 	<div id="searchpage_b">
+		<search-com></search-com>
 		<searchhistory-com></searchhistory-com>
 		<searchrecommend-com></searchrecommend-com>
 	</div>
@@ -8,10 +9,12 @@
 <script>
 import Searchhistory from './searchpage/searchhistory.vue'
 import Searchrecommend from './searchpage/searchrecommend.vue'
+import Search from "./search.vue"
 export default {
 	components:{
 		"searchhistory-com":Searchhistory,//()=>import('./searchpage/searchhistory.vue'),
-		"searchrecommend-com":Searchrecommend//()=>import('./searchpage/searchrecommend.vue'),
+		"searchrecommend-com":Searchrecommend,//()=>import('./searchpage/searchrecommend.vue'),
+		"search-com":Search,
 	},
 	data(){
 		return{
@@ -22,9 +25,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.red_top_b{
-	width: 100%;
-	height: 0.4rem;
-	background:#E83F39 ;
-}
-</style>
+
+</style
