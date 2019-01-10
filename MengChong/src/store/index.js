@@ -4,6 +4,7 @@ import petlist from './petlist/index.js'
 import login from './Login'
 import mine from './mine'
 import select from './selected'
+import publish from './publish'
 
 Vue.use(Vuex);
 let state = {}
@@ -19,7 +20,8 @@ const store = new Vuex.Store({
     petlist,
     login,
     mine,
-    select
+    select,
+    publish
   }
 })
 export default store;

@@ -1,16 +1,30 @@
 <template>
-	<router-link :to="{name:'home'}">
-		<div id="cancel">
-			
-		</div>
-	</router-link>
+		<router-link :to="{name:indexname}"  >
+			<div id="cancel" @click = "cancelshow()">
+				
+			</div>
+		</router-link>
+	
 </template>
 
 <script>
+ import Vuex from "vuex";
+ export default{
+	 methods:{
+        ...Vuex.mapMutations({
+         cancelshow:"publish/cancleindex"
+        })
+	  },
+	  computed:{
+			...Vuex.mapState({
+			 indexname:state=>state.publish.strindex
+        })
+		}
+ }
 </script>
 
 <style lang = "scss">
-#cancel{
+ a>#cancel{
 	background: #eee;
 	width:0.91rem;
 	height:0.91rem;
