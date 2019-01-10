@@ -4,7 +4,7 @@
 			<h2>热门话题 >></h2>
 			<ul>
 				<li v-for="(item,index) in topic_w">
-					<router-link to="{name:'topic_w',params:{t_w_id:item.topId}}">
+					<router-link :to="{name:'home_topic_w',params:{t_w_id:item.topId}}">
 						<img :src="item.topicImg"/>
 						<p class="topic_w_p1">{{item.topicTitle}}</p>
 						<p class="topic_w_p2">

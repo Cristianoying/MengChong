@@ -4,8 +4,8 @@
 		<div class="wrapper" ref="homeWrapper">
 			<div class="content">
 				<Banner_w></Banner_w>
-				<!--<Time_w></Time_w>
-				<Topic_w></Topic_w>-->
+				<Time_w></Time_w>
+				<Topic_w></Topic_w>
 				<TopicList_w></TopicList_w>
 			</div>
 		</div>
@@ -31,7 +31,8 @@
 			
 				this.scroll=new BScroll(this.$refs.homeWrapper,{
 					//只有设置为true pulling才能使用
-					pullUpLoad:true
+					pullUpLoad:true,
+					click:true,
 				});
 				/*this.scroll.on("pullingUp",()=>{
 					

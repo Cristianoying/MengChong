@@ -100,5 +100,38 @@ export default {
         	topicComNum:6,
         	
         }
-    ]
+    ],
+    /*以下是话题页面*/
+   topic_index_w:[
+	   {
+		topicName:"#狗狗！不许吃粑粑", //话题名
+		topicPhoto:"static/home_w/sy_ht_w/tp_ht_1@2x.png", //话题图片
+		topicComNum:"603", //话题讨论人数
+		topicTieNum:"0",
+	   },
+	   {
+		topicName:"#狗狗！不许吃粑粑", //话题名
+		topicPhoto:"static/home_w/sy_ht_w/tp_ht_1@2x.png", //话题图片
+		topicComNum:"603", //话题讨论人数
+		topicTieNum:"0",
+	   },
+	   {
+		topicName:"#狗狗！不许吃粑粑", //话题名
+		topicPhoto:"static/home_w/sy_ht_w/tp_ht_1@2x.png", //话题图片
+		topicComNum:"603", //话题讨论人数
+		topicTieNum:"0",
+	   },
+	   {
+		topicName:"#狗狗！不许吃粑粑", //话题名
+		topicPhoto:"static/home_w/sy_ht_w/tp_ht_1@2x.png", //话题图片
+		topicComNum:"603", //话题讨论人数
+		topicTieNum:"0",
+	   },
+	   {
+		topicName:"#狗狗！不许吃粑粑", //话题名
+		topicPhoto:"static/home_w/sy_ht_w/tp_ht_1@2x.png", //话题图片
+		topicComNum:"603", //话题讨论人数
+		topicTieNum:"0",
+	   },
+   ]
 }

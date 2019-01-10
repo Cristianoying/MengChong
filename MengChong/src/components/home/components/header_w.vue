@@ -58,6 +58,10 @@
 	border-radius:0.08rem;
 	padding-left: 0.22rem;
   }
+  #header_w>ul>li>img{
+  	width: 1rem;
+  	height: 1rem;
+  }
   #header_w>ul>li>span{
   	width:1 rem;
 	height:0.5rem;
