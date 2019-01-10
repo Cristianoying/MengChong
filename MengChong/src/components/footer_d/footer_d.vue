@@ -58,13 +58,13 @@
 
 <style scoped>
   .footer_d {
-    height: .92rem;
+    height: 1.2rem;
     width: 100%;
     background: #fff;
     position: fixed;
     bottom: 0;
     left: 0;
-    padding-bottom: .3rem;
+    padding-bottom: .05rem;
   }
 
   .footer_ul_d {

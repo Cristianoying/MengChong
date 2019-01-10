@@ -23,6 +23,14 @@ import Comment from '@/components/mine/setUp/comment/comment_d'
 import CommentIndex from '@/components/mine/setUp/comment/comment_index_d'
 import Like_index_d from "@/components/mine/setUp/like_d/like_index_d"
 import Like_d from '@/components/mine/setUp/like_d/like_d'
+import PetInfo_d from '@/components/mine/setUp/petinfo_d/petinfo_d'
+import PetInfo_Index_d  from '@/components/mine/setUp/petinfo_d/petinfo_index_d'
+import PetFriendList_d from '@/components/mine/setUp/petfriendlist/petfriendlist_d'
+import PetFriendList_Index_d from '@/components/mine/setUp/petfriendlist/petfriendlist_index_d'
+import Order_d from '@/components/mine/setUp/orderlist_d/order_d'
+import Order_index_d from "@/components/mine/setUp/orderlist_d/order_index_d"
+
+
 
 import Publicvideo from "@/components/publish/video/publicvideo"
 import Publictrends from "@/components/publish/trends/publictrends"
@@ -217,7 +225,8 @@ export default new Router({
               component: Comment,
             }
           ]
-        }, {
+        },
+        {
           path: 'like_index_d',
           name: 'like_index_d',
           component: Like_index_d,
@@ -227,6 +236,45 @@ export default new Router({
               path: 'like_d',
               name: 'like_d',
               component: Like_d
+            }
+          ]
+        },
+        {
+          path:"/petinfo_d",
+          name:'petinfo_d',
+          component:PetInfo_d,
+          redirect:'/petinfo_d/petinfo_index_d',
+          children:[
+            {
+              path:'petinfo_index_d',
+              name:'petinfo_index_d',
+              component:PetInfo_Index_d
+            }
+          ]
+        },
+        {
+          path:'/petfriend_d',
+          name:'petfriend_d',
+          component:PetFriendList_d,
+          redirect:'/petfriend_d/petfriend_index_d',
+          children:[
+            {
+              path:'petfriend_index_d',
+              name:'petfriend_index_d',
+              component:PetFriendList_Index_d
+            }
+          ]
+        },
+        {
+          path:"/order_d",
+          name:'order_d',
+          component:Order_d,
+          redirect:'/order_d/order_index_d',
+          children:[
+            {
+              path:'order_index_d',
+              component:Order_index_d,
+              name:'order_index_d'
             }
           ]
         }

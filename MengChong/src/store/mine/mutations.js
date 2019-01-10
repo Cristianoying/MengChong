@@ -7,5 +7,11 @@ export default {
   },
   getLikeAllMutations(state,payload){
       state.likeList_d=payload
+  },
+  getPetInfoMutations_d(state,payload){
+    state.petinfo_d=payload;
+  },
+  getAllPetFriendListMutations_d(state,payload){
+    state.petfriendlist_d=payload;
   }
 }
