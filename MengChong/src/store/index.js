@@ -5,6 +5,9 @@ import login from './Login'
 import mine from './mine'
 import Home_w from './home'
 import select from "./selectedata"
+import select from './selected'
+import publish from './publish'
+
 Vue.use(Vuex);
 let state = {}
 let actions = {}
@@ -21,6 +24,7 @@ const store = new Vuex.Store({
     mine,
     select,
     Home_w,
+    publish
   }
 })
 export default store;
