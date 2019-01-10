@@ -62,6 +62,10 @@
 		text-align: center;
 		padding: 0.26rem 0.4rem 0.26rem 0.2rem;
 	}
+	.goodsImg_w>img{
+		width: 1.46rem;
+		height: 1.3rem;
+	}
 	#time_w>ul>li>h3{
 		width:2rem;
 		font-size:0.18rem;

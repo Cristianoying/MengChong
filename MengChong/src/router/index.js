@@ -47,6 +47,7 @@ import Foodlist from "@/components/petlist/components/petlist_list/food_list"
 import Goods_intro from "@/components/petlist/components/goods_details/goods_intro.vue"
 import Goods_detailed from "@/components/petlist/components/goods_details/goods_detailed.vue"
 
+import Home_topic_w from "@/components/home/topicList.vue"
 export default new Router({
 
   routes: [
@@ -60,8 +61,14 @@ export default new Router({
       component: Home,
       meta: {
         isFooter: true
-      }
+      },
     },
+    { 
+    	/*由首页转跳到话题列表详情页*/
+	  	path:'/home/topic_w/:t_w_id',
+	  	name:"home_topic_w",
+	  	component: Home_topic_w,
+	  },
     {
       path: '/community',
       name: 'community',
