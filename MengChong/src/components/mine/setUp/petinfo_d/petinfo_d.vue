@@ -1,18 +1,19 @@
 <template>
-<div id="like_index_d">
+<div id="petinfo_d">
   <router-view></router-view>
 </div>
 </template>
 
 <script>
     export default {
-        name: "like_index_d"
+        name: "petinfo_d"
     }
 </script>
 
 <style scoped>
-#like_index_d{
+#petinfo_d{
   height:100%;
   width:100%;
+  background:#f6f6f6;
 }
 </style>
