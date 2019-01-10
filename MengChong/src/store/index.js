@@ -4,9 +4,7 @@ import petlist from './petlist/index.js'
 import login from './Login'
 import mine from './mine'
 import Home_w from './home'
-
-import select from "./selectedata";
-
+import select from "./selectedata"
 Vue.use(Vuex);
 let state = {}
 let actions = {}
@@ -22,7 +20,7 @@ const store = new Vuex.Store({
     login,
     mine,
     select,
-    Home_w
+    Home_w,
   }
 })
 export default store;

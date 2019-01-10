@@ -1,4 +1,5 @@
 export default {
   mine_info_d:{},
-  likelist_d:[],
+  commentlist_d:[],
+  likeList_d:[]
 }

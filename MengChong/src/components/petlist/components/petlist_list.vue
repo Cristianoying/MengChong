@@ -1,6 +1,6 @@
 <template>
 	<div id="petlist_list_b">
-		<!--<keep-alive>-->
+		<keep-alive>
 			<router-view>
 				<ul class="petlist_list_tab_b" slot="pet_list_tab_b">
 					<li v-for="(item,index) in tabs" 
@@ -11,7 +11,7 @@
 					</li>
 				</ul>
 			</router-view>
-		<!--</keep-alive>-->
+		</keep-alive>
 	</div>
 	
 </template>
@@ -35,7 +35,7 @@ export default{
 				}
 			]
 		}
-	},
+	}
 }
 </script>
 <style scoped lang="scss">

@@ -54,6 +54,10 @@
 </template>
 
 <script type="text/javascript">
+  import Vue from 'vue'
+  import { Header } from 'mint-ui';
+
+  Vue.component(Header.name, Header);
   import Vuex from 'vuex'
   export default {
     data(){
@@ -62,12 +66,12 @@
           {
             message:"信息",
             icon:"#icon-xinxi",
-            url:'comment_d',
+            url:'comment_index',
           },
           {
             message:"获赞",
             icon:"#icon-aixin",
-            url:'',
+            url:'like_index_d',
           },
           {
             message:"宠物",

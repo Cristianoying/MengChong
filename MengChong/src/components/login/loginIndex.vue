@@ -7,15 +7,6 @@
     登陆
   </router-link>
   <div class="login_share_d">
-        <span class="login_share_wx_d">
-            <img src="../../../static/login_d_img/wx@2x.png" alt="">
-        </span>
-    <span class="login_share_wb_d">
-            <img src="../../../static/login_d_img/wb@2x.png" alt="">
-        </span>
-    <span class="login_share_qq_d">
-          <img src="../../../static/login_d_img/qq2x.png" alt="">
-        </span>
     <router-link class="login_share_register_d" :to="{name:'register'}">
             注册
         </router-link>
@@ -34,6 +25,8 @@
     height:100%;
     width:100%;
     background-image: url("../../../static/login_d_img/login13@2x.png");
+    background-size:cover;
+
 
   }
   .login_head_appear_d{
