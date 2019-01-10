@@ -80,22 +80,24 @@ export default {
         },
     ],
     topic_list_w:[
-        {
-        	personAppear:"static/home_w/sy_center_w/tx_dt_sy_1@2x.png",
-        	personName:"小V",
-        	personTime:"1小",
-        	personImg:"static/home_w/sy_center_w/dt_sy_1@3x.png",
-        	personCount:177,
-        	commentCount:6,
+        {    
+	        user:"1",
+	        userPhoto:"static/home_w/sy_center_w/tx_dt_sy_1@2x.png",
+        	topicPhoto: "static/home_w/sy_center_w/dt_sy_2.png",
+        	userName:"小V",
+        	topicDate:"1小",
+        	topicCount:177,
+        	topicComNum:6,
         	
         },
         {
-        	personAppear:"static/home_w/sy_center_w/tx_dt_sy_2@2x.png",
-        	personName:"小V",
-        	personTime:"1小",
-        	personImg:"static/home_w/sy_center_w/dt_sy_1@3x.png",
-        	personCount:177,
-        	commentCount:6,
+        	userId:"2",
+        	userPhoto:"static/home_w/sy_center_w/tx_dt_sy_1@2x.png",
+        	topicPhoto: "static/home_w/sy_center_w/dt_sy_2.png",
+        	userName:"小V",
+        	topicDate:"1小",
+        	topicCount:177,
+        	topicComNum:6,
         	
         }
     ]

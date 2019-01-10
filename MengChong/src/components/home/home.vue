@@ -4,8 +4,8 @@
 		<div class="wrapper" ref="homeWrapper">
 			<div class="content">
 				<Banner_w></Banner_w>
-				<Time_w></Time_w>
-				<Topic_w></Topic_w>
+				<!--<Time_w></Time_w>
+				<Topic_w></Topic_w>-->
 				<TopicList_w></TopicList_w>
 			</div>
 		</div>
