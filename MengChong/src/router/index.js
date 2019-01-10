@@ -58,12 +58,129 @@ import Goods_intro from "@/components/petlist/components/goods_details/goods_int
 import Goods_detailed from "@/components/petlist/components/goods_details/goods_detailed.vue"
 
 import Home_topic_w from "@/components/home/topicList.vue"
+import topicTitle_w from "@/components/home/topicTitle.vue"
 export default new Router({
 
+<<<<<<< HEAD
     routes: [{
             path: '/',
             redirect: '/home'
         },
+=======
+  routes: [
+    {
+      path: '/',
+      redirect: '/home'
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home,
+      meta: {
+        isFooter: true
+      },
+    },
+    { 
+    	/*由首页转跳到话题列表详情页*/
+	  	path:'/home/topic_w/:t_w_id',
+	  	name:"home_topic_w",
+	  	component: Home_topic_w,
+    },
+    {
+      // 有话题列表页 转跳到 某一个话题页
+      path:"/topicTitle_w/:topicTitleId",
+      name:"topicTitle_w",
+      component:topicTitle_w,
+    },
+    {
+      path: '/community',
+      name: 'community',
+      component: Community,
+      meta: {
+        isFooter: true
+      }
+    },
+    {
+      path: '/petlist',
+      name: 'petlist',
+      redirect: '/petlist/doglist',
+      component: Petlist,
+      children: [{
+        path: '/petlist/doglist',
+        name: 'doglist',
+        component: Doglist,
+        meta: {
+          isFooter: true
+        }
+      }, {
+        path: '/petlist/catlist',
+        name: 'catlist',
+        component: Catlist,
+        meta: {
+          isFooter: true
+        }
+      }, {
+        path: '/petlist/foodlist',
+        name: 'foodlist',
+        component: Foodlist,
+        meta: {
+          isFooter: true
+        }
+      }],
+      meta: {
+        isFooter: true
+      }
+    },
+    {
+      path: '/search_b',
+      component: Search_b,
+      name: "search_b",
+      meta: {
+        isFooter: false
+      },
+    },
+    {
+      path: '/goods_details_b',
+      component: Goods_details_b,
+      redirect: 'goods_details_b/goods_intro',
+      name: "goods_details_b",
+      meta: {
+        isFooter: false
+      },
+      children: [{
+        path: '/goods_details_b/goods_intro',
+        component: Goods_intro,
+
+        name: "goods_intro",
+        meta: {
+          isFooter: false
+        }
+      }, {
+        path: '/goods_details_b/goods_detailed',
+        component: Goods_detailed,
+        name: "goods_detailed",
+        meta: {
+          isFooter: false
+        }
+      }]},
+    {
+   		path: '/goods_details_b',
+      component: Goods_details_b,
+      name: "goods_details_b",
+      meta: {
+        isFooter: false
+      }
+    },
+    {
+      path: '/mine',
+      component: Mine,
+      name: "mine",
+      redirect: '/mine/mineIndex',
+      meta: {
+        isFooter: true
+      },
+      children: [
+>>>>>>> wrz
         {
             path: '/home',
             name: 'home',

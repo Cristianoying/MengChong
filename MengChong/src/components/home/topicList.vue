@@ -6,14 +6,16 @@
 		</div>
 		<ul>
 			<li v-for="(item,index) in topic_index_w">
-				<img :src="item.topicPhoto"/>
-				<div class="topic_index_div_w">
-					<h1>{{item.topicName}}</h1>
-					<p>
-					 <b>{{item.topicComNum | tieHot}}</b>
-					 <i>{{item.topicTieNum | tieNum}}</i>
-					</p>
-				</div>
+				<router-link :to="{name:'topicTitle_w',params:{topicTitleId:1}}">
+					<img :src="item.topicPhoto"/>
+					<div class="topic_index_div_w">
+						<h1>{{item.topicName}}</h1>
+						<p>
+						<b>{{item.topicComNum | tieHot}}</b>
+						<i>{{item.topicTieNum | tieNum}}</i>
+						</p>
+					</div>
+				</router-link>
 			</li>
 		</ul>
 		<p>已显示全部内容</p>
@@ -79,11 +81,18 @@
         padding-top: 0.22rem;
        border-bottom:2px solid  rgba(223,222,222,1);
 	}
-	#topic_indexWrap_w>ul>li>img{
+	#topic_indexWrap_w>ul>li>a{
+		display: block;
+		 display: flex;
+		width: 100%;
+		height: 100%;
+		  align-items: center;
+	}
+	#topic_indexWrap_w>ul>li>a>img{
 		width: 1.41rem;
 		height: 1.36rem;
 	}
-	#topic_indexWrap_w>ul>li>.topic_index_div_w{
+	#topic_indexWrap_w>ul>li>a>.topic_index_div_w{
 		width: 70%;
 		height: 1.36rem;
 		margin-left:0.25rem ;
