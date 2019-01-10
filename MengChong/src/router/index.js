@@ -48,6 +48,7 @@ import Goods_intro from "@/components/petlist/components/goods_details/goods_int
 import Goods_detailed from "@/components/petlist/components/goods_details/goods_detailed.vue"
 
 import Home_topic_w from "@/components/home/topicList.vue"
+import topicTitle_w from "@/components/home/topicTitle.vue"
 export default new Router({
 
   routes: [
@@ -68,7 +69,13 @@ export default new Router({
 	  	path:'/home/topic_w/:t_w_id',
 	  	name:"home_topic_w",
 	  	component: Home_topic_w,
-	  },
+    },
+    {
+      // 有话题列表页 转跳到 某一个话题页
+      path:"/topicTitle_w/:topicTitleId",
+      name:"topicTitle_w",
+      component:topicTitle_w,
+    },
     {
       path: '/community',
       name: 'community',
