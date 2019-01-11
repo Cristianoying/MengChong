@@ -37,6 +37,7 @@
 				/*this.scroll.on("pullingUp",()=>{
 					
 				})*/
+				console.log(this.scroll)
 				
 			
 		}
@@ -55,7 +56,7 @@
 		position: fixed;
 		top: 2.52rem;
 	}
-	##home_first_w>.wrapper>.content{
+	#home_first_w>.wrapper>.content{
 		padding-bottom: 0.92rem;
 	}
 </style>

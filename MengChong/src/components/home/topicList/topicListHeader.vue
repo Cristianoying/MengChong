@@ -23,6 +23,7 @@ export default {
 #topicTitleHeader_w{
     width: 100%;
     height: 3.97rem;
+    background: #ffffff;
 }
 #topicTitleHeader_w>img{
     width: 100%;

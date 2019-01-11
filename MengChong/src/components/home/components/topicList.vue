@@ -29,6 +29,7 @@
 </template>
 <script>
 	import Vuex from "vuex";
+	import BScroll from "better-scroll";
 	export default{
 		computed:{
 			...Vuex.mapState({
