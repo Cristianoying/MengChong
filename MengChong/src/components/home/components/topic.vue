@@ -4,12 +4,12 @@
 			<h2>热门话题 >></h2>
 			<ul>
 				<li v-for="(item,index) in topic_w">
-					<router-link :to="{name:'home_topic_w',params:{t_w_id:item.topId}}">
-						<img :src="item.topicImg"/>
-						<p class="topic_w_p1">{{item.topicTitle}}</p>
+					<router-link :to="{name:'home_topic_w',params:{t_w_id:item.topicId}}">
+						<img :src="item.topicPhoto"/>
+						<p class="topic_w_p1">{{item.topicName}}</p>
 						<p class="topic_w_p2">
 							<i></i>
-							<span>{{item.topCount}}
+							<span>{{item.topicComNum}}
 							</span></p>
 					</router-link>
 				</li>
@@ -24,6 +24,14 @@
 			...Vuex.mapState({
 				topic_w:state=>state.Home_w.topic_w,
 			})
+		},
+		methods:{
+			...Vuex.mapActions({
+				handleTopicList:"Home_w/handleTopicList",
+			})
+		},
+		created(){
+			this.handleTopicList();
 		}
 	}
 </script>

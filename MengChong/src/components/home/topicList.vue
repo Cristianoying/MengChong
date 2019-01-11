@@ -6,13 +6,13 @@
 		</div>
 		<ul>
 			<li v-for="(item,index) in topic_index_w">
-				<router-link :to="{name:'topicTitle_w',params:{topicTitleId:1}}">
+				<router-link :to="{name:'topicTitle_w',params:{topicTitleId:item.topicId}}">
 					<img :src="item.topicPhoto"/>
 					<div class="topic_index_div_w">
 						<h1>{{item.topicName}}</h1>
 						<p>
 						<b>{{item.topicComNum | tieHot}}</b>
-						<i>{{item.topicTieNum | tieNum}}</i>
+						<i>{{item.topicComNum | tieNum}}</i>
 						</p>
 					</div>
 				</router-link>
@@ -24,6 +24,9 @@
 <script>
 	import Vuex from "vuex";
 	export default{
+		created(){
+			this.handleTopicList();
+		},
 		computed:{
 			...Vuex.mapState({
 				topic_index_w:state=>state.Home_w.topic_index_w,
@@ -32,14 +35,17 @@
 		methods:{
 			handleBack(){
 				this.$router.back();
-			}
+			},
+			...Vuex.mapActions({
+				handleTopicList:"Home_w/handleTopicList",
+			})
 		},
 		filters:{
 			tieHot(n){
-				return "热度 "+n;
+				return n*2;
 			},
 			tieNum(n){
-				return "帖子 "+n;
+				return n;
 			}
 		}
 	}
