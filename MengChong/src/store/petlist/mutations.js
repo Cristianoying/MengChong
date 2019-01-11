@@ -10,6 +10,9 @@ export default {
     //查询相关商品列表  狗
     getCatGoodsList(state, params) {
         state.catGoodsList = params;
-        console.log(params)
+    },
+    //查询相关商品列表  食物
+    getPetFoodGoodsList(state, params) {
+        state.petFoodGoodsList = params;
     }
 }

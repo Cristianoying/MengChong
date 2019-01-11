@@ -32,5 +32,16 @@ export default {
                 commit("getCatGoodsList", data.data.data)
             }
         })
+    },
+    //查询相关商品列表  食物
+    getPetFoodGoodsList({ commit }) {
+        axios({
+            method: "post",
+            url: "api/mock/5c37f86a74255b71a6a8cb64/getPetFoodGoodsList"
+        }).then((data) => {
+            if (data.data.code === 1000) {
+                commit("getPetFoodGoodsList", data.data.data)
+            }
+        })
     }
 }

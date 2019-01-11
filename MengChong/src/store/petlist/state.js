@@ -4,5 +4,7 @@ export default {
     //查询相关商品列表  狗
     dogGoodsList: {},
     //查询相关商品列表  猫
-    catGoodsList: {}
+    catGoodsList: {},
+    //查询相关商品列表  猫
+    petFoodGoodsList: {}
 }
