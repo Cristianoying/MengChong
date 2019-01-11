@@ -2,24 +2,22 @@
 	<div id="searchrecommend_b">
 		<h4>搜索推荐</h4>
 		<ul class="searchrecommend_b">
-			<router-link :to="{name:'search_list'}"><li>猪猪</li></router-link>
-			<router-link :to="{name:'search_list'}"><li>哈士奇</li></router-link>
-			<router-link :to="{name:'search_list'}"><li>蓝猫</li></router-link>
-			<router-link :to="{name:'search_list'}"><li>猪儿虫</li></router-link>
-			<router-link :to="{name:'search_list'}"><li>蓝猫</li></router-link>
-			<router-link :to="{name:'search_list'}"><li>老鼠</li></router-link>
-			<router-link :to="{name:'search_list'}"><li>蓝猫</li></router-link>
-			<router-link :to="{name:'search_list'}"><li>大福蝶</li></router-link>
-			<router-link :to="{name:'search_list'}"><li>猪猪</li></router-link>
-			<router-link :to="{name:'search_list'}"><li>哈士奇</li></router-link>
-			<router-link :to="{name:'search_list'}"><li>猪儿虫</li></router-link>
+			<router-link :to="{name:'search_list'}" 
+						 v-for="(item,index) in beforHottag" 
+						 :key="index"><li>{{item}}</li>
+			</router-link>
 		</ul>
 	</div>
 </template>
 
 <script>
+import Vuex from "vuex"
 export default{
-
+	computed: {
+		...Vuex.mapState({
+    		beforHottag:state=>state.petlist.beforHottagAndHisearch.hottag
+		})
+	}
 }
 </script>
 

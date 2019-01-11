@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import Vuex  from "vuex"
 import Searchhistory from './searchpage/searchhistory.vue'
 import Searchrecommend from './searchpage/searchrecommend.vue'
 import Search from "./search.vue"
@@ -20,6 +21,20 @@ export default {
 		return{
 			
 		}
+	},
+	computed: {
+		...Vuex.mapState({
+			beforHottagAndHisearch:state=>state.petlist.beforHottagAndHisearch
+		})
+	},
+	methods: {
+		...Vuex.mapActions({
+			getBeforHottagAndHisearch:"petlist/getBeforHottagAndHisearch"
+		}),
+		
+	},
+	created(){
+		this.getBeforHottagAndHisearch()
 	}
 }
 </script>
