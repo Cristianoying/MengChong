@@ -4,7 +4,7 @@ import petlist from './petlist/index.js'
 import login from './Login'
 import mine from './mine'
 import Home_w from './home'
-
+import ShopCart from './shopcart/shopcart'
 import select from "./selectedata";
 
 Vue.use(Vuex);
@@ -18,6 +18,7 @@ const store = new Vuex.Store({
   mutations,
   getters,
   modules: {
+    ShopCart,
     petlist,
     login,
     mine,

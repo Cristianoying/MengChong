@@ -1,15 +1,17 @@
 <template>
+  <keep-alive>
     <div id="orderall">
-        <Header></Header>
+      <Header></Header>
       <div class="wrapper order_wrapper " ref="order_c">
         <div class="content order_content">
           <Main></Main>
         </div>
 
       </div>
-
-        <Footer></Footer>
+      <Footer></Footer>
     </div>
+  </keep-alive>
+
 </template>
 
 <script>
@@ -27,7 +29,8 @@
       mounted(){
           this.$nextTick(()=>{
             this.scroll_c = new Bscroll(this.$refs.order_c,{
-              pullUpLoad:true
+              pullUpLoad:true,
+              click:true
             })
           })
       }

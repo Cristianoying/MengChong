@@ -1,7 +1,7 @@
 <template>
   <div>
     <mt-header id="order">
-      <div class="order" slot="left">
+      <div @click="handle()"  class="order" slot="left">
         &lt; 确认订单
       </div>
     </mt-header>
@@ -9,7 +9,13 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+    methods:{
+      handle(){
+        this.$router.push('/shopcart')
+      }
+    }
+  }
 </script>
 
 <style scoped>
