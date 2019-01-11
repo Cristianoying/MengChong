@@ -59,6 +59,7 @@ import Goods_detailed from "@/components/petlist/components/goods_details/goods_
 
 import Home_topic_w from "@/components/home/topicList.vue"
 import topicTitle_w from "@/components/home/topicTitle.vue"
+import animal_w from "@/components/home/animal.vue"
 export default new Router({
     routes: [{
             path: '/',
