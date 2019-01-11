@@ -3,7 +3,7 @@
 		<catbanner-com></catbanner-com>
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
-			<li>
+			<!-- <li>
 				<router-link to="/goods_details_b"><img src="../../../../../static/petlish_b_img/20190108155255.jpg" class="pet_pic_b"/>
 				<div class="cat_price_b">¥ <span>10000</span></div></router-link>
 				<div class="cat_message_b">
@@ -12,22 +12,17 @@
 						<span>北京</span>
 					</p>
 				</div>
+			</li> -->
+			<li v-for="(item,index) in catGoodsList" :key="index">
+				<router-link to="/goods_details_b"><img :src="item.catPhoto" class="pet_pic_b"/>
+				<div class="cat_price_b">¥ <span>{{item.catNowPrice}}</span></div></router-link>
+				<div class="cat_message_b">
+					<p class="cat_kind_b">种类：<span>{{item.catName}}</span></p>
+					<p class="cat_local_b"><i class="iconfont icon_loc_b">&#xe685;</i>
+						<span>北京</span>
+					</p>
+				</div>
 			</li>
-			<li>222</li>
-			<li>222</li>
-			<li>222</li>
-			<li>222</li>
-			<li>222</li>
-			<li>222</li>
-			<li>222</li>
-			<li>222</li>
-			<li>222</li>
-			<li>222</li>
-			<li>33</li>
-			<li>112211</li>
-			<li>33</li>
-			<li>112211</li>
-			<li>33</li>
 		</ul>
 	</div></keep-alive>
 </template>
@@ -43,6 +38,19 @@ export default{
 	},
 	components:{
 		"catbanner-com":Catbanner
+	},
+	computed: {
+		...Vuex.mapState({
+			catGoodsList:state=>state.petlist.catGoodsList.catGoodsList
+		})
+	},
+	methods: {
+		...Vuex.mapActions({
+			getCatGoodsList:'petlist/getCatGoodsList'
+		})
+	},
+	created() {
+		this.getCatGoodsList()
 	},
 }
 </script>

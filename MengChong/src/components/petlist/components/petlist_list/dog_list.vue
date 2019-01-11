@@ -3,30 +3,16 @@
 		<dogbanner-com></dogbanner-com>
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
-			<li>
-				<router-link to="/goods_details_b"><img src="../../../../../static/petlish_b_img/timg.jpg" class="pet_pic_b"/>
-				<div class="dog_price_b">¥ <span>8000</span></div></router-link>
+			<li v-for="(item,index) in dogGoodsList" :key="index">
+				<router-link to="/goods_details_b"><img :src="item.dogPhoto" class="pet_pic_b"/>
+				<div class="dog_price_b">¥ <span>{{item.dogNowPrice}}</span></div></router-link>
 				<div class="dog_message_b">
-					<p class="dog_kind_b">种类：<span>柴犬</span></p>
+					<p class="dog_kind_b">种类：<span>{{item.dogName}}</span></p>
 					<p class="dog_local_b"><i class="iconfont icon_loc_b">&#xe685;</i>
 						<span>北京</span>
 					</p>
 				</div>
 			</li>
-			<li>22</li>
-			<li>112211</li>
-			<li>33</li>
-			<li>112211</li>
-			<li>33</li>
-			<li>112211</li>
-			<li>33</li>
-			<li>112211</li>
-			<li>33</li>
-			<li>33</li>
-			<li>112211</li>
-			<li>33</li>
-			<li>112211</li>
-			<li>33</li>
 		</ul>
 	</div>
 </template>
@@ -41,7 +27,20 @@ export default{
 	},
 	components:{
 		"dogbanner-com":Dogbanner
-	}
+	},
+	computed: {
+		...Vuex.mapState({
+			dogGoodsList:state=>state.petlist.dogGoodsList.dogGoodsList
+		})
+	},
+	methods: {
+		...Vuex.mapActions({
+			getDogGoodsList:'petlist/getDogGoodsList'
+		})
+	},
+	created() {
+		this.getDogGoodsList()
+	},
 }
 </script>
 
