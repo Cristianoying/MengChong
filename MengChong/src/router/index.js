@@ -86,6 +86,12 @@ export default new Router({
             component: topicTitle_w,
         },
         {
+          //转跳到宠物详情页
+          path:"/animal",
+          name:"animal_w",
+          component:animal_w,
+       },
+        {
             path: '/community',
             name: 'community',
             component: Community,
