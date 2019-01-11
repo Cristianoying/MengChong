@@ -387,7 +387,13 @@ export default new Router({
           path: 'submitorder',
           name: 'submitorder',
           component: Submitorder
+        },
+        {
+          path:'changereceplace',
+          name:'changereceplace',
+          component:Changereceplace
         }
+
       ]
     },
     {

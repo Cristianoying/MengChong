@@ -6,6 +6,8 @@ import mine from './mine'
 import Home_w from './home'
 import select from "./selectedata"
 import publish from './publish'
+import ShopCart from './shopcart/shopcart'
+
 
 Vue.use(Vuex);
 let state = {}
@@ -18,6 +20,7 @@ const store = new Vuex.Store({
   mutations,
   getters,
   modules: {
+    ShopCart,
     petlist,
     login,
     mine,

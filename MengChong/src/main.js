@@ -14,6 +14,7 @@ import './common/css/mine_icon_d/iconfont'
 Vue.config.productionTip = false
 import MintUi from 'mint-ui';
 import 'mint-ui/lib/style.css'
+import  'mint-ui/lib/index.js'
 Vue.use(MintUi);
 import axios from 'axios'
 Vue.config.productionTip = false
