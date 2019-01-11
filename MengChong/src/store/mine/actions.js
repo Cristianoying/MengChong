@@ -32,5 +32,16 @@ export default {
       .then(({data})=>{
         commit('getAllPetFriendListMutations_d',data.userInfoList);
       })
+  },
+  getOrderListActions_d({commit}){
+    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/order/getlist")
+      .then(({data})=>{
+        commit("getOrderListMutations_d",data.orderInfo);
+      })
+  },
+  //根据订单id获取该订单的详细信息；
+  getOrderDetailInfoActions_d({commit},id){
+    // console.log(id);
+    commit("getOrderDetailInfoMutations_d",id);
   }
 }
