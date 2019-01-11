@@ -31,7 +31,7 @@
                     {
                       title:"",
                       icon:"&#xe728;",
-                      url:""
+                      url:"publish"
                     },
                     {
                       title:"淘宠",

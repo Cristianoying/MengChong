@@ -29,7 +29,7 @@ import PetFriendList_d from '@/components/mine/setUp/petfriendlist/petfriendlist
 import PetFriendList_Index_d from '@/components/mine/setUp/petfriendlist/petfriendlist_index_d'
 import Order_d from '@/components/mine/setUp/orderlist_d/order_d'
 import Order_index_d from "@/components/mine/setUp/orderlist_d/order_index_d"
-
+import OrderDetail from '@/components/mine/setUp/orderlist_d/order_detail'
 
 
 import Publicvideo from "@/components/publish/video/publicvideo"
@@ -71,7 +71,7 @@ export default new Router({
         isFooter: true
       },
     },
-    { 
+    {
     	/*由首页转跳到话题列表详情页*/
 	  	path:'/home/topic_w/:t_w_id',
 	  	name:"home_topic_w",
@@ -274,7 +274,12 @@ export default new Router({
             {
               path:'order_index_d',
               component:Order_index_d,
-              name:'order_index_d'
+              name:'order_index_d',
+
+            },{
+              path:'order_detail_d',
+              name:'order_detail',
+              component:OrderDetail,
             }
           ]
         }
