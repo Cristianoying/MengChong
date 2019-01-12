@@ -1,8 +1,12 @@
 <template>
   <div class="footer_d">
     <ul class="footer_ul_d">
-      <li class="footer_li_d" v-for="(item,index) in footer_list_d" :key="index" @click = "recordindex(index)">
-        <router-link :to="{name:item.url}"  >
+      <li
+        class="footer_li_d"
+        v-for="(item,index) in footer_list_d"
+        :key="index"
+      >
+        <router-link :to="{name:item.url}">
           <i class="iconfont" v-html="item.icon"></i>
           <span>{{item.title}}</span>
         </router-link>
@@ -46,17 +50,14 @@
                   ],
 
                 }
-              },
-      methods:{
-        ...Vuex.mapMutations({
-          recordindex:"publish/reindex"
-        })
+              }
+      
+  };
 
-      }
-  }
 </script>
 
 <style scoped>
+<<<<<<< HEAD
   .footer_d {
     height: 1.2rem;
     width: 100%;
@@ -66,31 +67,43 @@
     left: 0;
     padding-bottom: .05rem;
   }
+=======
+.footer_d {
+  height: 0.92rem;
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 0.3rem;
+}
+>>>>>>> htm
 
-  .footer_ul_d {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.footer_ul_d {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .footer_li_d {
-    height: 100%;
-    width: 100%;
-    list-style: none;
-  }
+.footer_li_d {
+  height: 100%;
+  width: 100%;
+  list-style: none;
+}
 
-  .footer_li_d a {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-  }
+.footer_li_d a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
 
+<<<<<<< HEAD
   i {
     font-size: .6rem;
     color: #C8C8C8;
@@ -112,11 +125,33 @@
   .footer_li_d>.router-link-active span{
     color: #E83F39;
   }
+=======
+i {
+  font-size: 0.6rem;
+  color: #c8c8c8;
+  font-weight: 800;
+}
+>>>>>>> htm
 
+span {
+  color: #c8c8c8;
+  font-size: 0.22rem;
+  width: 0.46rem;
+  font-weight: 800;
+}
 
-  .footer_li_d > .router-link-active i,
-  .footer_li_d > .router-link-active span {
-    color: #E83F39;
-  }
+.footer_ul_d li:nth-child(3) i {
+  font-size: 1.1rem;
+  position: relative;
+  top: -0.4rem;
+}
+.footer_li_d > .router-link-active i,
+.footer_li_d > .router-link-active span {
+  color: #e83f39;
+}
 
+.footer_li_d > .router-link-active i,
+.footer_li_d > .router-link-active span {
+  color: #e83f39;
+}
 </style>

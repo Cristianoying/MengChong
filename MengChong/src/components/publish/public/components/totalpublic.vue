@@ -1,12 +1,12 @@
 <template>
 	<div id = "totals">
-		<router-link :to="{name:'trends'}">
+		<router-link to="/publish/trends">
 			<div class = "bgone"></div>
 		</router-link>
-		<router-link :to="{name:'video'}">	
+		<router-link to="/publish/video">	
 			<div class = "bgtwo"></div>
 		</router-link>
-		<router-link :to="{name:'article'}">	
+		<router-link to="/publish/article">	
 			<div class = "bgthree"></div>
 		</router-link>
 	</div>
