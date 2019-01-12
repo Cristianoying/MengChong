@@ -15,6 +15,9 @@
                 <img :src="item.pinlunimg" alt="">&nbsp;10
             </div>
         </div>
+        <div class="kong">
+
+        </div>
     </div>
 </template>
 <script>
@@ -30,9 +33,6 @@ export default {
 <style scoped>
     .follow_a{
         width:100%;
-    
-        position:fixed;
-        top:.88rem;
         background: #EEEEEE;
     }
     .list_a{
@@ -94,5 +94,9 @@ export default {
         height:.32rem;
         margin:0 0 0 .3rem;
         align-items: center
+    }
+    .kong{
+        height:26vw;
+        width:100%;
     }
 </style>

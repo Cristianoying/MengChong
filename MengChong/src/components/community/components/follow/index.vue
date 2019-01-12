@@ -1,6 +1,5 @@
 <template>
     <div class="followed_a">
-       
         <div class="wrapper" ref="foll">
                 <List class="content"></List>
         </div>
@@ -23,7 +22,7 @@ export default {
     mounted(){
         if(!this.scroll){
             this.scroll=new BScroll(this.$refs.foll)
-            // console.log(this.scroll);       
+        //    console.log(this.scroll);       
         }
     }
 }

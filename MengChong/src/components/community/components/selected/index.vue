@@ -1,6 +1,5 @@
 <template>
     <div class="zhu_a">
-        
         <div class="wrapper" ref="homeWrapper">
             <div class="content">
                 <Banner></Banner>
@@ -27,8 +26,11 @@ export default {
     },
     mounted(){
         if(!this.scroll){
-            this.scroll=new BScroll(this.$refs.homeWrapper)
+            this.scroll=new BScroll(this.$refs.homeWrapper,{
+                click:true                    //点击事件才会生效
+            })
             // console.log(this.scroll);
+            
             
         }
     }

@@ -37,6 +37,7 @@ import Submitorder from '@/components/shopcart/submitOrder_c/submitOrder'
 import Communityind from '@/components/community/components/selected/index.vue'
 import Followind from '@/components/community/components/follow/index.vue'
 import Articleind from '@/components/community/components/article/index.vue'
+import Dynamic from '@/components/community/components/dynamic/index.vue'
 
 
 Vue.use(Router)
@@ -54,7 +55,7 @@ import Goods_intro from "@/components/petlist/components/goods_details/goods_int
 import Goods_detailed from "@/components/petlist/components/goods_details/goods_detailed.vue"
 
 export default new Router({
-
+  
   routes: [
     {
       path: '/',
@@ -89,6 +90,15 @@ export default new Router({
           }
         },
         {
+          path:'/community/dynamic',
+          name:'dynamic',
+          component:Dynamic,
+          meta: {
+            isFooter: false,
+            iscommuntop:false
+          }
+        },
+        {
           path:'/community/follow',
           name:'follow',
           component:Followind,
@@ -103,9 +113,9 @@ export default new Router({
           component:Articleind,
           meta: {
             isFooter: true,
-            iscommuntop:false
+            iscommuntop:true
           }
-        }
+        },
       ],
       meta: {
         isFooter: true
@@ -180,14 +190,6 @@ export default new Router({
           isFooter: false
         }
       }]},
-    {
-   		path: '/goods_details_b',
-      component: Goods_details_b,
-      name: "goods_details_b",
-      meta: {
-        isFooter: false
-      }
-    },
     {
       path: '/mine',
       component: Mine,
