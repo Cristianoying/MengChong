@@ -5,6 +5,10 @@ import login from './Login'
 import mine from './mine'
 import Home_w from './home'
 import select from "./selectedata"
+import publish from './publish'
+import ShopCart from './shopcart/shopcart'
+
+
 Vue.use(Vuex);
 let state = {}
 let actions = {}
@@ -16,11 +20,13 @@ const store = new Vuex.Store({
   mutations,
   getters,
   modules: {
+    ShopCart,
     petlist,
     login,
     mine,
     select,
     Home_w,
+    publish
   }
 })
 export default store;

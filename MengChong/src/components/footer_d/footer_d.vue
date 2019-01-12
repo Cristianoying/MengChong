@@ -1,8 +1,8 @@
 <template>
   <div class="footer_d">
     <ul class="footer_ul_d">
-      <li class="footer_li_d" v-for="(item,index) in footer_list_d" :key="index">
-        <router-link :to="{name:item.url}">
+      <li class="footer_li_d" v-for="(item,index) in footer_list_d" :key="index" @click = "recordindex(index)">
+        <router-link :to="{name:item.url}"  >
           <i class="iconfont" v-html="item.icon"></i>
           <span>{{item.title}}</span>
         </router-link>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-
+    import Vuex from "vuex";
     export default {
         name: "footer_d",
               data(){
@@ -47,19 +47,24 @@
 
                 }
               },
-      methods:{}
+      methods:{
+        ...Vuex.mapMutations({
+          recordindex:"publish/reindex"
+        })
+
+      }
   }
 </script>
 
 <style scoped>
   .footer_d {
-    height: .92rem;
+    height: 1.2rem;
     width: 100%;
     background: #fff;
     position: fixed;
     bottom: 0;
     left: 0;
-    padding-bottom: .3rem;
+    padding-bottom: .05rem;
   }
 
   .footer_ul_d {

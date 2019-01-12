@@ -60,43 +60,78 @@ export default {
 	    }
     ],
     topic_w:[
-        {
-        	topicImg:"static/home_w/sy_center_w/图层 8.png",
-        	topicTitle:"母女两个的日常",
-        	topCount:110,
-        	topId:1,
-        },
-        {
-        	topicImg:"static/home_w/sy_center_w/df006ced21989cda67f87089c71ec4c@2x.png",
-        	topicTitle:"母女两个的日常",
-        	topCount:110,
-        	topId:2,
-        },
-        {
-        	topicImg:"static/home_w/sy_center_w/5d1a8eb5dd07745fbc5a05cacbdd8ce@2x.png",
-        	topicTitle:"母女两个的日常",
-        	topCount:110,
-        	topId:3,
-        },
+        // {
+        // 	topicImg:"static/home_w/sy_center_w/图层 8.png",
+        // 	topicTitle:"母女两个的日常",
+        // 	topCount:110,
+        // 	topId:1,
+        // },
+        // {
+        // 	topicImg:"static/home_w/sy_center_w/df006ced21989cda67f87089c71ec4c@2x.png",
+        // 	topicTitle:"母女两个的日常",
+        // 	topCount:110,
+        // 	topId:2,
+        // },
+        // {
+        // 	topicImg:"static/home_w/sy_center_w/5d1a8eb5dd07745fbc5a05cacbdd8ce@2x.png",
+        // 	topicTitle:"母女两个的日常",
+        // 	topCount:110,
+        // 	topId:3,
+        // },
     ],
     topic_list_w:[
-        {
-        	personAppear:"static/home_w/sy_center_w/tx_dt_sy_1@2x.png",
-        	personName:"小V",
-        	personTime:"1小",
-        	personImg:"static/home_w/sy_center_w/dt_sy_1@3x.png",
-        	personCount:177,
-        	commentCount:6,
+        {    
+	        user:"1",
+	        userPhoto:"static/home_w/sy_center_w/tx_dt_sy_1@2x.png",
+        	topicPhoto: "static/home_w/sy_center_w/dt_sy_2.png",
+        	userName:"小V",
+        	topicDate:"1小",
+        	topicCount:177,
+        	topicComNum:6,
         	
         },
         {
-        	personAppear:"static/home_w/sy_center_w/tx_dt_sy_2@2x.png",
-        	personName:"小V",
-        	personTime:"1小",
-        	personImg:"static/home_w/sy_center_w/dt_sy_1@3x.png",
-        	personCount:177,
-        	commentCount:6,
+        	userId:"2",
+        	userPhoto:"static/home_w/sy_center_w/tx_dt_sy_1@2x.png",
+        	topicPhoto: "static/home_w/sy_center_w/dt_sy_2.png",
+        	userName:"小V",
+        	topicDate:"1小",
+        	topicCount:177,
+        	topicComNum:6,
         	
         }
-    ]
+    ],
+    /*以下是话题页面*/
+   topic_index_w:[
+	   {
+		topicName:"#狗狗！不许吃粑粑", //话题名
+		topicPhoto:"static/home_w/sy_ht_w/tp_ht_1@2x.png", //话题图片
+		topicComNum:"603", //话题讨论人数
+		topicTieNum:"0",
+	   },
+	   {
+		topicName:"#狗狗！不许吃粑粑", //话题名
+		topicPhoto:"static/home_w/sy_ht_w/tp_ht_1@2x.png", //话题图片
+		topicComNum:"603", //话题讨论人数
+		topicTieNum:"0",
+	   },
+	   {
+		topicName:"#狗狗！不许吃粑粑", //话题名
+		topicPhoto:"static/home_w/sy_ht_w/tp_ht_1@2x.png", //话题图片
+		topicComNum:"603", //话题讨论人数
+		topicTieNum:"0",
+	   },
+	   {
+		topicName:"#狗狗！不许吃粑粑", //话题名
+		topicPhoto:"static/home_w/sy_ht_w/tp_ht_1@2x.png", //话题图片
+		topicComNum:"603", //话题讨论人数
+		topicTieNum:"0",
+	   },
+	   {
+		topicName:"#狗狗！不许吃粑粑", //话题名
+		topicPhoto:"static/home_w/sy_ht_w/tp_ht_1@2x.png", //话题图片
+		topicComNum:"603", //话题讨论人数
+		topicTieNum:"0",
+	   },
+   ]
 }

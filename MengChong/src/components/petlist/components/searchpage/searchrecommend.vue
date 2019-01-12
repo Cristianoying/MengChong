@@ -2,24 +2,22 @@
 	<div id="searchrecommend_b">
 		<h4>搜索推荐</h4>
 		<ul class="searchrecommend_b">
-			<li>猪猪</li>
-			<li>哈士奇</li>
-			<li>蓝猫</li>
-			<li>猪儿虫</li>
-			<li>蓝猫</li>
-			<li>老鼠</li>
-			<li>蓝猫</li>
-			<li>大福蝶</li>
-			<li>猪猪</li>
-			<li>哈士奇</li>
-			<li>猪儿虫</li>
+			<router-link :to="{name:'search_list'}" 
+						 v-for="(item,index) in beforHottag" 
+						 :key="index"><li>{{item}}</li>
+			</router-link>
 		</ul>
 	</div>
 </template>
 
 <script>
+import Vuex from "vuex"
 export default{
-
+	computed: {
+		...Vuex.mapState({
+    		beforHottag:state=>state.petlist.beforHottagAndHisearch.hottag
+		})
+	}
 }
 </script>
 
@@ -36,7 +34,7 @@ export default{
 			display: flex;
 			width: 100%;
 			flex-wrap: wrap;
-			>li{
+			li{
 				font-size: 0.28rem;
 				height: 0.6rem;
 				line-height: 0.6rem;

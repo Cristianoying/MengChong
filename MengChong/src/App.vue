@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-  <keep-alive>
   	<router-view/>
-  </keep-alive>
-    
     <footer_com v-if="this.$route.meta.isFooter"></footer_com>
   </div>
 </template>
@@ -23,5 +20,6 @@ export default {
 #app{
 	width: 100%;
 	height: 100%;
+  position: relative;
 }
 </style>

@@ -31,11 +31,13 @@
 			
 				this.scroll=new BScroll(this.$refs.homeWrapper,{
 					//只有设置为true pulling才能使用
-					pullUpLoad:true
+					pullUpLoad:true,
+					click:true,
 				});
 				/*this.scroll.on("pullingUp",()=>{
 					
 				})*/
+				console.log(this.scroll)
 				
 			
 		}
@@ -54,7 +56,7 @@
 		position: fixed;
 		top: 2.52rem;
 	}
-	##home_first_w>.wrapper>.content{
+	#home_first_w>.wrapper>.content{
 		padding-bottom: 0.92rem;
 	}
 </style>

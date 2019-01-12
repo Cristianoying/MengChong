@@ -16,8 +16,32 @@ export default {
   },
   getLikeAllActions({commit}){
     //获取我的页面里面的被赞页面的初始信息
-    axios.get("api/mock/5c34ca878fafe728d1f70c7d/like/getall").then(({data})=>{
+    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/like/getall").then(({data})=>{
       commit("getLikeAllMutations",data.likelist)
     })
+  },
+  getPetInfoActions_d({commit}){
+    //获取我的宠物的详细信息
+    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/getpet")
+      .then(({data})=>{
+        commit("getPetInfoMutations_d",data.petInfo);
+      })
+  },
+  getAllPetFriendListActions_d({commit}){
+    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/friend/getall")
+      .then(({data})=>{
+        commit('getAllPetFriendListMutations_d',data.userInfoList);
+      })
+  },
+  getOrderListActions_d({commit}){
+    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/order/getlist")
+      .then(({data})=>{
+        commit("getOrderListMutations_d",data.orderInfo);
+      })
+  },
+  //根据订单id获取该订单的详细信息；
+  getOrderDetailInfoActions_d({commit},id){
+    // console.log(id);
+    commit("getOrderDetailInfoMutations_d",id);
   }
 }

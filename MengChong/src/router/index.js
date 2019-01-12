@@ -23,6 +23,15 @@ import Comment from '@/components/mine/setUp/comment/comment_d'
 import CommentIndex from '@/components/mine/setUp/comment/comment_index_d'
 import Like_index_d from "@/components/mine/setUp/like_d/like_index_d"
 import Like_d from '@/components/mine/setUp/like_d/like_d'
+import PetInfo_d from '@/components/mine/setUp/petinfo_d/petinfo_d'
+import PetInfo_Index_d from '@/components/mine/setUp/petinfo_d/petinfo_index_d'
+import PetFriendList_d from '@/components/mine/setUp/petfriendlist/petfriendlist_d'
+import PetFriendList_Index_d from '@/components/mine/setUp/petfriendlist/petfriendlist_index_d'
+import Order_d from '@/components/mine/setUp/orderlist_d/order_d'
+import Order_index_d from "@/components/mine/setUp/orderlist_d/order_index_d"
+import OrderDetail from '@/components/mine/setUp/orderlist_d/order_detail'
+
+
 
 import Publicvideo from "@/components/publish/video/publicvideo"
 import Publictrends from "@/components/publish/trends/publictrends"
@@ -31,7 +40,7 @@ import Publicarticle from "@/components/publish/article/publicarticle"
 import Cart from '@/components/shopcart/cart_c/Cart'
 import Publish from "@/components/publish/public/publish"
 import Submitorder from '@/components/shopcart/submitOrder_c/submitOrder'
-
+import Changereceplace from '@/components/shopcart/submitOrder_c/changereceplace_c'
 
 
 import Communityind from '@/components/community/components/selected/index.vue'
@@ -47,6 +56,8 @@ import Search_b from "@/components/petlist/components/searchpage.vue"
 import Search_list from "@/components/petlist/components/search_list.vue"
 //petlist下物品详情路由
 import Goods_details_b from "@/components/petlist/components/goods_details.vue"
+//支付成功
+import Pay_success from "@/components/petlist/components/pay_success.vue"
 //petlist下的二级路由
 import Doglist from "@/components/petlist/components/petlist_list/dog_list"
 import Catlist from "@/components/petlist/components/petlist_list/cat_list"
@@ -54,6 +65,9 @@ import Foodlist from "@/components/petlist/components/petlist_list/food_list"
 import Goods_intro from "@/components/petlist/components/goods_details/goods_intro.vue"
 import Goods_detailed from "@/components/petlist/components/goods_details/goods_detailed.vue"
 
+import Home_topic_w from "@/components/home/topicList.vue"
+import topicTitle_w from "@/components/home/topicTitle.vue"
+import animal_w from "@/components/home/animal.vue"
 export default new Router({
   
   routes: [
@@ -67,7 +81,25 @@ export default new Router({
       component: Home,
       meta: {
         isFooter: true
-      }
+      },
+    },
+    {
+      /*由首页转跳到话题列表详情页*/
+      path: '/home/topic_w/:t_w_id',
+      name: "home_topic_w",
+      component: Home_topic_w,
+    },
+    {
+      // 有话题列表页 转跳到 某一个话题页
+      path: "/topicTitle_w/:topicTitleId",
+      name: "topicTitle_w",
+      component: topicTitle_w,
+    },
+    {
+      //转跳到宠物详情页
+      path:"/animal",
+      name:"animal_w",
+      component:animal_w,
     },
 
 
@@ -163,6 +195,24 @@ export default new Router({
       component: Search_b,
       name: "search_b",
       meta: {
+        isFooter: false,
+        isBack: true
+      },
+    },
+    {
+      path: '/search_list',
+      component: Search_list,
+      name: "search_list",
+      meta: {
+        isFooter: false,
+        isBack: true
+      },
+    },
+    {
+      path: '/pay_success',
+      component: Pay_success,
+      name: "pay_success",
+      meta: {
         isFooter: false
       },
     },
@@ -189,7 +239,12 @@ export default new Router({
         meta: {
           isFooter: false
         }
+<<<<<<< HEAD
       }]},
+=======
+      }]
+    },
+>>>>>>> master
     {
       path: '/mine',
       component: Mine,
@@ -212,34 +267,39 @@ export default new Router({
           name: "setUp",
           component: MineSetUp,
           redirect: "minesetup/personalinfo",
-          children: [{
-            path: 'personalinfo',
-            name: "personalinfo",
-            component: Personalinfo
-          }, {
-            path: 'person',
-            name: "person",
-            component: Person,
-          }, {
-            path: 'personpage',
-            name: 'personpage',
-            component: PersonPage
-          },
+          children: [
+            {
+              path: 'personalinfo',
+              name: "personalinfo",
+              component: Personalinfo
+            },
+            {
+              path: 'person',
+              name: "person",
+              component: Person,
+            },
+            {
+              path: 'personpage',
+              name: 'personpage',
+              component: PersonPage
+            },
             {
               path: 'account_security',
               name: "account_security",
               component: accountSecurity,
               redirect: 'account_security/account_security_index',
-              children: [{
-                path: 'account_security_index',
-                component: accountSecurityIndex,
-                name: 'account_security_index'
-              },
+              children: [
+                {
+                  path: 'account_security_index',
+                  component: accountSecurityIndex,
+                  name: 'account_security_index'
+                },
                 {
                   path: 'phone',
                   name: 'phone_d',
                   component: Phone_d,
-                }, {
+                },
+                {
                   path: 'password_d',
                   name: 'password_d',
                   component: password_d,
@@ -259,7 +319,8 @@ export default new Router({
               component: Comment,
             }
           ]
-        }, {
+        },
+        {
           path: 'like_index_d',
           name: 'like_index_d',
           component: Like_index_d,
@@ -271,6 +332,50 @@ export default new Router({
               component: Like_d
             }
           ]
+        },
+        {
+          path:"/petinfo_d",
+          name:'petinfo_d',
+          component:PetInfo_d,
+          redirect:'/petinfo_d/petinfo_index_d',
+          children:[
+            {
+              path:'petinfo_index_d',
+              name:'petinfo_index_d',
+              component:PetInfo_Index_d
+            }
+          ]
+        },
+        {
+          path:'/petfriend_d',
+          name:'petfriend_d',
+          component:PetFriendList_d,
+          redirect:'/petfriend_d/petfriend_index_d',
+          children:[
+            {
+              path:'petfriend_index_d',
+              name:'petfriend_index_d',
+              component:PetFriendList_Index_d
+            }
+          ]
+        },
+        {
+          path:"/order_d",
+          name:'order_d',
+          component:Order_d,
+          redirect:'/order_d/order_index_d',
+          children:[
+            {
+              path:'order_index_d',
+              component:Order_index_d,
+              name:'order_index_d',
+
+            },{
+              path:'order_detail_d',
+              name:'order_detail',
+              component:OrderDetail,
+            }
+          ]
         }
       ]
     },
@@ -280,12 +385,11 @@ export default new Router({
       meta: {
         isFooter: false
       },
-      children: [
-        {
-          path: "/",
-          name: "userIndex",
-          component: UserIndex
-        },
+      children: [{
+        path: "/",
+        name: "userIndex",
+        component: UserIndex
+      },
         {
           path: "loginuser",
           name: "userlogin",
@@ -304,17 +408,22 @@ export default new Router({
       name: 'shopcart',
       component: Shopcart,
       redirect: "/shopcart/cart",
-      children: [
-        {
-          path: 'cart',
-          name: 'cart',
-          component: Cart
-        },
+      children: [{
+        path: 'cart',
+        name: 'cart',
+        component: Cart
+      },
         {
           path: 'submitorder',
           name: 'submitorder',
           component: Submitorder
+        },
+        {
+          path:'changereceplace',
+          name:'changereceplace',
+          component:Changereceplace
         }
+
       ]
     },
     {

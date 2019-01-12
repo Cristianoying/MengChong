@@ -14,22 +14,17 @@ import './common/css/mine_icon_d/iconfont'
 Vue.config.productionTip = false
 import MintUi from 'mint-ui';
 import 'mint-ui/lib/style.css'
+import  'mint-ui/lib/index.js'
 Vue.use(MintUi);
-
 import axios from 'axios'
-
 Vue.config.productionTip = false
-
-
-Vue.prototype.$axios=axios
+Vue.prototype.$axios = axios
 import store from './store'
-
-
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  store,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    store,
+    components: { App },
+    template: '<App/>'
 })
