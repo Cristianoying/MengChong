@@ -15,6 +15,7 @@ import MineSetUp from "@/components/mine/mineSetUp"
 import Personalinfo from '@/components/mine/personalinfo'
 import Person from '@/components/mine/person'
 import PersonPage from '@/components/mine/personalPage'
+import PersonalPage_index_d from '@/components/mine/personalPage_index_d'
 import accountSecurity from '@/components/mine/setUp/Account_security/account_security'
 import Phone_d from '@/components/mine/setUp/Account_security/phone'
 import accountSecurityIndex from '@/components/mine/setUp/Account_security/account_security_index'
@@ -216,9 +217,17 @@ export default new Router({
               component: Person,
             },
             {
-              path: 'personpage',
-              name: 'personpage',
-              component: PersonPage
+              path:'/personalPage_index_d',
+              name:'personalPage_index_d',
+              component:PersonalPage_index_d,
+              redirect:'/personalPage_index_d/personpage',
+              children:[
+                {
+                  path: 'personpage',
+                  name: 'personpage',
+                  component: PersonPage
+                }
+              ]
             },
             {
               path: 'account_security',

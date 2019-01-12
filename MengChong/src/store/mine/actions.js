@@ -43,5 +43,12 @@ export default {
   getOrderDetailInfoActions_d({commit},id){
     // console.log(id);
     commit("getOrderDetailInfoMutations_d",id);
+  },
+  //获取个人主页信息
+  getPersonalInfoActions_d({commit}){
+      axios.get("/api/mock/5c34ca878fafe728d1f70c7d/getMineInfo")
+        .then(({data})=>{
+          commit("getPersonalInfoMutations_d",data)
+        })
   }
 }

@@ -20,5 +20,8 @@ export default {
   getOrderDetailInfoMutations_d(state,payload){
     var orderlist_detail_d=state.orderlist_d.find(v=>v.orderId=payload);
     state.orderlist_detail_d=orderlist_detail_d
+  },
+  getPersonalInfoMutations_d(state,payload){
+    state.personalInfo_d=payload;
   }
 }
