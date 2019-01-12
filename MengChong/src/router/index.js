@@ -183,39 +183,6 @@ export default new Router({
       }]
     },
     {
-      path: "/petinfo_d",
-      name: 'petinfo_d',
-      component: PetInfo_d,
-      redirect: '/petinfo_d/petinfo_index_d',
-      children: [{
-        path: 'petinfo_index_d',
-        name: 'petinfo_index_d',
-        component: PetInfo_Index_d
-      }]
-    },
-    {
-      path: '/petfriend_d',
-      name: 'petfriend_d',
-      component: PetFriendList_d,
-      redirect: '/petfriend_d/petfriend_index_d',
-      children: [{
-        path: 'petfriend_index_d',
-        name: 'petfriend_index_d',
-        component: PetFriendList_Index_d
-      }]
-    },
-    {
-      path: "/order_d",
-      name: 'order_d',
-      component: Order_d,
-      redirect: '/order_d/order_index_d',
-      children: [{
-        path: 'order_index_d',
-        component: Order_index_d,
-        name: 'order_index_d'
-      }]
-    },
-    {
       path: '/mine',
       component: Mine,
       name: "mine",
