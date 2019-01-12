@@ -54,7 +54,6 @@
           let Bscroll = new BScroll(this.$refs.order_header_swapper_d,{
             click:true
           })
-        console.log(Bscroll)
       },
       filters:{
           money_d(money){

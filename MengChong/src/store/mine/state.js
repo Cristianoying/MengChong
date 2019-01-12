@@ -5,5 +5,6 @@ export default {
   petinfo_d:{},
   petfriendlist_d:[],
   orderlist_d:[],
-  orderlist_detail_d:{}
+  orderlist_detail_d:{},
+  personalInfo_d:{}
 }
