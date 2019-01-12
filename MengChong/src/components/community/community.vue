@@ -8,7 +8,6 @@
 import selected from "./components/selected/index.vue"
 	export default{
 		created(){
-			console.log(this)
 			this.$store.dispatch("select/handleSelect")
 		},
 		data(){
