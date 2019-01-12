@@ -5,14 +5,14 @@ export default {
     },
     //查询相关商品列表  狗
     getDogGoodsList(state, params) {
-        state.dogGoodsList = params;
+        state.dogGoodsList = [...state.dogGoodsList, ...params.dogGoodsList];
     },
-    //查询相关商品列表  狗
+    //查询相关商品列表  猫
     getCatGoodsList(state, params) {
-        state.catGoodsList = params;
+        state.catGoodsList = [...state.catGoodsList, ...params.catGoodsList];
     },
     //查询相关商品列表  食物
     getPetFoodGoodsList(state, params) {
-        state.petFoodGoodsList = params;
+        state.petFoodGoodsList = [...state.petFoodGoodsList, ...params.petFoodGoodsList];
     }
 }

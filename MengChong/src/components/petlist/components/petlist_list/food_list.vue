@@ -6,7 +6,7 @@
 				<li v-for="(item,index) in petFoodGoodsList" :key="index">
 					<router-link to="/goods_details_b/goods_detailed">
 						<div class="food_left_b">
-							<img :src="item.foodPhoto" alt="">
+							<img v-lazy="item.foodPhoto"/>
 						</div>
 						<div class="food_right_b">
 							<div class="food_righttitle_b">
@@ -20,9 +20,6 @@
 						</div>
 					</router-link>
 				</li>
-
-			
-		
 		</ul>
 	</div>
 </template>
@@ -30,6 +27,9 @@
 <script>
 import Foodbanner from "./components/banner_food.vue"
 import Vuex from "vuex"
+import Vue from "vue"
+import { Lazyload } from 'mint-ui';
+Vue.use(Lazyload);
 export default{
 	data(){
 		return{
@@ -40,7 +40,7 @@ export default{
 	},
 	computed: {
 		...Vuex.mapState({
-			petFoodGoodsList:state=>state.petlist.petFoodGoodsList.petFoodGoodsList
+			petFoodGoodsList:state=>state.petlist.petFoodGoodsList
 		})
 	},
 	methods: {
@@ -79,7 +79,11 @@ export default{
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					img{
+					// img{
+					// 	width: 2rem;
+					// 	height: 2rem;
+					// }
+					image[lazy=loading] {
 						width: 2rem;
 						height: 2rem;
 					}

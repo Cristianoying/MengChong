@@ -3,19 +3,11 @@
 		<catbanner-com></catbanner-com>
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
-			<!-- <li>
-				<router-link to="/goods_details_b"><img src="../../../../../static/petlish_b_img/20190108155255.jpg" class="pet_pic_b"/>
-				<div class="cat_price_b">¥ <span>10000</span></div></router-link>
-				<div class="cat_message_b">
-					<p class="cat_kind_b">种类：<span>英短-蓝白</span></p>
-					<p class="cat_local_b"><i class="iconfont icon_loc_b">&#xe685;</i>
-						<span>北京</span>
-					</p>
-				</div>
-			</li> -->
 			<li v-for="(item,index) in catGoodsList" :key="index">
-				<router-link to="/goods_details_b"><img :src="item.catPhoto" class="pet_pic_b"/>
-				<div class="cat_price_b">¥ <span>{{item.catNowPrice}}</span></div></router-link>
+				<router-link to="/goods_details_b">
+					<img class="pet_pic_b" v-lazy="item.catPhoto"/>
+					<div class="cat_price_b">¥ <span>{{item.catNowPrice}}</span></div>
+				</router-link>
 				<div class="cat_message_b">
 					<p class="cat_kind_b">种类：<span>{{item.catName}}</span></p>
 					<p class="cat_local_b"><i class="iconfont icon_loc_b">&#xe685;</i>
@@ -28,8 +20,12 @@
 </template>
 
 <script>
+import Vue from "vue"
 import Catbanner from "./components/banner_cat.vue"
+//懒加载
 import Vuex from "vuex"
+import { Lazyload } from 'mint-ui';
+Vue.use(Lazyload);
 export default{
 	data(){
 		return{
@@ -41,7 +37,7 @@ export default{
 	},
 	computed: {
 		...Vuex.mapState({
-			catGoodsList:state=>state.petlist.catGoodsList.catGoodsList
+			catGoodsList:state=>state.petlist.catGoodsList
 		})
 	},
 	methods: {
@@ -71,7 +67,12 @@ export default{
 			padding: 0.1rem;
 			border-radius: 0.1rem;
 			position: relative;
-			.pet_pic_b{
+			// .pet_pic_b{
+			// 	width: 3.1rem;
+			// 	height: 3.1rem;
+			// 	border-radius: 0.1rem;
+			// }
+			image[lazy=loading] {
 				width: 3.1rem;
 				height: 3.1rem;
 				border-radius: 0.1rem;
