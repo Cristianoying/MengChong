@@ -40,7 +40,7 @@ import Publicarticle from "@/components/publish/article/publicarticle"
 import Cart from '@/components/shopcart/cart_c/Cart'
 import Publish from "@/components/publish/public/publish"
 import Submitorder from '@/components/shopcart/submitOrder_c/submitOrder'
-
+import Changereceplace from '@/components/shopcart/submitOrder_c/changereceplace_c'
 
 Vue.use(Router)
 //petlist下搜索路由
