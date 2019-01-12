@@ -1,5 +1,6 @@
 <template>
     <div class="main_a">
+        {{id}}
          <div class="main_bottom" v-for="(item,index) in selectList">
             <div class="top" >
                 <img :src="item.headimg" alt="">
@@ -9,9 +10,8 @@
             </div>
             <div class="cont">
                 <p>在丑也要过节啊</p>
-            <img :src="item.images" class="datu">
+            <router-link :to="'/community/dynamic?id='+item.id"><img :src="item.images" class="datu"></router-link>
             </div>
-            
             <div class="navigation">
                 <img :src="item.smallimg1" alt="">
                 <img :src="item.smallimg2" alt="">
@@ -28,17 +28,29 @@
                 <span>{{item.thrusername}}</span>:<span>{{item.thrcontent}}</span>
             </div>
         </div> 
+       <div class="kong">
+
+       </div>
     </div>
 </template>
 <script>
 import Vuex from "vuex";
 export default {
-  
+    data(){
+        return{
+            id:""
+        }
+    },
+    methods:{
+       
+    },
     computed:{
         ...Vuex.mapState({
            selectList:state=>state.select.selectList
         })
-    }
+    },
+   
+    
 }
 </script>
 <style scoped>
@@ -79,7 +91,7 @@ export default {
         float:right;
         width:1.2rem;
         height:.44rem;     
-        font-size:22px;
+        font-size:.22rem;
         font-weight:bold;
         color:rgba(252,53,53,1);
         background: white;
@@ -134,11 +146,16 @@ export default {
         margin-top:.8rem;
         background: white;
         margin:.84rem 0 0 .25rem;
+        padding-bottom:.2rem;
     }
     
     .main_bottom{
         overflow: hidden;
         background: white;
-        
+        margin-bottom:.2rem;
+    }
+    .kong{       
+        width:100%;
+        height:25vw;
     }
 </style>

@@ -1,33 +1,78 @@
 <template>
 <div class="loginIndex_d">
-  <div class="login_head_appear_d">
-    <img src="../../../static/login_d_img/header_appear.png" alt="">
-  </div>
-  <router-link class="login_login_btn_d" type="button"  :to="{name:'userlogin'}">
-    登陆
-  </router-link>
-  <div class="login_share_d">
-    <router-link class="login_share_register_d" :to="{name:'register'}">
-            注册
+  <div class="swiper-container">
+    <div class="swiper-wrapper" ref="swiperWrapper">
+      <div class="swiper-slide swiper-slide1" ></div>
+      <div class="swiper-slide swiper-slide2"></div>
+      <div class="swiper-slide swiper-slide3"></div>
+      <div class="swiper-slide swiper-slide4">
+        <div class="login_head_appear_d">
+          <img src="../../../static/login_d_img/header_appear.png" alt="">
+        </div>
+        <router-link class="login_login_btn_d" type="button"  :to="{name:'userlogin'}">
+          登陆
         </router-link>
+        <div class="login_share_d">
+          <router-link class="login_share_register_d" :to="{name:'register'}">
+            注册
+          </router-link>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </template>
 
 <script>
+  import Swiper from 'swiper'
     export default {
-        name: "login-index"
+        name: "login-index",
+      mounted(){
+        var mySwiper = new Swiper('.swiper-container', {
+
+        })
+      },
+      beforeRouteEnter(to,from,next){
+          // if(.name==='userlogin'||from.name=='register')
+        console.log(from==true);
+          if(from){
+            next((vm)=>{
+              vm.$refs.swiperWrapper.style="transform: translate3d(-2250px, 0px, 0px); transition-duration: 0ms;"
+            })
+          }
+          next();
+      }
     }
 </script>
 
 <style scoped>
+  .swiper-slide1{
+    background-image: url("../../../static/login_d_img/login1.jpg");
+  }
+  .swiper-slide2{
+    background-image: url("../../../static/login_d_img/login2.jpg");
+  }
+  .swiper-slide3{
+    background-image: url("../../../static/login_d_img/login3.jpg");
+  }
+  .swiper-slide4{
+    background-image: url("../../../static/login_d_img/login13@2x.png");
+  }
+  . swiper-wrapper>div{
+    height:100%;
+    width:100%;
+  }
+  .swiper-wrapper{
+    height:100%;
+    width:100%;
+  }
+  .swiper-container{
+    height:100%;
+    width:100%;
+  }
   .loginIndex_d{
     height:100%;
     width:100%;
-    background-image: url("../../../static/login_d_img/login13@2x.png");
-    background-size:cover;
-
-
   }
   .login_head_appear_d{
     height:3rem;

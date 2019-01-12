@@ -60,24 +60,24 @@ export default {
 	    }
     ],
     topic_w:[
-        {
-        	topicImg:"static/home_w/sy_center_w/图层 8.png",
-        	topicTitle:"母女两个的日常",
-        	topCount:110,
-        	topId:1,
-        },
-        {
-        	topicImg:"static/home_w/sy_center_w/df006ced21989cda67f87089c71ec4c@2x.png",
-        	topicTitle:"母女两个的日常",
-        	topCount:110,
-        	topId:2,
-        },
-        {
-        	topicImg:"static/home_w/sy_center_w/5d1a8eb5dd07745fbc5a05cacbdd8ce@2x.png",
-        	topicTitle:"母女两个的日常",
-        	topCount:110,
-        	topId:3,
-        },
+        // {
+        // 	topicImg:"static/home_w/sy_center_w/图层 8.png",
+        // 	topicTitle:"母女两个的日常",
+        // 	topCount:110,
+        // 	topId:1,
+        // },
+        // {
+        // 	topicImg:"static/home_w/sy_center_w/df006ced21989cda67f87089c71ec4c@2x.png",
+        // 	topicTitle:"母女两个的日常",
+        // 	topCount:110,
+        // 	topId:2,
+        // },
+        // {
+        // 	topicImg:"static/home_w/sy_center_w/5d1a8eb5dd07745fbc5a05cacbdd8ce@2x.png",
+        // 	topicTitle:"母女两个的日常",
+        // 	topCount:110,
+        // 	topId:3,
+        // },
     ],
     topic_list_w:[
         {    

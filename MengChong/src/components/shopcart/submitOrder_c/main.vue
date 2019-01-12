@@ -1,43 +1,66 @@
 <template>
-  <div id="middle">
-    <div class="recemsg">
-    <p class="recename">收货人：<span>王营</span> <span>17865815662</span></p>
-    <p class="receplace">收货地址: <span>北京北京市昌平区沙河镇富生路14号振宇公寓办公室</span></p>
-    <p class="lert">(收货不便时，可选择免费代收服务) </p>
-  </div>
-    <div v-for="(item,index) in 5">
+  <keep-alive>
+    <div id="middle">
+      <div class="recemsg">
+        <p class="recename">收货人：<span>王营</span> <span>17865815662</span></p>
 
-      <hr>
-      <div class="allgoodsmsg">
-        <p class="storename">
-          <img src="" alt="">淘宠官方旗舰店
+        <p class="receplace">收货地址: <span>北京北京市昌平区沙河镇富生路14号振宇公寓办公室</span>
+          <span @click="handlereplace()">&gt;</span>
         </p>
-        <div class="goodsmsg">
-          <div class="goodspic">
-            <!-- <img src="../../../assets/logo.png" alt=""> -->
+        <p class="lert">(收货不便时，可选择免费代收服务) </p>
+      </div>
+      <div v-for="(item,index) in orderlist">
+
+        <hr>
+        <div class="allgoodsmsg">
+          <p class="storename">
+            <img src="" alt="">淘宠官方旗舰店
+          </p>
+          <div class="goodsmsg">
+            <div class="goodspic">
+              <img :src="item.goodsPhoto" alt="">
+            </div>
+            <div class="goodsname">
+              <p><span>{{item.goodsName}}</span></p>
+              <p>分类: <span>大包</span></p>
+              <p>七天退换</p>
+            </div>
           </div>
-          <div class="goodsname">
-            <p><span>鸿星尔克与东邪秋季网鞋鞋子跑步鞋旅游休闲鞋椰子鞋潮时尚男鞋</span></p>
-            <p>分类: <span>鞋码42</span></p>
-            <p>七天退换</p>
-          </div>
+          <p> ￥ <span> {{item.goodsPrice}} </span> &ensp; X<span>{{item.goodsCount}}</span></p>
         </div>
-        <p> ￥ <span> 159.00 </span> X<span> 1 </span></p>
       </div>
     </div>
-  </div>
+  </keep-alive>
+
 </template>
 
 <script>
-  export default {}
+  import Vuex from 'vuex'
+
+  export default {
+    created() {
+      this.$store.commit('ShopCart/handleaddorderlist');
+    },
+    computed: {
+      ...Vuex.mapState({
+        orderlist: state => state.ShopCart.orderlist
+      })
+    },
+    methods:{
+      handlereplace(){
+        this.$router.replace({ name: 'changereceplace'});
+      }
+    }
+
+  }
 </script>
 
 <style scoped>
   #middle {
+
     width: 100%;
-    height: 13rem;
     padding-bottom: 1rem;
-    overflow:auto
+
   }
 
   #middle .recemsg {
@@ -60,6 +83,7 @@
   }
 
   #middle .recemsg .receplace {
+    width: 90%;
     font-size: .34rem;
   }
 
@@ -84,11 +108,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-left: .5rem;
   }
 
   #middle .goodsmsg img {
     width: 1.5rem;
     height: 1.5rem;
+    margin-right: .5rem;
   }
 
   #middle .goodsname {
@@ -105,7 +131,8 @@
     margin: 0 1rem;
     color: #f00;
   }
-#middle div:nth-child(2) {
-  font-size: .28rem;
-}
+
+  #middle div:nth-child(2) {
+    font-size: .28rem;
+  }
 </style>
