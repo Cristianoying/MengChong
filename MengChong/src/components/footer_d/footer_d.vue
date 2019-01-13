@@ -51,13 +51,12 @@
 
                 }
               }
-      
+
   };
 
 </script>
 
 <style scoped>
-<<<<<<< HEAD
   .footer_d {
     height: 1.2rem;
     width: 100%;
@@ -67,7 +66,6 @@
     left: 0;
     padding-bottom: .05rem;
   }
-=======
 .footer_d {
   height: 0.92rem;
   width: 100%;
@@ -77,7 +75,6 @@
   left: 0;
   padding-bottom: 0.3rem;
 }
->>>>>>> htm
 
 .footer_ul_d {
   height: 100%;
@@ -102,8 +99,6 @@
   align-items: center;
   text-decoration: none;
 }
-
-<<<<<<< HEAD
   i {
     font-size: .6rem;
     color: #C8C8C8;
@@ -125,13 +120,12 @@
   .footer_li_d>.router-link-active span{
     color: #E83F39;
   }
-=======
 i {
   font-size: 0.6rem;
   color: #c8c8c8;
   font-weight: 800;
 }
->>>>>>> htm
+
 
 span {
   color: #c8c8c8;

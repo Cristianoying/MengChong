@@ -70,7 +70,7 @@ import Home_topic_w from "@/components/home/topicList.vue"
 import topicTitle_w from "@/components/home/topicTitle.vue"
 import animal_w from "@/components/home/animal.vue"
 export default new Router({
-  
+
   routes: [
     {
       path: '/',
@@ -135,7 +135,7 @@ export default new Router({
           path:'/community/follow',
           name:'follow',
           component:Followind,
-          meta: { 
+          meta: {
             isFooter: true,
             iscommuntop:true
           }
@@ -240,12 +240,10 @@ export default new Router({
         meta: {
           isFooter: false
         }
-<<<<<<< HEAD
       }]},
-=======
-      }]
-    },
->>>>>>> master
+
+
+
     {
       path: '/mine',
       component: Mine,
