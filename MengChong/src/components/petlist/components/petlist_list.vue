@@ -1,7 +1,8 @@
 <template>
 	<div id="petlist_list_b">
 		<router-view>
-			<ul class="petlist_list_tab_b" slot="pet_list_tab_b">
+			<div class="occupied_b" slot="occupied"  v-show="!tabFlag"></div>
+			<ul class="petlist_list_tab_b" slot="pet_list_tab_b" v-show="tabFlag">
 				<li v-for="(item,index) in tabs" 
 					:key="index">
 					<router-link :to="item.tolink">
@@ -33,10 +34,17 @@ export default{
 				}
 			]
 		}
+	},
+	props:{
+		tabFlag:Boolean
 	}
 }
 </script>
 <style scoped lang="scss">
+.occupied_b{
+	width: 100%;
+	height: 0.64rem;
+}
 .petlist_list_tab_b{
 	padding:0 0.26rem;
 	display: flex;
@@ -46,6 +54,7 @@ export default{
 	>li{
 		text-align: center;
 		font-family: PingFang-SC-Regular;
+		height: 100%;
 		width: 100%;
 		color: #161616;
 		font-size: 0.3rem;
@@ -56,6 +65,7 @@ export default{
 			display: block;
 			width: 100%;
 			height: 100%;
+			line-height: .64rem;
 		}
 	}
 }

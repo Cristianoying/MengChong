@@ -1,6 +1,7 @@
 <template>
 	<div id="dog_list_b">
 		<dogbanner-com></dogbanner-com>
+		<slot name="occupied"></slot>
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
 			<li v-for="(item,index) in dogGoodsList" :key="index">
@@ -67,15 +68,14 @@ export default{
 			padding: 0.1rem;
 			border-radius: 0.1rem;
 			position: relative;
-			// .pet_pic_b{
-			// 	width: 3.1rem;
-			// 	height: 3.1rem;
-			// 	border-radius: 0.1rem;
-			// }
-			image[lazy=loading] {
+			img{
 				width: 3.1rem;
 				height: 3.1rem;
 				border-radius: 0.1rem;
+			}
+			image[lazy=loading] {
+				width: 3.1rem;
+				height: 3.1rem;
 			}
 			.dog_price_b{
 				position: absolute;

@@ -1,6 +1,7 @@
 <template>
-	<keep-alive><div id="cat_list_b">
+	<div id="cat_list_b">
 		<catbanner-com></catbanner-com>
+		<slot name="occupied"></slot>
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
 			<li v-for="(item,index) in catGoodsList" :key="index">
@@ -16,7 +17,7 @@
 				</div>
 			</li>
 		</ul>
-	</div></keep-alive>
+	</div>
 </template>
 
 <script>
@@ -67,15 +68,14 @@ export default{
 			padding: 0.1rem;
 			border-radius: 0.1rem;
 			position: relative;
-			// .pet_pic_b{
-			// 	width: 3.1rem;
-			// 	height: 3.1rem;
-			// 	border-radius: 0.1rem;
-			// }
-			image[lazy=loading] {
+			img{
 				width: 3.1rem;
 				height: 3.1rem;
 				border-radius: 0.1rem;
+			}
+			image[lazy=loading] {
+				width: 3.1rem;
+				height: 3.1rem;
 			}
 			.cat_price_b{
 				position: absolute;

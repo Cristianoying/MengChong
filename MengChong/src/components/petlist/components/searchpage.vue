@@ -17,11 +17,6 @@ export default {
 		"searchrecommend-com":Searchrecommend,//()=>import('./searchpage/searchrecommend.vue'),
 		"search-com":Search,
 	},
-	data(){
-		return{
-			
-		}
-	},
 	computed: {
 		...Vuex.mapState({
 			beforHottagAndHisearch:state=>state.petlist.beforHottagAndHisearch

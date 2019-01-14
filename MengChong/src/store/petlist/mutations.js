@@ -14,5 +14,9 @@ export default {
     //查询相关商品列表  食物
     getPetFoodGoodsList(state, params) {
         state.petFoodGoodsList = [...state.petFoodGoodsList, ...params.petFoodGoodsList];
+    },
+    //搜索列表相关商品
+    getGoodsByName(state, params) {
+        state.goodsList = [...state.goodsList, ...params.goodsList]
     }
 }

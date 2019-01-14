@@ -6,5 +6,7 @@ export default {
     //查询相关商品列表  猫
     catGoodsList: [],
     //查询相关商品列表  猫
-    petFoodGoodsList: []
+    petFoodGoodsList: [],
+    //搜索查询相关商品列表
+    goodsList: []
 }

@@ -1,6 +1,7 @@
 <template>
 	<div id="food_list_b">
 		<foodbanner-com></foodbanner-com>
+		<slot name="occupied"></slot>
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
 				<li v-for="(item,index) in petFoodGoodsList" :key="index">
@@ -79,10 +80,10 @@ export default{
 					display: flex;
 					justify-content: center;
 					align-items: center;
-					// img{
-					// 	width: 2rem;
-					// 	height: 2rem;
-					// }
+					img{
+						width: 2rem;
+						height: 2rem;
+					}
 					image[lazy=loading] {
 						width: 2rem;
 						height: 2rem;

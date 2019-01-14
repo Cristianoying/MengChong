@@ -11,8 +11,8 @@
 			</div>
 			<router-view></router-view>-->
 			<div class="details_bodytitle_b">
-				<img src="../../../../static/petlish_b_img/GMY-ICON-1@2x.png" @click="goodsContent('goods_intro-com')"/>
-				<img src="../../../../static/petlish_b_img/GMY-ICON-2@2x.png" @click="goodsContent('goods_detailed-com')"/>
+				<div @click="goodsContent('goods_intro-com')" :class="bgFlag ? 'bg_red_b':'bg_orange_b'">商品介绍</div>
+				<div @click="goodsContent('goods_detailed-com')" :class="bgFlag ? 'bg_orange_b':'bg_red_b'">图文详情</div>
 			</div>
 			<component :is="goodscontent ? goodscontent : 'goods_intro-com'"></component>
 		</div>
@@ -55,6 +55,7 @@ export default{
 		return{
 			goodscontent:'',
 			popupVisible:false,
+			bgFlag:true
 		}
 	},
 	components:{
@@ -72,6 +73,7 @@ export default{
 		},
 		goodsContent(val){
 			this.goodscontent = val
+			this.bgFlag = !this.bgFlag
 		},
 		buyShow(){
 			this.popupVisible = true
@@ -123,10 +125,22 @@ export default{
 			width: 100%;
 			flex-direction: row;
 			justify-content: space-around;
-			padding:  0.17rem 0 0.15rem 0;
-			img{
+			padding:  0.3rem 0 0.3rem 0;
+			>div{
 				width: 2rem;
 				height: 0.6rem;
+				border-radius: .3rem;
+				text-align: center;
+				line-height: .6rem;
+				color: #fff;
+				font-family: PingFang-SC-Regular;
+				font-size: .28rem;
+			}
+			.bg_red_b{
+				background: #E83F39;
+			}
+			.bg_orange_b{
+				background: #e87739;
 			}
 		}
 	}
