@@ -34,7 +34,8 @@ export default{
 	width: 7.1rem;
 	height: 10.04rem;
 	margin: 0 auto;
-	background: url(../../../../../static/petlish_b_img/GMY-JXK-1@2x.png) no-repeat center;
+	background: url(../../../../../static/petlish_b_img/GMY-JXK-1@2x.png) no-repeat;
+	background-size: 100% 100%;
 	.details_pic_b{
 		padding:.03rem .06rem;
 		display: flex;
@@ -44,7 +45,6 @@ export default{
 		img{
 			width: 3.4rem;
 			height: 3.4rem;
-			background: greenyellow;
 			margin-bottom: .18rem;
 			border-radius: .1rem;
 		}

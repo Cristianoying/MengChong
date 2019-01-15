@@ -90,13 +90,13 @@ export default{
 
 <style lang="scss" scoped>
 #goods_details_b{
+	overflow: auto;
 	width: 100%;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
 	.details_head_b{
 		width: 100%;
 		height: 0.88rem;
+		//min-height: .88rem;
 		background: #E83F39;
 		display:flex;
 		justify-content: center;
@@ -107,8 +107,8 @@ export default{
 			left: 0;
 			width: 0.88rem;
 			height:0.88rem;
-			background: url(../../../../static/petlish_b_img/20190108180402.png) no-repeat center;
-			background-size: cover;
+			background: url(../../../../static/petlish_b_img/20190108180402.png) no-repeat;
+			background-size: 100% 100%;
 		}
 		>span{
 			font-size: 0.34rem;
@@ -117,7 +117,7 @@ export default{
 		}
 	}
 	.details_body_b{
-		flex: 1;
+		height: 11.48rem;
 		background: #eee;
 		width: 100%;
 		.details_bodytitle_b{
@@ -147,6 +147,7 @@ export default{
 	.details_foot_b{
 		width:100%;
 		height:0.98rem;
+		//min-height: .98rem;
 		background: #E83F39;
 		display: flex;
 		>div{
