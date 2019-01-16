@@ -1,72 +1,35 @@
 <template>
-<div class="loginIndex_d">
-  <div class="swiper-container">
-    <div class="swiper-wrapper" ref="swiperWrapper">
-      <div class="swiper-slide swiper-slide1" ></div>
-      <div class="swiper-slide swiper-slide2"></div>
-      <div class="swiper-slide swiper-slide3"></div>
-      <div class="swiper-slide swiper-slide4">
-        <div class="login_head_appear_d">
-          <img src="../../../static/login_d_img/header_appear.png" alt="">
-        </div>
-        <router-link class="login_login_btn_d" type="button"  :to="{name:'userlogin'}">
-          登陆
-        </router-link>
-        <div class="login_share_d">
-          <router-link class="login_share_register_d" :to="{name:'register'}">
-            注册
-          </router-link>
-        </div>
-      </div>
+  <div class="loginIndex_d">
+    <router-link class="gohome_d" :to="{name:'home'}">
+      &lt;进入首页
+    </router-link>
+    <div class="login_head_appear_d">
+      <img src="../../../static/login_d_img/header_appear.png" alt="">
+    </div>
+    <router-link class="login_login_btn_d" type="button"  :to="{name:'userlogin'}">
+      登陆
+    </router-link>
+    <div class="login_share_d">
+      <router-link class="login_share_register_d" :to="{name:'register'}">
+        注册
+      </router-link>
     </div>
   </div>
-</div>
 </template>
 
 <script>
   import Swiper from 'swiper'
-    export default {
-        name: "login-index",
-      mounted(){
-        var mySwiper = new Swiper('.swiper-container', {
-
-        })
-      },
-      beforeRouteEnter(to,from,next){
-          // if(.name==='userlogin'||from.name=='register')
-        console.log(from==true);
-          if(from){
-            next((vm)=>{
-              vm.$refs.swiperWrapper.style="transform: translate3d(-2250px, 0px, 0px); transition-duration: 0ms;"
-            })
-          }
-          next();
-      }
-    }
+  export default {
+    name: "login-index",
+  }
 </script>
 
 <style scoped>
-  .swiper-slide1{
-    background-image: url("../../../static/login_d_img/login1.jpg");
-  }
-  .swiper-slide2{
-    background-image: url("../../../static/login_d_img/login2.jpg");
-  }
-  .swiper-slide3{
-    background-image: url("../../../static/login_d_img/login3.jpg");
-  }
-  .swiper-slide4{
+  .loginIndex_d{
     background-image: url("../../../static/login_d_img/login13@2x.png");
+    background-size: cover;
   }
   . swiper-wrapper>div{
-    height:100%;
-    width:100%;
-  }
-  .swiper-wrapper{
-    height:100%;
-    width:100%;
-  }
-  .swiper-container{
     height:100%;
     width:100%;
   }
@@ -103,24 +66,6 @@
     bottom: .25rem;
     left:.75rem;
   }
-  .login_share_d .login_share_wx_d{
-    display: block;
-    position: absolute;
-    left:0;
-    top:0;
-  }
-  .login_share_d .login_share_wb_d{
-    display: block;
-    position: absolute;
-    left:1rem;
-    top:0;
-  }
-  .login_share_d .login_share_qq_d{
-    display: block;
-    position: absolute;
-    left:2rem;
-    top:0;
-  }
   .login_share_d .login_share_register_d{
     position:absolute;
     top:0;
@@ -134,4 +79,13 @@
     height:100%;
     width:100%;
   }
+.gohome_d{
+  position: absolute;
+  left:.1rem;
+  top:.15rem;
+  font-size: .36rem;
+  color:#fff;
+  font-weight: 800;
+  font-family:PingFang-SC-Heavy;
+}
 </style>
