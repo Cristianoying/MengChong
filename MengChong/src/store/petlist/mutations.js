@@ -18,5 +18,13 @@ export default {
     //搜索列表相关商品
     getGoodsByName(state, params) {
         state.goodsList = [...state.goodsList, ...params.goodsList]
+    },
+    //获取吸顶的高度
+    getOffsetTop(state, params) {
+        state.getOffsetTop = params
+    },
+    //记录进入搜索页面的路由
+    searchPageFromRouter(state, params) {
+        state.searchPageFromRouter = params
     }
 }

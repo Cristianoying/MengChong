@@ -8,5 +8,8 @@ export default {
     //查询相关商品列表  猫
     petFoodGoodsList: [],
     //搜索查询相关商品列表
-    goodsList: []
+    goodsList: [],
+    //吸顶tab条的offsetTop
+    getOffsetTop: 0,
+    searchPageFromRouter: "/petlist/doglist"
 }

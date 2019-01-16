@@ -2,7 +2,7 @@
 	<div id="petlist_list_b">
 		<router-view>
 			<div class="occupied_b" slot="occupied"  v-show="!tabFlag"></div>
-			<ul class="petlist_list_tab_b" slot="pet_list_tab_b" v-show="tabFlag">
+			<ul class="petlist_list_tab_b" slot="pet_list_tab_b" v-show="tabFlag" ref="getOffsetTop">
 				<li v-for="(item,index) in tabs" 
 					:key="index">
 					<router-link :to="item.tolink">
@@ -37,7 +37,10 @@ export default{
 	},
 	props:{
 		tabFlag:Boolean
-	}
+	},
+	mounted() {
+		this.$store.commit("petlist/getOffsetTop",this.$refs.getOffsetTop.offsetTop)
+	},
 }
 </script>
 <style scoped lang="scss">

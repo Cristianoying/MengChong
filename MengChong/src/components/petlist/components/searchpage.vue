@@ -30,6 +30,14 @@ export default {
 	},
 	created(){
 		this.getBeforHottagAndHisearch()
+		
+	},
+	beforeRouteEnter (to, from, next) {
+		//console.log(to,from)
+		// if( from != "/search_list" ){
+		// 	this.$store.commit("petlist/searchPageFromRouter",from)
+		// }
+		next()
 	}
 }
 </script>

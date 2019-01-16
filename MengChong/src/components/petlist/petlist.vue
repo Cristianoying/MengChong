@@ -50,7 +50,8 @@ export default{
 		...Vuex.mapState({
 			dogGoodsList:state=>state.petlist.dogGoodsList,
 			catGoodsList:state=>state.petlist.catGoodsList,
-			petFoodGoodsList:state=>state.petlist.petFoodGoodsList
+			petFoodGoodsList:state=>state.petlist.petFoodGoodsList,
+			getOffsetTop:state=>state.petlist.getOffsetTop
 		})
 	},
 	watch: {
@@ -66,7 +67,13 @@ export default{
 			this.scroll.refresh()
 		}
 	},
+	beforeRouteUpdate (to, from, next) {
+		this.$store.commit("petlist/searchPageFromRouter",to.path)
+		next()
+		// ...
+	},
     mounted(){
+
 		this.scroll = new BScroll(this.$refs.scrollWrapper,{
 			click:true,
 			pullUpLoad:true,
@@ -78,7 +85,8 @@ export default{
 			this.getFoodGoodsListAgain()
 		})
 		this.scroll.on("scroll",({x,y})=>{
-			if( y < -320 ){
+			if( y < -(this.getOffsetTop) ){
+
 				this.tabFlag = false
 			}else{
 				this.tabFlag = true
@@ -152,3 +160,14 @@ export default{
 }
 
 </style>
+
+
+
+beforeRouteEnter (to, from, next) {
+	var arr = [a,b,c];
+
+	var flag = arr.include(from.name);
+	if(flag){
+		store.state.path = from.name;
+	}
+}

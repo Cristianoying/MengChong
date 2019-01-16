@@ -73,7 +73,7 @@ export default{
 			getGoodsByName:"petlist/getGoodsByName",
 			getGoodsByNameAgain:"petlist/getGoodsByNameAgain"
 		})
-	},
+	}
 }
 </script>
 

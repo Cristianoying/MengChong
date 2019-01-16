@@ -19,7 +19,8 @@ export default{
 			this.$router.push("/search_b")
 		},
 		backGo(){
-			this.$router.push('/petlist')
+			//console.log(this.$store.state.petlist.searchPageFromRouter)
+			this.$router.push(this.$store.state.petlist.searchPageFromRouter)
 			// let len = history.length;
 			// console.log(len)
 			// history.go(-(len-2))

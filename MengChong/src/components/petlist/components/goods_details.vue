@@ -65,7 +65,6 @@ export default{
 	},
 	methods:{
 		detailsBack(){
-			console.log(history.length)
 			this.$router.go(-1)
 			/*let len = history.length
 			history.go(-(len-1))*/
