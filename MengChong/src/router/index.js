@@ -31,7 +31,7 @@ import PetFriendList_Index_d from '@/components/mine/setUp/petfriendlist/petfrie
 import Order_d from '@/components/mine/setUp/orderlist_d/order_d'
 import Order_index_d from "@/components/mine/setUp/orderlist_d/order_index_d"
 import OrderDetail from '@/components/mine/setUp/orderlist_d/order_detail'
-
+import Leader from '@/components/login/leader'
 
 
 import Publicvideo from "@/components/publish/video/publicvideo"
@@ -101,7 +101,6 @@ export default new Router({
             name: "animal_w",
             component: animal_w,
         },
-
 
 
 
@@ -438,6 +437,26 @@ export default new Router({
             path: '/publish/article',
             name: 'article',
             component: Publicarticle
-        }
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {
+        name:"leader",
+        path:'/leader',
+        component:Leader
+      }
     ]
 })

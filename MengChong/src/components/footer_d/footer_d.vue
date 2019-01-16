@@ -130,7 +130,6 @@ i {
 span {
   color: #c8c8c8;
   font-size: 0.22rem;
-  width: 0.46rem;
   font-weight: 800;
 }
 
