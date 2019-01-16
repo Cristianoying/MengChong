@@ -11,8 +11,10 @@
 			</div>
 			<router-view></router-view>-->
 			<div class="details_bodytitle_b">
-				<div @click="goodsContent('goods_intro-com')" :class="bgFlag ? 'bg_red_b':'bg_orange_b'">商品介绍</div>
-				<div @click="goodsContent('goods_detailed-com')" :class="bgFlag ? 'bg_orange_b':'bg_red_b'">图文详情</div>
+				<div @click="goodsContent('goods_intro-com'),tabIndex=0" 
+					 :class="tabIndex === 0 ? 'bg_red_b' : ''">商品介绍</div>
+				<div @click="goodsContent('goods_detailed-com'),tabIndex=1"
+				 	 :class="tabIndex === 1 ? 'bg_red_b' : ''">图文详情</div>
 			</div>
 			<component :is="goodscontent ? goodscontent : 'goods_intro-com'"></component>
 		</div>
@@ -55,13 +57,14 @@ export default{
 		return{
 			goodscontent:'',
 			popupVisible:false,
-			bgFlag:true
+			tabIndex:0
 		}
 	},
 	components:{
 		"goods_intro-com":Goods_intro,
 		"goods_detailed-com":Goods_detailed,
 		"mt-popup":Popup,
+		
 	},
 	methods:{
 		detailsBack(){
@@ -72,7 +75,6 @@ export default{
 		},
 		goodsContent(val){
 			this.goodscontent = val
-			this.bgFlag = !this.bgFlag
 		},
 		buyShow(){
 			this.popupVisible = true
@@ -134,13 +136,14 @@ export default{
 				color: #fff;
 				font-family: PingFang-SC-Regular;
 				font-size: .28rem;
+				background: #e87739;
+
 			}
 			.bg_red_b{
 				background: #E83F39;
 			}
-			.bg_orange_b{
-				background: #e87739;
-			}
+// 			.bg_orange_b{
+// x			}
 		}
 	}
 	.details_foot_b{

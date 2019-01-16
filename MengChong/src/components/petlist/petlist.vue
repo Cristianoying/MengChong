@@ -1,6 +1,14 @@
 <template>
 	<div id="petlist_b">
-		<search-com></search-com>
+		<div id="searchfake_b">
+			<div id="searchtitlefake_b" @click="searchPage()">
+				<label for="search_page_b">
+					<i class="iconfont icon_glass_b">&#xe62d;</i>
+					<input id="search_pagefake_b" placeholder="请搜索">
+				</label>
+			</div>
+			<div class="back_index_b" v-show="this.$route.meta.isBack" @click="backGo()">取消</div>
+		</div>
 		<div class="ceiling_tab_b" v-show="!tabFlag">
 			<ul class="petlist_list_tab_b">
 				<li v-for="(item,index) in tabs" 
@@ -18,7 +26,6 @@
 </template>
 
 <script type="text/javascript">
-import Search from "./components/search.vue"
 import Lists from "./components/petlist_list.vue"
 import BScroll from 'better-scroll'
 import Vuex from "vuex"
@@ -43,7 +50,6 @@ export default{
 		}
 	},
 	components:{
-		"search-com":Search,
 		"lists-com":Lists
 	},
 	computed: {
@@ -83,7 +89,7 @@ export default{
 			this.getDogGoodsListAgain()
 			this.getCatGoodsListAgain()
 			this.getFoodGoodsListAgain()
-		})
+		});
 		this.scroll.on("scroll",({x,y})=>{
 			if( y < -(this.getOffsetTop) ){
 
@@ -91,7 +97,8 @@ export default{
 			}else{
 				this.tabFlag = true
 			}
-		})
+		});
+		
 	},
 	// updated() {
 	// 	this.scroll.finishPullUp()
@@ -101,7 +108,10 @@ export default{
 			getDogGoodsListAgain:"petlist/getDogGoodsListAgain",
 			getCatGoodsListAgain:"petlist/getCatGoodsListAgain",
 			getFoodGoodsListAgain:"petlist/getFoodGoodsListAgain"
-		})
+		}),
+		searchPage(){
+			this.$router.push("/search_b")
+		}
 	},
 }
 
@@ -126,7 +136,7 @@ export default{
 	.ceiling_tab_b{
 		position:fixed;
 		padding:0 0.26rem;
-		top: .98rem;
+		top: 1.06rem;
 		left: 0;
 		width: 100%;
 		z-index: 100;
@@ -138,14 +148,14 @@ export default{
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		height: 0.64rem;
+		height: 0.8rem;
 		>li{
 			text-align: center;
 			font-family: PingFang-SC-Regular;
 			height: 100%;
 			width: 100%;
 			color: #161616;
-			font-size: 0.3rem;
+			
 			.router-link-active{
 				color: #FF1515;
 			}
@@ -153,21 +163,74 @@ export default{
 				display: block;
 				width: 100%;
 				height: 100%;
-				line-height: 0.64rem;
+				line-height: 0.8rem;
+				font-size: 0.3rem;
 			}
 		}
 	}
 }
-
-</style>
-
-
-
-beforeRouteEnter (to, from, next) {
-	var arr = [a,b,c];
-
-	var flag = arr.include(from.name);
-	if(flag){
-		store.state.path = from.name;
+#searchfake_b{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0.88rem;
+	background: #E83F39;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.back_index_b{
+		position:absolute;
+		height: 100%;
+		width: 0.88rem;
+		line-height: 0.88rem;
+		text-align: center;
+		right: 0;
+		font-size: 0.28rem;
+		color: #FFFFFF;
+		font-weight: 400;
+		font-family: PingFang-SC-Regular;
+	}
+	#searchtitlefake_b{
+		label{
+			width: 100%;
+			display: flex;
+		}
+		width: 5.8rem;
+		height: 0.6rem;
+		background: #C93934;
+		border-radius: 0.08rem;
+		display:flex;
+		.icon_glass_b{
+			display: block;
+			width: 0.3rem;
+			height: 0.3rem;
+			font-size: 0.3rem;
+			color: #FAFEFA;
+			margin: 0.15rem 0.2rem 0 0.15rem;
+		}
+		#search_pagefake_b{
+			border: none;
+			font-size: 0.28rem;
+			background: #C93934;
+			line-height: 0.6rem;
+			width: 100%;
+			color: #FFFFFF;
+			font-weight: 400;
+			font-family:PingFang-SC-Regular; 
+			&::-webkit-input-placeholder{
+           		 color:#fff;
+        	}
+	        &::-moz-placeholder{   
+	            color:#fff;
+	        }
+	        &:-moz-placeholder{    
+	            color:#fff;
+	        }
+	        &:-ms-input-placeholder{  
+	            color:#fff;
+	        }
+	    }    
 	}
 }
+</style>

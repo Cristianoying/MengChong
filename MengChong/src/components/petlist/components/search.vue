@@ -3,27 +3,30 @@
 		<div id="searchtitle_b" @click="searchPage()">
 			<label for="search_page_b">
 				<i class="iconfont icon_glass_b">&#xe62d;</i>
-				<input id="search_page_b" placeholder="请搜索">
+				<input id="search_page_b" placeholder="请搜索" v-focus>
 			</label>
 		</div>
 		<div class="back_index_b" v-show="this.$route.meta.isBack" @click="backGo()">取消</div>
 	</div>
 </template>
-
 <script>
 export default{
 	components:{
+	},
+	directives:{
+		focus:{
+			inserted:(el)=>{
+				el.focus()
+				console.log(el)
+			}
+		}
 	},
 	methods:{
 		searchPage(){
 			this.$router.push("/search_b")
 		},
 		backGo(){
-			//console.log(this.$store.state.petlist.searchPageFromRouter)
 			this.$router.push(this.$store.state.petlist.searchPageFromRouter)
-			// let len = history.length;
-			// console.log(len)
-			// history.go(-(len-2))
 		}
 	},
 	computed:{

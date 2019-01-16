@@ -46,21 +46,20 @@ export default{
 <style scoped lang="scss">
 .occupied_b{
 	width: 100%;
-	height: 0.64rem;
+	height: 0.8rem;
 }
 .petlist_list_tab_b{
 	padding:0 0.26rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 0.64rem;
+	height: 0.8rem;
 	>li{
 		text-align: center;
 		font-family: PingFang-SC-Regular;
 		height: 100%;
 		width: 100%;
 		color: #161616;
-		font-size: 0.3rem;
 		.router-link-active{
 			color: #FF1515;
 		}
@@ -68,7 +67,8 @@ export default{
 			display: block;
 			width: 100%;
 			height: 100%;
-			line-height: .64rem;
+			line-height: .8rem;
+			font-size: 0.3rem;
 		}
 	}
 }
