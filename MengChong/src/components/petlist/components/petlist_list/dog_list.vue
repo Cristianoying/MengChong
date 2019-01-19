@@ -1,11 +1,14 @@
 <template>
 	<div id="dog_list_b">
 		<dogbanner-com></dogbanner-com>
+		<slot name="occupied"></slot>
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
 			<li v-for="(item,index) in dogGoodsList" :key="index">
-				<router-link to="/goods_details_b"><img :src="item.dogPhoto" class="pet_pic_b"/>
-				<div class="dog_price_b">¥ <span>{{item.dogNowPrice}}</span></div></router-link>
+				<router-link to="/goods_details_b">
+					<img class="pet_pic_b" v-lazy="item.dogPhoto"/>
+					<div class="dog_price_b">¥ <span>{{item.dogNowPrice}}</span></div>
+				</router-link>
 				<div class="dog_message_b">
 					<p class="dog_kind_b">种类：<span>{{item.dogName}}</span></p>
 					<p class="dog_local_b"><i class="iconfont icon_loc_b">&#xe685;</i>
@@ -18,8 +21,13 @@
 </template>
 
 <script>
+
 import Dogbanner from "./components/banner_dog.vue"
+//懒加载
 import Vuex from "vuex"
+import Vue from "vue"
+import { Lazyload } from 'mint-ui';
+Vue.use(Lazyload);
 export default{
 	data(){
 		return{
@@ -30,7 +38,7 @@ export default{
 	},
 	computed: {
 		...Vuex.mapState({
-			dogGoodsList:state=>state.petlist.dogGoodsList.dogGoodsList
+			dogGoodsList:state=>state.petlist.dogGoodsList
 		})
 	},
 	methods: {
@@ -60,10 +68,14 @@ export default{
 			padding: 0.1rem;
 			border-radius: 0.1rem;
 			position: relative;
-			.pet_pic_b{
+			img{
 				width: 3.1rem;
 				height: 3.1rem;
 				border-radius: 0.1rem;
+			}
+			image[lazy=loading] {
+				width: 3.1rem;
+				height: 3.1rem;
 			}
 			.dog_price_b{
 				position: absolute;

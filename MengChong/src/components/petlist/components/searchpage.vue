@@ -17,11 +17,6 @@ export default {
 		"searchrecommend-com":Searchrecommend,//()=>import('./searchpage/searchrecommend.vue'),
 		"search-com":Search,
 	},
-	data(){
-		return{
-			
-		}
-	},
 	computed: {
 		...Vuex.mapState({
 			beforHottagAndHisearch:state=>state.petlist.beforHottagAndHisearch
@@ -35,6 +30,14 @@ export default {
 	},
 	created(){
 		this.getBeforHottagAndHisearch()
+		
+	},
+	beforeRouteEnter (to, from, next) {
+		//console.log(to,from)
+		// if( from != "/search_list" ){
+		// 	this.$store.commit("petlist/searchPageFromRouter",from)
+		// }
+		next()
 	}
 }
 </script>
