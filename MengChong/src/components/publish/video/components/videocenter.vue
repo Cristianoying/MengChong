@@ -23,7 +23,6 @@ export default {
     .videobutton{
         width:1.03rem;
         height:1.02rem;
-        
         background:url(../../../../../static/publishs_img/publishvideo_slices/videobutton2x.png)no-repeat;
         background-size: 100% 100%;
     }

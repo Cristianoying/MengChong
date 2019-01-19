@@ -22,7 +22,6 @@ export default {
   },
   beforeRouteEnter: (to, from, next) => {
     next(vm => {
-      console.log(vm);
       var str = from.fullPath;
       if (!(/^\/publish/.test(str))) {
         vm.url = str;

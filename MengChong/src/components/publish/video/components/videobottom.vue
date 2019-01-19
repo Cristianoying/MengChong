@@ -22,7 +22,7 @@ export default {
         justify-content: center;
         position: relative;
         p{
-            font-size:25px;
+            font-size:0.25rem;
             font-family:PingFang-SC-Regular;
             font-weight:400;
             color:rgba(98,98,98,1);  
@@ -30,8 +30,8 @@ export default {
         .cut{
             width:0.68rem;
             height:0.66rem;
+            background:url(../../../../../static/publishs_img/publishvideo_slices/cut2x.png)no-repeat;
             background-size: 100% 100%;
-            background:url(../../../../../static/publishs_img/publishvideo_slices/cut2x.png);
             position:absolute;
             left:0.8rem;
             bottom:2.79rem;
@@ -39,8 +39,8 @@ export default {
         .stop{
             width:1.48rem;
             height:1.48rem;
-            background-size: 100% 100%;
             background:url(../../../../../static/publishs_img/publishvideo_slices/stop2x.png)no-repeat;
+             background-size: 100% 100%;
             position: absolute;
             bottom:2.38rem;
             left:2.96rem;
@@ -48,8 +48,9 @@ export default {
         .right{
             width:0.66rem;
             height:0.66rem;
-            background-size: 100% 100%;
+            
             background:url(../../../../../static/publishs_img/publishvideo_slices/right2x.png)no-repeat;
+             background-size: 100% 100%;
              position: absolute;
             bottom:2.8rem;
             right:0.8rem;
