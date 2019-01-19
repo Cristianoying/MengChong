@@ -3,13 +3,23 @@
         <router-link :to="{name:'publish'}">
             <div class="topfirst"></div>
         </router-link>
-        <div class="topsecond"></div>
+        <div class="topsecond" @click = "handleclickone()" ref = "divGenres">
+            <input type="file" accept="image/*" capture="camera" @change="handleclicktwo()">
+        </div>
         <div class="topthird"></div>
+         
     </div>
 </template>
 <script>
 export default {
-    
+    methods: {
+        handleclickone(e){
+            let els = this.$refs.divGenres.querySelectorAll('input[type=file]');
+            els[0].click();
+            return false;
+        
+        }
+    },
 }
 </script>
 <style lang="scss">
@@ -33,6 +43,9 @@ export default {
             right:1.33rem;
             background:url(../../../../../static/publishs_img/publishvideo_slices/takephoto2x.png)no-repeat;
             background-size: 100% 100%;
+            input{
+                display: none;
+            }
         }
         .topthird{
             width:0.33rem;

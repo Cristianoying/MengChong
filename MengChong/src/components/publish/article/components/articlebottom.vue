@@ -15,9 +15,9 @@ export default {
         width:100%;
         height:8.39rem;
         input{
-            font-size:24px;
+            font-size:0.24rem;
             font-family:PingFang-SC-Bold;
-            font-weight:bold;
+            
             color:rgba(98,98,98,1);
             line-height:70px;
         }
@@ -40,14 +40,14 @@ export default {
         }
         .addmain{
             width:100%;
-            height:1.5rem;
+            height:5rem;
              border:none;
             outline:none;
-            font-size:24px;
+            font-size:0.24rem;
             font-family:PingFang-SC-Bold;
-            font-weight:bold;
+      
             color:rgba(98,98,98,1);
-            line-height:70px;
+            line-height:.7rem;
 
         }
     }
