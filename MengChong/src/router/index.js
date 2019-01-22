@@ -239,12 +239,7 @@ export default new Router({
         meta: {
           isFooter: false
         }
-<<<<<<< HEAD
       }]},
-=======
-      }]
-    },
->>>>>>> master
     {
       path: '/mine',
       component: Mine,

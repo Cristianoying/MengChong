@@ -21,7 +21,9 @@ export default {
     },
     mounted(){
         if(!this.scroll){
-            this.scroll=new BScroll(this.$refs.foll)
+            this.scroll=new BScroll(this.$refs.foll,{
+                click:true
+            })
         //    console.log(this.scroll);       
         }
     }

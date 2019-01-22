@@ -22,7 +22,9 @@ export default {
     },
     mounted(){
         if(!this.scroll){
-            this.scroll=new BScroll(this.$refs.stan)
+            this.scroll=new BScroll(this.$refs.stan,{
+                click:true
+            })
         //    console.log(this.scroll);       
         }
     }

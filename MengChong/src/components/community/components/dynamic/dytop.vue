@@ -7,7 +7,7 @@
             <ul>
                 <li class="one_a">分享</li>
                 <li class="two_a">举报</li>
-                <li class="three_a">取消</li>
+                <li class="three_a" @click="handleCancel()">取消</li>
             </ul>
         </mt-popup>
     </div>
@@ -29,6 +29,9 @@ export default {
          },
          handleback(){
              this.$router.go(-1);
+         },
+         handleCancel(){
+              this.popupVisible=false
          }
      }
 }
@@ -42,6 +45,8 @@ export default {
         align-items: center;
         background:#ED3C3C;
         color:white;
+        position: relative;
+        z-index: 5;
     }
     .dytop h3{
         font-size: .4rem;

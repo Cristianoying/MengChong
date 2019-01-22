@@ -1,12 +1,13 @@
 <template>
     <div class="main_a">
-        {{id}}
-         <div class="main_bottom" v-for="(item,index) in selectList">
+        
+         <div class="main_bottom" v-for="(item,index) in selectList" >
             <div class="top" >
                 <img :src="item.headimg" alt="">
                 <h3>{{item.username}}</h3>
                 <h4>{{item.address}}</h4>
-                <button>已关注</button>
+                <!-- <button @click="handleConcern()">{{concerns}}</button> -->
+                <input type="button" :value="concerns" @click="handleConcern($event)" class="button">
             </div>
             <div class="cont">
                 <p>在丑也要过节啊</p>
@@ -19,8 +20,10 @@
                 <span>{{item.zan}}</span>
             </div>
             <div class="laud">
-                <img :src="item.zanimg" alt="">
+                <img :src="item.zanimg" alt="" @click="handleZan()">
+               
                 <img :src="item.pinlunimg" alt="">
+               
                 <img :src="item.enjoyimg" alt="">
             </div>
             <div class="botpin">
@@ -38,11 +41,24 @@ import Vuex from "vuex";
 export default {
     data(){
         return{
-            id:""
+            id:"",
+            flag:false,
+            concerns:"关注"
         }
     },
     methods:{
-       
+        handleConcern(e){
+            this.flag=!this.flag;
+            //   console.log(!this.flag);
+            if(this.flag==true){
+                e.target.value="已关注"
+            }else(
+                e.target.value="关注"
+            )
+        },
+        handleZan(){
+            // console.log(this.selectList);
+        }
     },
     computed:{
         ...Vuex.mapState({
@@ -87,7 +103,7 @@ export default {
         color:rgba(98,98,98,1);
         line-height: 1.3rem
     }
-    .main_a .top button{
+    .main_a .top .button{
         float:right;
         width:1.2rem;
         height:.44rem;     
@@ -99,6 +115,7 @@ export default {
         box-shadow:0px 1px 1px 0px rgba(0, 0, 0, 0.3);
         border-radius:8px;
         margin:.1rem .27rem 0 0 ;
+        outline: none
     }
     p{
        margin:0 0 0 .27rem;
@@ -127,8 +144,7 @@ export default {
     .laud{
         float:right;
         background: white;
-        display: flex;
-        
+        display: flex; 
     }
     .laud img{
         width:.32rem;

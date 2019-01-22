@@ -11,8 +11,10 @@
                 <img :src="item.images" class="datu">
             </div>
             <div class="laud">
-                <img :src="item.zanimg" alt="">&nbsp;赞
-                <img :src="item.pinlunimg" alt="">&nbsp;10
+                <img :src="item.zanimg" @click="handleAddnum(index)">
+                <span>{{item.zannum}}</span>
+                <img :src="item.pinlunimg">
+                <span>{{item.lunnum}}</span>
             </div>
         </div>
         <div class="kong">
@@ -23,10 +25,26 @@
 <script>
 import Vuex from "vuex";
 export default {
+    data(){
+        return{
+            flag:false
+        }
+    },
     computed:{
         ...Vuex.mapState({
            selectList:state=>state.select.selectList
         })
+    },
+    methods:{
+        handleAddnum(index){
+            this.flag=!this.flag;
+            if(this.flag==true){
+                this.selectList[index].zannum=(this.selectList[index].zannum)/1+1
+            //    console.log(this.selectList)
+            }else(
+                this.selectList[index].zannum=(this.selectList[index].zannum)/1-1
+            )
+        }
     }
 }
 </script>
@@ -92,7 +110,7 @@ export default {
     .laud img{
         width:.32rem;
         height:.32rem;
-        margin:0 0 0 .3rem;
+        margin:0 0.1rem 0 .3rem;
         align-items: center
     }
     .kong{

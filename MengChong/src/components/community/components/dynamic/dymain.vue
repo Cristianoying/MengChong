@@ -1,6 +1,6 @@
 <template>
     <div class="dymain">
-       <div class="dymainfor" v-for="(item,index) in mockoneList">
+       <div class="dymainfor" v-for="(item,index) in mockoneList" v-if="index==0">
             <div class="top" >
                 <img :src="item.headimg" alt="">
                 <dl>
@@ -19,10 +19,10 @@
                 <img :src="item.shuoimg" class="datu">
             </div>
             <div class="stanzan">
-                <span>16</span>
-                <img class="img1" :src=item.img alt="">&nbsp;
-                <span>10</span>
-                <img class="img2" :src=item.zanimg alt="">&nbsp;
+                <span>{{item.lunnum}}</span>
+                <img class="img2" :src=item.img>&nbsp;
+                <span>{{item.zannum}}</span>
+                <img class="img1" :src=item.zanimg @click="handleAdd()">&nbsp;
             </div>
        </div>
     </div>
@@ -30,6 +30,11 @@
 <script>
 import Vuex from "vuex";
 export default {
+    data(){
+        return{
+            flag:false
+        }
+    },
     computed:{
         ...Vuex.mapState({
            selectList:state=>state.select.selectList,
@@ -39,6 +44,18 @@ export default {
      props:{
         main:String
     },
+    methods:{
+        handleAdd(){
+            this.flag=!this.flag;
+            if(this.flag==true){
+                this.mockoneList[0].zannum=(this.mockoneList[0].zannum)/1+1
+            //    console.log(this);
+            //    console.log(this.mockoneList)
+            }else(
+                this.mockoneList[0].zannum=(this.mockoneList[0].zannum)/1-1
+            )
+        }
+    }
 }
 
 </script>
@@ -47,6 +64,7 @@ export default {
         widtH:100%;
         background:white;
         margin:.18rem 0 0 0;
+        border-radius:10px;
     }
     .dymainfor{
 
@@ -107,6 +125,7 @@ export default {
     }
      .stanzan{
          margin-top:.1rem;
+         padding-bottom:.2rem;
      }
      .stanzan img,span{
         float:right;

@@ -7,7 +7,8 @@
                     <dt>{{item.username}}</dt>
                     <dd>{{item.address}}</dd>
                 </dl>
-                <button>关注</button>
+                <!-- <button @click="handleChange($event)">{{buttoncont}}</button> -->
+                <input type="button" :value="buttoncont" @click="handleChange($event)" class="button">
             </div>
             <div class="cont_a">   
                 <img :src="item.lunimg" class="datu">
@@ -17,10 +18,10 @@
                 <h6>{{item.entary2}}</h6>
             </div>
             <div class="stanzan">
-                <span>16</span>
+                <span>{{item.lunnum}}</span>
                 <img class="img1" :src="item.pinlunimg" alt="">&nbsp;
-                <span>10</span>
-                <img class="img2" :src="item.zanimg" alt="">&nbsp;
+                <span>{{item.zannum}}</span>
+                <img class="img2" :src="item.zanimg" @click="handleAdd(index)">&nbsp;
             </div>
         </div>
         <div class="kong">
@@ -31,10 +32,36 @@
 <script>
 import Vuex from "vuex";
 export default {
+     data(){
+        return{
+            buttoncont:"关注",
+            flag:false
+        }
+    },
     computed:{
         ...Vuex.mapState({
            selectList:state=>state.select.selectList
         })
+    },
+    methods:{
+        handleAdd(index){
+            this.flag=!this.flag;
+            if(this.flag==true){
+                this.selectList[index].zannum=(this.selectList[index].zannum)/1+1
+            }else(
+                this.selectList[index].zannum=(this.selectList[index].zannum)/1-1
+            )
+        },
+        handleChange(e){
+        //    console.log(e.target.value);
+           
+           this.flag=!this.flag;
+            if(this.flag==true){
+                e.target.value="已关注"
+            }else(
+                e.target.value="关注"
+            )
+        },
     }
 }
 </script>
@@ -67,7 +94,7 @@ export default {
     .stancefor .top dl dd{
         margin-top:.1rem;
     }
-    .stancefor .top button{
+    .stancefor .top .button{
         width:1.2rem;
         height:.44rem;
         float:right;
@@ -76,6 +103,7 @@ export default {
         box-shadow:0px 1px 1px 0px rgba(0, 0, 0, 0.3);
         border-radius:8px;
         margin:.1rem .1rem 0 0;
+        outline: none
     }
     .cont_a{
         height:3.26rem;

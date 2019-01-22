@@ -12,6 +12,7 @@
             "smallimg3":"static/img/1.png",
             "zan":"123赞",
             "zanimg":"static/img/5.png",
+            "zanimg2":"static/img/7.png",
             "pinlunimg":"static/img/6.png",
             "enjoyimg":"static/img/8.png",
             "twousername":"小拉拉-麻将",
@@ -20,7 +21,9 @@
             "thrcontent":"加油",
             "lunimg":"static/img/9.png",
             "entary1":"哪些狗狗特别怕冷？",
-            "entary2":"哈士奇就不怕冷了吧"
+            "entary2":"哈士奇就不怕冷了吧",
+            "zannum":"16",
+            "lunnum":"23"
         },{
             "id":2,
             "username":"李四",
@@ -41,7 +44,9 @@
             "thrcontent":"加油",
             "lunimg":"static/img/10.png",
             "entary1":"哪些狗狗特别怕冷？",
-            "entary2":"哈士奇就不怕冷了吧"
+            "entary2":"哈士奇就不怕冷了吧",
+            "zannum":"16",
+            "lunnum":"23"
         },
         {
             "id":3,
@@ -63,7 +68,9 @@
             "thrcontent":"加油",
             "lunimg":"static/img/11.png",
             "entary1":"哪些狗狗特别怕冷？",
-            "entary2":"哈士奇就不怕冷了吧"
+            "entary2":"哈士奇就不怕冷了吧",
+            "zannum":"16",
+            "lunnum":"23"
         }
     ]
 }
