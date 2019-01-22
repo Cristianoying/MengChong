@@ -3,11 +3,15 @@
     <div class="loginuser_head_appear_d">
       <img src="../../../static/login_d_img/header_appear.png" alt="">
     </div>
-    <p class="login_input_userphone_d"><label>+86<input type="text" placeholder="输入手机号"></label></p>
+    <p class="login_input_userphone_d">
+      <label>+86
+        <input type="text" placeholder="输入手机号" v-model="username_d">
+      </label>
+    </p>
     <p class="login_input_password_d">
       <label>
         密码
-        <input type="text" placeholder="输入密码">
+        <input type="text" placeholder="输入密码" v-model="password_d">
       </label>
     </p>
     <router-link :to="{name:'home'}" class="loginuser_login_btn_d">
@@ -21,6 +25,12 @@
 <script>
   export default {
     name: "loginuser",
+    data(){
+      return {
+        password_d:"",
+        username_d:"",
+      }
+    },
     methods:{
       login_goBack_d(){
         this.$router.go(-1);

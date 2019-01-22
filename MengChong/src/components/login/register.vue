@@ -5,24 +5,28 @@
     </div>
     <p class="login_input_userphone_d">
       <label>+86
-        <input type="text" placeholder="输入手机号" v-model="username_d">
+        <input type="text" placeholder="输入手机号"
+               v-model="username_d"
+        @blur="missFocus_d()">
       </label>
     </p>
     <p class="login_input_vcode_d">
       <label>密码
-        <input type="text" placeholder="输入手机号" v-model="username_d">
+        <input type="text" placeholder="输入密码" v-model="password_d">
       </label>
     </p>
     <p class="login_input_password_d">
       <label>
         验证码
-        <input type="text" placeholder="输入密码" v-model="password_d">
+        <input type="text" placeholder="输入验证码" v-model="verificationCode">
       </label>
       <button class="loginuser_input_password_button_d"
-              @click="getVerificationCode()">获取验证码</button>
+              @click="getVerificationCode()">
+        获取验证码
+      </button>
     </p>
     <div class="loginuser_login_btn_d"
-         @click="login_d({username:username_d,password:password_d})">
+         @click="login_d({username:username_d,password:password_d,verificationCode:verificationCode})">
       登陆
     </div>
     <div class="loginuser_goback_d" @click="login_goBack_d()"><</div>
@@ -39,18 +43,45 @@
       return{
         username_d:'',
         password_d:'',
+        verificationCode:''
       }
     },
     methods:{
+      //当用户名称输入框失去焦点时触发的事件
+      missFocus_d(){
+        //console.log(1234)
+        axios({
+          method:'post',
+          url:'api/phone/ajaxNum',
+          data:{
+            userTel:this.username_d,
+          }
+        }).then((data)=>{
+          console.log(data);
+        })
+      },
+      //获取验证码
+      getVerificationCode(){
+        // console.log(123456)
+        axios({
+          method:'get',
+          url:'api/phone/regCode',
+          data:{
+            params:{
+              userTel:this.username_d
+            }
+          }
+        }).then((data)=>{
+          console.log(data);
+        })
+      },
+      //返回上一级
       login_goBack_d(){
         this.$router.go(-1);
       },
       ...Vuex.mapActions({
         login_d:"login/loginActions"
       }),
-      getVerificationCode(){
-        axios.get("")
-      }
 
     }
   }
