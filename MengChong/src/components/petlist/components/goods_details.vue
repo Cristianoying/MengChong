@@ -11,8 +11,10 @@
 			</div>
 			<router-view></router-view>-->
 			<div class="details_bodytitle_b">
-				<img src="../../../../static/petlish_b_img/GMY-ICON-1@2x.png" @click="goodsContent('goods_intro-com')"/>
-				<img src="../../../../static/petlish_b_img/GMY-ICON-2@2x.png" @click="goodsContent('goods_detailed-com')"/>
+				<div @click="goodsContent('goods_intro-com'),tabIndex=0" 
+					 :class="tabIndex === 0 ? 'bg_red_b' : ''">商品介绍</div>
+				<div @click="goodsContent('goods_detailed-com'),tabIndex=1"
+				 	 :class="tabIndex === 1 ? 'bg_red_b' : ''">图文详情</div>
 			</div>
 			<component :is="goodscontent ? goodscontent : 'goods_intro-com'"></component>
 		</div>
@@ -55,16 +57,17 @@ export default{
 		return{
 			goodscontent:'',
 			popupVisible:false,
+			tabIndex:0
 		}
 	},
 	components:{
 		"goods_intro-com":Goods_intro,
 		"goods_detailed-com":Goods_detailed,
 		"mt-popup":Popup,
+		
 	},
 	methods:{
 		detailsBack(){
-			console.log(history.length)
 			this.$router.go(-1)
 			/*let len = history.length
 			history.go(-(len-1))*/
@@ -88,13 +91,13 @@ export default{
 
 <style lang="scss" scoped>
 #goods_details_b{
+	overflow: auto;
 	width: 100%;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
 	.details_head_b{
 		width: 100%;
 		height: 0.88rem;
+		//min-height: .88rem;
 		background: #E83F39;
 		display:flex;
 		justify-content: center;
@@ -105,8 +108,8 @@ export default{
 			left: 0;
 			width: 0.88rem;
 			height:0.88rem;
-			background: url(../../../../static/petlish_b_img/20190108180402.png) no-repeat center;
-			background-size: cover;
+			background: url(../../../../static/petlish_b_img/20190108180402.png) no-repeat;
+			background-size: 100% 100%;
 		}
 		>span{
 			font-size: 0.34rem;
@@ -115,7 +118,7 @@ export default{
 		}
 	}
 	.details_body_b{
-		flex: 1;
+		height: 11.48rem;
 		background: #eee;
 		width: 100%;
 		.details_bodytitle_b{
@@ -123,16 +126,30 @@ export default{
 			width: 100%;
 			flex-direction: row;
 			justify-content: space-around;
-			padding:  0.17rem 0 0.15rem 0;
-			img{
+			padding:  0.3rem 0 0.3rem 0;
+			>div{
 				width: 2rem;
 				height: 0.6rem;
+				border-radius: .3rem;
+				text-align: center;
+				line-height: .6rem;
+				color: #fff;
+				font-family: PingFang-SC-Regular;
+				font-size: .28rem;
+				background: #e87739;
+
 			}
+			.bg_red_b{
+				background: #E83F39;
+			}
+// 			.bg_orange_b{
+// x			}
 		}
 	}
 	.details_foot_b{
 		width:100%;
 		height:0.98rem;
+		//min-height: .98rem;
 		background: #E83F39;
 		display: flex;
 		>div{

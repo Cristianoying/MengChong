@@ -35,7 +35,8 @@ export default{
 	padding-top: 0.66rem;
 	display: flex;
 	flex-direction: column;
-	background: url(../../../../../static/petlish_b_img/GMY-JXK-1@2x.png) no-repeat center;
+	background: url(../../../../../static/petlish_b_img/GMY-JXK-1@2x.png) no-repeat;
+	background-size: 100% 100%;
 	.bodyintro_img_b{
 		margin: 0 auto 0.5rem;
 		width: 6rem;

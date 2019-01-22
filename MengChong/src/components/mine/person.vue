@@ -32,18 +32,6 @@
      {{mine_info_d.userSex}}
     </span>
   </li>
-  <!--<li class="mine_person_li_d">-->
-    <!--<span class="mine_person_li_span_d">年龄</span>-->
-    <!--<span class="mine_person_li_span_two_d">-->
-
-    <!--</span>-->
-  <!--</li>-->
-  <!--<li class="mine_person_li_d">-->
-    <!--<span class="mine_person_li_span_d">城市</span>-->
-    <!--<span class="mine_person_li_span_two_d">-->
-
-    <!--</span>-->
-  <!--</li>-->
 </ul>
 </div>
 </template>

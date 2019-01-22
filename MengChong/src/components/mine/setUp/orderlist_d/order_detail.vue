@@ -63,7 +63,6 @@
           let Bscroll=new BScroll(this.$refs.order_detail_wrapper,{
             click:true
           })
-        console.log(Bscroll);
       },
       computed:{
         ...Vuex.mapState({
@@ -79,7 +78,6 @@
         },
         total(m){
           var money=0
-          console.log(m);
           for(var i=0;i<m.length;i++){
             money=money+m[i].goodsCount*m[i].goodsPrice
           }

@@ -19,7 +19,7 @@
             宠号：{{mine_info_d.petId}}
           </p>
         </div>
-        <div class="mine_personl_d">
+        <div class="mine_personl_d" @click="goPersonalInfo()">
           <span>个人主页</span><span>></span>
         </div>
 
@@ -109,6 +109,8 @@
         this.$router.push({name:"setUp"})
       },gonextpage_d(url){
         this.$router.push({name:url})
+      },goPersonalInfo(){
+        this.$router.push({name:'personalPage_index_d'})
       }
     },
     computed:{
@@ -218,5 +220,8 @@
     top:1rem;
     width:100%;
     height:78%;
+  }
+  span{
+    font-size:.26rem
   }
 </style>

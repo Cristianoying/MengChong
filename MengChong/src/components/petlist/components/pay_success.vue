@@ -27,6 +27,7 @@ export default {
 
 <style lang="scss" scoped>
     #pay_success_b{
+        overflow: auto;
         width: 100%;
         height: 100%;
         font-family: PingFang-SC-Regular;

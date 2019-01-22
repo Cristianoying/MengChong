@@ -19,9 +19,7 @@
 #top{
 	width:100%;
 	height:1.41rem;
-	
 	border-bottom: 0.01rem solid #eee;
-	
 	.content{
 		padding:0.75rem 0.46rem 0;
 		display:flex;
