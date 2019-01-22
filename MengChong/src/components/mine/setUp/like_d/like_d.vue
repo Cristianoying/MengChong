@@ -8,7 +8,9 @@
       <ul class="comment_ul_d">
         <li class="comment_li_d" v-for="(item,index) in commentlist_d">
           <div class="comment_li_image_d">
-            <img :src="item.userInfo.userPhoto" alt="">
+            <router-link :to="{name:'animal_w',query:{id:item.userInfo.userId}}">
+              <img :src="item.userInfo.userPhoto" alt="">
+            </router-link>
           </div>
           <div class="comment_li_info_d">
             <p>
@@ -20,7 +22,10 @@
             </p>
           </div>
           <div class="comment_dyn_image_d">
-            <img :src="item.dynList.dynPhoto" alt="">
+            <router-link :to="{name:'dynamic',query:{id:item.dynList.dynId}}">
+              <img :src="item.dynList.dynPhoto" alt="">
+            </router-link>
+
           </div>
         </li>
       </ul>
@@ -40,7 +45,9 @@
     mounted() {
       var comment_swrapper = document.querySelector(".comment_div_d");
       this.$nextTick(() => {
-        let Bscroll = new BScroll(comment_swrapper, {});
+        let Bscroll = new BScroll(comment_swrapper, {
+          click:true
+        });
       })
     },
     computed: {

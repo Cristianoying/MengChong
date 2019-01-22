@@ -6,12 +6,14 @@
   <div class="petfriendlist_div_d">
    <ul class="petfriendlist_ul_d">
      <li class="petfriendlist_li_d" v-for="(item,index) in petfriendlist_d">
-       <div class="petfriendlist_li_img_d">
-         <img :src="item.userPhoto" alt="">
-       </div>
-       <div class="petfriendlist_li_name_d">
-         {{item.userName}}
-       </div>
+         <router-link :to="{name:'animal_w',query:{id:item.userId}}">
+            <div class="petfriendlist_li_img_d">
+              <img :src="item.userPhoto" alt="">
+            </div>
+            <div class="petfriendlist_li_name_d">
+              {{item.userName}}
+            </div>
+         </router-link>
      </li>
    </ul>
   </div>
@@ -28,7 +30,9 @@
       },
       mounted(){
           let petfriend_swapper=document.querySelector(".petfriendlist_div_d");
-          let Scroll=new BScroll(petfriend_swapper,{});
+          let Scroll=new BScroll(petfriend_swapper,{
+            click:true
+          });
       },
       computed:{
         ...Vuex.mapState({

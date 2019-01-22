@@ -8,7 +8,9 @@
       <ul class="like_ul_d">
         <li class="like_li_d" v-for="(item,index) in likelist_d">
           <div class="like_li_image_d">
-            <img :src="item.userInfo.userPhoto" alt="">
+            <router-link :to="{name:'animal_w',query:{id:item.userInfo.userId}}">
+              <img :src="item.userInfo.userPhoto" alt="">
+            </router-link>
           </div>
           <div class="like_li_info_d">
             <p>
@@ -20,7 +22,9 @@
             </p>
           </div>
           <div class="like_dyn_image_d">
-            <img :src="item.dynList.dynPhoto" alt="">
+            <router-link :to="{name:'dynamic',query:{id:item.dynList.dynId}}">
+              <img :src="item.dynList.dynPhoto" alt="">
+            </router-link>
           </div>
         </li>
       </ul>
@@ -39,7 +43,9 @@
     },
     mounted() {
       var like_swrapper = document.querySelector(".like_div_d");
-        let Bscroll = new BScroll(like_swrapper, {})
+        let Bscroll = new BScroll(like_swrapper, {
+          click:true
+        })
     },
     computed: {
       ...Vuex.mapState({
