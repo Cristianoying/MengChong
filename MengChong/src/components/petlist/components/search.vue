@@ -17,7 +17,6 @@ export default{
 		focus:{
 			inserted:(el)=>{
 				el.focus()
-				console.log(el)
 			}
 		}
 	},

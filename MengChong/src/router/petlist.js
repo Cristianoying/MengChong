@@ -62,7 +62,7 @@ let petlist = [
     name: "search_list",
     meta: {
       isFooter: false,
-      isBack: true
+      isBack: false
     },
   },
   {
