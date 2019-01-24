@@ -7,5 +7,11 @@ export default {
     },
     handleTimeList(state,params){
         state.time_w=params.petFoodGoodsList;
-    }
+    },
+    handleDongTai(state,params){
+        state.topic_list_w=params.dynList;
+    },
+    topicUserList(state,params){
+        state.topicUserList_w=params.topicTitleTitle;
+    },
 }

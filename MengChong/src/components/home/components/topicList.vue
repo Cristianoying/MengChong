@@ -7,20 +7,20 @@
 				<li v-for="(item,index) in topic_list_w">
 				  <div class="topiclist_w_p">
 				      <p class="topiclist_p1_w">
-				      	<img :src="item.userPhoto" />
+				      	<img :src="item.userInfo.userPhoto" />
 				      </p>
 				      <p class="topiclist_p2_w">
-				       <i>{{item.userName}}</i>
-				       <em>{{item.topicDate}}</em>
+				       <i>{{item.userInfo.userName}}</i>
+				       <em>{{item.dynDate}}</em>
 				      </p>
 				      <p class="topiclist_p3_w">
 				      	+关注
 				      </p>
 				  </div>
-				  <img  :src="item.topicPhoto"/>
+				  <img  :src="item.dynPhoto"/>
 				  <div class="topiclist_w_bot">
-				       <i>{{item.topicCount}}</i>
-				       <em>{{item.topicComNum}}</em>
+				       <i>{{item.likeNum}}</i>
+				       <em>{{item.comNum}}</em>
 				  </div>
 				</li>
 			</ul>
@@ -31,6 +31,14 @@
 	import Vuex from "vuex";
 	import BScroll from "better-scroll";
 	export default{
+		methods:{
+			...Vuex.mapActions({
+				handleDongTai:"Home_w/handleDongTai",
+			})
+		},
+		created(){
+			this.handleDongTai();
+		},
 		computed:{
 			...Vuex.mapState({
 				topic_list_w:state=>state.Home_w.topic_list_w,
@@ -41,7 +49,7 @@
 <style scoped="">
 	#topiclist_wrap_w{
 		width: 100%;
-		height:10rem ;
+		height:auto;
 		background:rgba(238,238,238,1);
 	}
 	#topiclist_wrap_w>h1{
@@ -57,7 +65,7 @@
 	}
     #topiclist_w{
     	width: 100%;
-    	height: 9.36rem;
+    	height: auto;
     	background:#FFFFFF ;
     	padding: 0 0.26rem 0 0.26rem;
     }
@@ -142,21 +150,22 @@
 		width: 1rem;
 		height: 0.32rem;
 		font-size:0.24rem;
+		background: red;
 		font-family:PingFang-SC-Regular;
 		font-weight:400;
-		color:rgba(75,75,75,1);
+		color: gainsboro;
 		font-style: normal;
 		line-height: 0.32rem;
 		background:url(../../../../static/home_w/sy_center_w/dianzhan.png) no-repeat left center;
 		text-indent: 0.5rem;
 	}
 	.topiclist_w_bot>em{
-		width: 0.8rem;
+		width: 1rem;
 		height: 0.32rem;
 		font-size:0.24rem;
 		font-family:PingFang-SC-Regular;
 		font-weight:400;
-		color:rgba(75,75,75,1);
+		color :gainsboro;
 		line-height: 0.32rem;
 		text-indent: 0.5rem;
 		font-style: normal;
