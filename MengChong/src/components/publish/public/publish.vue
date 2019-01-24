@@ -24,7 +24,7 @@ export default {
     next(vm => {
       var str = from.fullPath;
       if (!(/^\/publish/.test(str))) {
-        vm.url = str;
+        sessionStorage.setItem("from_url",str)
       }
     });
   }
