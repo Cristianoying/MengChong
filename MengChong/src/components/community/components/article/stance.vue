@@ -2,27 +2,31 @@
     <div class="stance">
         <div class="stancefor" v-for="(item,index) in selectList">
              <div class="top" >
-                <img :src="item.headimg" alt="">
+                <router-link to="/animal">
+                    <img :src="item.headimg" alt="">
+                </router-link>
                 <dl>
                     <dt>{{item.username}}</dt>
                     <dd>{{item.address}}</dd>
                 </dl>
                 <!-- <button @click="handleChange($event)">{{buttoncont}}</button> -->
-                <input type="button" :value="buttoncont" @click="handleChange($event)" class="button">
+                <!-- <input type="button" :value="buttoncont" @click="handleChange($event)" class="button"> -->
             </div>
             <div class="cont_a">   
-                <img :src="item.lunimg" class="datu">
+                <router-link to="/community/dynamic">
+                     <img :src="item.lunimg" class="datu">
+                </router-link>
             </div>
             <div class="laud">
                 <h5>{{item.entary1}}</h5>
                 <h6>{{item.entary2}}</h6>
             </div>
-            <div class="stanzan">
+            <!-- <div class="stanzan">
                 <span>{{item.lunnum}}</span>
                 <img class="img1" :src="item.pinlunimg" alt="">&nbsp;
                 <span>{{item.zannum}}</span>
                 <img class="img2" :src="item.zanimg" @click="handleAdd(index)">&nbsp;
-            </div>
+            </div> -->
         </div>
         <div class="kong">
 
@@ -103,7 +107,9 @@ export default {
         box-shadow:0px 1px 1px 0px rgba(0, 0, 0, 0.3);
         border-radius:8px;
         margin:.1rem .1rem 0 0;
-        outline: none
+        outline: none;
+        color:rgba(252,53,53,1);
+        font-size: .22rem;
     }
     .cont_a{
         height:3.26rem;

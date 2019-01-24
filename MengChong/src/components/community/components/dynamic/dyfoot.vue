@@ -10,7 +10,9 @@
     </div>
 </template>
 <script>
+import axios from "axios";
 export default {
+    
     data(){
         return{
             contents:""
@@ -21,7 +23,15 @@ export default {
         handleSend(){
             var obj={};
             obj.contents=this.contents;
+            this.Observer.$emit("handleSends",obj); 
             this.contents="";
+            axios.post("/dynamic/comment",{
+                obj:obj,
+
+            }).then((data)=>{
+                // console.log(data);
+                
+            })
         },
     }
 }
