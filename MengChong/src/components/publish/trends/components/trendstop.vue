@@ -5,14 +5,47 @@
 				<p class="pone">取消</p>
 			</router-link>
 			<p class ="ptwo">发帖</p>
-			<p class = "pthree">发送</p>
+			<p class = "pthree" @click = "sendtrends">发送</p>
 		</div>
 		
 	</div>
 </template>
 
 <script>
-	
+	import axios from "axios"
+	export default{
+
+		data() {
+			return {
+				content:""
+			}
+		},
+		created() {
+			 this.Observer.$on("send",(val)=>{
+           	 this.content = val;
+       })
+		},
+		methods: {
+			sendtrends(){
+				console.log(this.content)
+				axios({
+					url:"/dynMvArtPublish",
+					methods:"post",
+					data:{				
+						"dynContent":this.content,
+						"userId":""
+					}
+
+				})
+				.then(data =>{
+					console.log(data);
+				})
+				.catch(err=>{
+					console.log(err);
+				});
+			}
+		},	
+	}
 </script>
 
 <style lang = "scss">

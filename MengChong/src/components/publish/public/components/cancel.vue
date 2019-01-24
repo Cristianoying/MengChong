@@ -1,27 +1,19 @@
 <template>
-  <!-- <div id="cancel" @click="cancelshow()"></div> -->
-  <router-link :to="{name:'home'}">
-    <div id = "cancel">
-
-    </div>
-  </router-link>
+  <div id="cancel" @click="cancelshow()"></div> 
+  
+  
+  
 </template>
 
 <script>
 import Vuex from "vuex";
 export default {
-  // data() {
-  //   return {};
-  // },
-  // props: {
-  //   val: String
-  // },
-  // methods: {
-	//   cancelshow(){
-	// 	  this.$router.push(this.val)
-	// 	  console.log(this.val)
-	//   }
-  // },
+  methods: {
+    cancelshow(){
+      var str = sessionStorage.getItem("from_url")
+      this.$router.push(str)
+    }
+  },
 };
 </script>
 

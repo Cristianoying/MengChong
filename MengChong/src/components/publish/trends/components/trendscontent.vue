@@ -1,10 +1,27 @@
 <template>
 	<div id="content">
-		<textarea  placeholder="输入帖子内容"></textarea>
+		<textarea  placeholder="输入帖子内容" @change ="handlecontent($event)" :value = "content" ></textarea>
 	</div>
 </template>
 
 <script>
+export default{
+	
+	data(){
+		return{
+			content:""
+		}
+	},
+	methods: {
+		handlecontent(e){
+			var val=e.target.value;
+			this.content=val;
+			this.Observer.$emit("send",this.content)
+			//console.log(this.content,e.target.value)
+        
+		}
+	},
+}
 </script>
 
 <style lang="scss">
