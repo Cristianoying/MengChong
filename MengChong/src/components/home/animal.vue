@@ -3,8 +3,8 @@
         <div class="animalHeader">
             <img src="../../../static/home_w/sy_ht_w/tp_ht_4@3x.png" alt="">
             <p>
-              <img src="../../../static/home_w/sy_slices_w/jian.png" alt="">
-              <em>分享</em>
+              <img @click="handleBack()" src="../../../static/home_w/sy_slices_w/jian.png" alt="">
+              <em @click="handleClick()">分享</em>
             </p>
         </div>
         <div class="animakMain_w">
@@ -49,13 +49,59 @@
                 </li>
             </ul>
         </div>
+        <mt-popup
+            v-model="popupVisible"
+            position="bottom">
+            <div class="feng">
+                <img  @click="handleClickCan()" src="../../../static/home_w/sy_center_w/fengXiang.png"/>
+                <button @click="handleClickCan()">取消</button>
+            </div>
+        </mt-popup>
+
     </div>
 </template>
 
 <script>
-export default {
-    
-}
+import { Popup } from 'mint-ui';
+
+
+import Vuex from "vuex";
+	export default{
+        components:{
+           // "mt-popup":Popup
+        },
+        data(){
+            return{
+                popupVisible:false,
+            }
+        },
+		computed:{
+			...Vuex.mapState({
+				topic_w:state=>state.Home_w.topic_w,
+			})
+		},
+		methods:{
+			...Vuex.mapActions({
+				handleTopicList:"Home_w/handleTopicList",
+            }),
+            handleBack(){
+				this.$router.back();
+            },
+            handleClick(){
+               // alert(1);
+                this.popupVisible=true;
+
+            },
+            handleClickCan(){
+                this.popupVisible=false;
+
+            
+            }
+		},
+		created(){
+			this.handleTopicList();
+		}
+	}
 </script>
 <style scoped>
 #animalDetail{
@@ -210,6 +256,26 @@ export default {
     font-weight:400;
     color:rgba(98,98,98,1);
     margin-left: .22rem;
+}
+.mint-popup-bottom{
+    width: 100%;
+}
+.feng{
+    width: 100%;
+    height: 5.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
+}
+.feng>img{
+    width:100%;
+    height: 80%;
+}
+.feng>button{
+    width: 20%;
+    border: none;
+    font-size: .34rem;
+    background: #ffffff;
 }
 </style>
 

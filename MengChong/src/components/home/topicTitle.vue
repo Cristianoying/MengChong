@@ -6,77 +6,30 @@
         <TopicTliteHeader_w></TopicTliteHeader_w>
         <div id="topicTltle_main_w">
           <ul>
-            <li>
+            <li v-for="(item,index) in topicUserList_w">
               <div class="topicTitle_mainone_w">
+                <router-link to='#'>
+                  <img :src="item.topicInfo.userInfo.userPhoto">
+                </router-link>
+                <p>
+                  <i>{{item.topicInfo.userInfo.userName}}</i>
+                  <em>小 主 红 人</em>
+                </p>
+                <span>+关注</span>
+              </div>
+              <div class="topicTitle_maintwo_w">
                 <router-link to="animal">
-                  <img src="../../../static/home_w/sy_slices_w/tx_cy_1@2x.png">
-                </router-link>
-                <p>
-                  <i>萌萌哒见面了...</i>
-                  <em>小 主 红 人</em>
-                </p>
-                <span>+关注</span>
-              </div>
-              <div class="topicTitle_maintwo_w">
-                <router-link to="#">
-                  <img src="../../../static/home_w/sy_slices_w/wz_cy_1@2x.png">
-                  <h1>狗狗DIY圣诞项圈制作...</h1>
+                  <img :src="item.topicInfo.topicPhoto">
+                  <h1>{{item.topicInfo.topicName}}</h1>
                 </router-link>
               </div>
 
               <p>
-                <b>177</b>
-                <strong>6</strong>
+                <b>{{item.topicInfo.topicComNum}}</b>
+                <strong>{{item.topicInfo.topicComNum}}</strong>
               </p>
             </li>
 
-            <li>
-              <div class="topicTitle_mainone_w">
-                <router-link to="#">
-                  <img src="../../../static/home_w/sy_slices_w/tx_cy_1@2x.png">
-                </router-link>
-                <p>
-                  <i>萌萌哒见面了...</i>
-                  <em>小 主 红 人</em>
-                </p>
-                <span>+关注</span>
-              </div>
-              <div class="topicTitle_maintwo_w">
-                <router-link to="#">
-                  <img src="../../../static/home_w/sy_slices_w/wz_cy_1@2x.png">
-                  <h1>狗狗DIY圣诞项圈制作...</h1>
-                </router-link>
-              </div>
-
-              <p>
-                <b>177</b>
-                <strong>6</strong>
-              </p>
-            </li>
-
-            <li>
-              <div class="topicTitle_mainone_w">
-                <router-link to="#">
-                  <img src="../../../static/home_w/sy_slices_w/tx_cy_1@2x.png">
-                </router-link>
-                <p>
-                  <i>萌萌哒见面了...</i>
-                  <em>小 主 红 人</em>
-                </p>
-                <span>+关注</span>
-              </div>
-              <div class="topicTitle_maintwo_w">
-                <router-link to="#">
-                  <img src="../../../static/home_w/sy_slices_w/wz_cy_1@2x.png">
-                  <h1>狗狗DIY圣诞项圈制作...</h1>
-                </router-link>
-              </div>
-
-              <p>
-                <b>177</b>
-                <strong>6</strong>
-              </p>
-            </li>
           </ul>
         </div>
       </div>
@@ -87,6 +40,7 @@
     <script>
 import TopicTliteHeader_w from "./topicList/topicListHeader";
 import BScroll from "better-scroll";
+import Vuex from "vuex";
 export default {
   components: {
     TopicTliteHeader_w: TopicTliteHeader_w
@@ -97,9 +51,21 @@ export default {
         //只有设置为true pulling才能使用
         pullUpLoad:true,
         click:true,
-
     });
-  }
+  },
+  computed:{
+			...Vuex.mapState({
+				topicUserList_w:state=>state.Home_w.topicUserList_w,
+			})
+		},
+		methods:{
+			...Vuex.mapActions({
+				topicUserList:"Home_w/topicUserList",
+			})
+		},
+		created(){
+			this.topicUserList();
+		}
 };
 </script>
 

@@ -36,10 +36,7 @@
 				});
 				/*this.scroll.on("pullingUp",()=>{
 					
-				})*/
-				console.log(this.scroll)
-				
-			
+				})*/	
 		}
 	}
 
