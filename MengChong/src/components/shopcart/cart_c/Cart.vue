@@ -35,7 +35,7 @@
       });
     },
     beforeRouteEnter(to,from,next){
-      console.log(from.name);
+
       next();
     },
     beforeRouteUpdate(){

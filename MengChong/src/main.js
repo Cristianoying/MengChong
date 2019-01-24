@@ -11,6 +11,7 @@ import './common/css/footer_icon_d/iconfont.css';
 import './common/css/petlist_icon_b/iconfont.css';
 import './common/css/mine_icon_d/iconfont.css';
 import './common/css/mine_icon_d/iconfont'
+import './common/css/share_d/iconfont.css'
 Vue.config.productionTip = false
 import MintUi from 'mint-ui';
 import 'mint-ui/lib/style.css'

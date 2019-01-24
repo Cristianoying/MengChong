@@ -1,26 +1,15 @@
 <template>
   <div class="Account_secuirty">
     <mt-header title="账号安全" class="Account_secuirty_d">
-      <router-link to="/mine/mineIndex" slot="left"><</router-link>
+      <router-link to="/mine/minesetup/personalinfo" slot="left"><</router-link>
     </mt-header>
     <ul class="Account_secuirty_ul_d">
-      <router-link :to="{name:'phone_d'}">
-        <li class="Account_secuirty_li_d">
-          <span class="Account_secuirty_li_span_d">手机绑定</span>
-        </li>
-      </router-link>
       <router-link :to="{name:'password_d'}">
           <li class="Account_secuirty_li_d">
             <span class="Account_secuirty_li_span_d">密码修改</span>
           </li>
       </router-link>
     </ul>
-    <ul class="Account_secuirty_ul_d">
-      <li class="Account_secuirty_li_d">
-        <span class="Account_secuirty_li_span_d">微博账号</span>
-      </li>
-    </ul>
-    <!--<router-view></router-view>-->
   </div>
 </template>
 

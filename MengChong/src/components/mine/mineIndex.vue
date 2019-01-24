@@ -2,6 +2,8 @@
   <div class="mine_d">
     <mt-header title="个人中心" class="mine_header_d">
      <router-link :to="{name:'setUp'}" slot="right" class="iconfont mine_header_set_up_d">&#xe610;</router-link>
+      <router-link :to="{name:'share_d'}" slot="left" class="iconfont mine_header_set_up_d">&#xe607;</router-link>
+
     </mt-header>
    <div class="mine_wrapper">
     <div class="mine_wrapper_content">
@@ -123,6 +125,11 @@
 </script>
 
 <style scoped>
+  #qrcode{
+    position: absolute;
+    top:5rem;
+    left: 3rem;
+  }
   .icon {
     width: 1em;
     height: 1em;

@@ -12,7 +12,6 @@ import Person from '@/components/mine/person'
 import PersonPage from '@/components/mine/personalPage'
 import PersonalPage_index_d from '@/components/mine/personalPage_index_d'
 import accountSecurity from '@/components/mine/setUp/Account_security/account_security'
-import Phone_d from '@/components/mine/setUp/Account_security/phone'
 import accountSecurityIndex from '@/components/mine/setUp/Account_security/account_security_index'
 import password_d from '@/components/mine/setUp/Account_security/password'
 import Comment from '@/components/mine/setUp/comment/comment_d'
@@ -27,8 +26,8 @@ import Order_d from '@/components/mine/setUp/orderlist_d/order_d'
 import Order_index_d from "@/components/mine/setUp/orderlist_d/order_index_d"
 import OrderDetail from '@/components/mine/setUp/orderlist_d/order_detail'
 import Leader from '@/components/login/leader'
-
-
+import Share_d from '@/components/mine/setUp/share/index'
+import Receive_d from '@/components/mine/setUp/receive_d/index'
 
 
 
@@ -85,11 +84,11 @@ let mine = [
           component: accountSecurityIndex,
           name: 'account_security_index'
         },
-        {
-          path: 'phone',
-          name: 'phone_d',
-          component: Phone_d,
-        },
+          {
+            path:"receive_d",
+            name:"receive_d",
+            component:Receive_d
+          },
         {
           path: 'password_d',
           name: 'password_d',
@@ -158,7 +157,12 @@ let mine = [
         name: 'order_detail',
         component: OrderDetail,
       }]
-    }
+    },
+      {
+        path:"share_d",
+        name:"share_d",
+        component:Share_d
+      }
     ]
   },
   {

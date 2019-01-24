@@ -5,16 +5,28 @@
         <mt-button icon="none">&lt;</mt-button>
       </router-link>
       <router-link :to="{name:'changereceplace'}" slot="right">
-        <mt-button icon="none">保存</mt-button>
+        <mt-button icon="none" @click="addReceiveAddress">保存</mt-button>
       </router-link>
     </mt-header>
       <div id="linkage">
         <Linkage></Linkage>
       </div>
     <div id="ipt">
-      <p class="ipt" v-for="(item,index) in list">
-        <label class="ipt_name">{{item.iptname}}</label>
-        <input class="ipt_c" type="text" :placeholder="item.ipt_cont">
+      <p class="ipt">
+        <label class="ipt_name">收货人</label>
+        <input class="ipt_c" type="text" placeholder="名字" ref="name_c">
+      </p>
+      <p class="ipt">
+        <label class="ipt_name">手机号</label>
+        <input class="ipt_c" type="text" placeholder="11位手机号" ref="tel_c">
+      </p>
+      <p class="ipt">
+        <label class="ipt_name">所在地区</label>
+        <input class="ipt_c" type="text" placeholder="地区" ref="add_c">
+      </p>
+      <p class="ipt">
+        <label class="ipt_name">详细地址</label>
+        <input class="ipt_c" type="text" placeholder="详细地址" ref="loca_c">
       </p>
     </div>
   </div>
@@ -24,19 +36,39 @@
   import Vue from 'vue'
   import {Header} from 'mint-ui';
   import Linkage from './linkage'
-
+  import axios from 'axios'
   Vue.component(Header.name, Header);
   export default {
-
     name: "chengereveplace_c",
     data() {
       return {
-        list: [{iptname: '收货人', ipt_cont: '名字'},
-          {iptname: '手机号', ipt_cont: '11位手机号'},
-          {iptname: '所在地区', ipt_cont: '地区'},
-          {iptname: '详细地址', ipt_cont: '详细地址'}],
         from_c:'/submitorder'
       }
+    },
+    methods:{
+      addReceiveAddress(){
+        console.log(this.$refs.name_c.value);
+        axios({
+          method:"post",
+          url:"/updateAddress",
+          data:{
+            id:this.$route.query.id,
+            name:this.$refs.name_c.value,
+            tel:this.$refs.tel_c.value,
+            add:this.$refs.add_c.value,
+            loca:this.$refs.add_c.value,
+          }
+        }).then((data)=>{
+          if(data.code==1000){
+            alert("修改成功")
+          }else{
+            alert("修改失败，请稍后再试")
+          }
+        })
+      }
+    },
+    created(){
+      console.log(this);
     },
     components: {
       Linkage

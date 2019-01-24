@@ -23,5 +23,13 @@ export default {
   },
   getPersonalInfoMutations_d(state,payload){
     state.personalInfo_d=payload;
+  },
+  getReceiveListMutations_d(state,payload){
+    state.recemg_d=payload
+  },
+  changePlaceIndexMutation_d(state,payload){
+    console.log(state.placeIndex_d,"before");
+    state.placeIndex_d=payload
+    console.log(state.placeIndex_d,"after")
   }
 }

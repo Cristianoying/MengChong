@@ -19,8 +19,11 @@
     </ul>
     <ul class="mine_set_up_ul_d">
       <li class="mine_set_up_li_d">
-        <span class="mine_set_up_li_span_d">收货地址</span>
-        <span class="mine_set_up_li_span_two_d">></span>
+        <router-link :to="{name:'receive_d'}" class="receive_d">
+          <span class="mine_set_up_li_span_d">收货地址</span>
+          <span class="mine_set_up_li_span_two_d">></span>
+        </router-link>
+
       </li>
       <li class="mine_set_up_li_d">
         <span class="mine_set_up_li_span_d">清除缓存</span>
@@ -43,6 +46,10 @@
 </script>
 
 <style scoped>
+  .receive_d{
+    height:100%;
+    width:100%;
+  }
   .mine_set_up_d{
     height:1rem;
     font-size:.32rem;
