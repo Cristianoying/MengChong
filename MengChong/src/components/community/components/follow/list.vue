@@ -2,7 +2,10 @@
     <div class="follow_a">
         <div class="list_a" v-for="(item,index) in selectList">
              <div class="top" >
-                <img :src="item.headimg" alt="">
+                 <router-link to="/animal">
+                      <img :src="item.headimg" alt="">
+                 </router-link>
+               
                 <h3>{{item.username}}</h3>
                 <span>一天前</span>
             </div>
@@ -11,9 +14,9 @@
                 <img :src="item.images" class="datu">
             </div>
             <div class="laud">
-                <img :src="item.zanimg" @click="handleAddnum(index)">
+                <img :src="item.zanimg" @click="handleAddnum(index,item.id)">
                 <span>{{item.zannum}}</span>
-                <img :src="item.pinlunimg">
+                <img :src="item.pinlunimg" @click="handlePin(item.id)">
                 <span>{{item.lunnum}}</span>
             </div>
         </div>
@@ -24,6 +27,7 @@
 </template>
 <script>
 import Vuex from "vuex";
+import axios from "axios";
 export default {
     data(){
         return{
@@ -36,7 +40,7 @@ export default {
         })
     },
     methods:{
-        handleAddnum(index){
+        handleAddnum(index,id){
             this.flag=!this.flag;
             if(this.flag==true){
                 this.selectList[index].zannum=(this.selectList[index].zannum)/1+1
@@ -44,6 +48,18 @@ export default {
             }else(
                 this.selectList[index].zannum=(this.selectList[index].zannum)/1-1
             )
+            axios.post("/like/change",{
+                id:id
+            }).then((data)=>{
+                console.log(data);
+            })
+        },
+        handlePin(id){
+            axios.post("/dynamic/comment",{
+                id:id
+            }).then((data)=>{
+                console.log(data);
+            })
         }
     }
 }

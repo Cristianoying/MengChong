@@ -2,13 +2,14 @@
     <div class="dymain">
        <div class="dymainfor" v-for="(item,index) in mockoneList" v-if="index==0">
             <div class="top" >
-                <img :src="item.headimg" alt="">
+                    <img :src="item.headimg" alt="">
                 <dl>
                     <dt>{{item.username}}</dt>
                     <dd>{{item.address}}</dd>
                 </dl>
                 <i>{{item.address}}</i>
-                <button>关注</button>
+                <!-- <button @click="handleDown(item.id)">关注</button> -->
+                <input type="button" :value="concerns" @click="handleDown(item.id,$event)" class="button">
             </div>
             <div class="cont_a">   
                 <img :src="item.shuoimg" class="datu">
@@ -20,19 +21,27 @@
             </div>
             <div class="stanzan">
                 <span>{{item.lunnum}}</span>
-                <img class="img2" :src=item.img>&nbsp;
+                <img class="img2" :src=item.img @click="handlePin(item.id)">&nbsp;
                 <span>{{item.zannum}}</span>
-                <img class="img1" :src=item.zanimg @click="handleAdd()">&nbsp;
+                <img class="img1" :src=item.zanimg @click="handleAdd(item.id)">&nbsp;
             </div>
        </div>
     </div>
 </template>
 <script>
 import Vuex from "vuex";
+import axios from "axios";
 export default {
+     created(){
+        this.Observer.$on("handleFollow",(params)=>{
+             console.log(params)
+            this.flag=params
+        })
+    },
     data(){
         return{
-            flag:false
+            flag:false,
+            concerns:"关注"
         }
     },
     computed:{
@@ -45,7 +54,7 @@ export default {
         main:String
     },
     methods:{
-        handleAdd(){
+        handleAdd(id){
             this.flag=!this.flag;
             if(this.flag==true){
                 this.mockoneList[0].zannum=(this.mockoneList[0].zannum)/1+1
@@ -54,6 +63,32 @@ export default {
             }else(
                 this.mockoneList[0].zannum=(this.mockoneList[0].zannum)/1-1
             )
+            axios.post("/like/change",{
+                id:id
+            }).then((data)=>{
+                console.log(data);
+            })
+        },
+        handlePin(id){
+            axios.post("/dynamic/comment",{
+                id:id
+            }).then((data)=>{
+                console.log(data);
+            })
+        },
+        handleDown(id,e){
+            this.flag=!this.flag;
+            //   console.log(!this.flag);
+            if(this.flag==true){
+                e.target.value="已关注"
+            }else(
+                e.target.value="关注"
+            )
+            axios.post("/focus/change",{
+                id:id
+            }).then((data)=>{
+                console.log(data);
+            })
         }
     }
 }
@@ -102,11 +137,12 @@ export default {
         font-weight:400;
         color:rgba(98,98,98,1);
     }
-    .top button{
+    .top .button{
         float:right;
         width:1.2rem;
         height:.44rem;
-      
+        font-size: .22rem;
+        color:rgba(252,53,53,1);
         background:rgba(255,255,255,1);
         border:1px solid rgba(225,225,225,1);
         box-shadow:0px 1px 1px 0px rgba(0, 0, 0, 0.3);

@@ -19,7 +19,9 @@ Vue.use(MintUi);
 import axios from 'axios'
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
-import store from './store'
+import store from './store';
+import Observer from "./observer";
+Vue.prototype.Observer=Observer;
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

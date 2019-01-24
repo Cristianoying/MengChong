@@ -3,15 +3,21 @@
         
          <div class="main_bottom" v-for="(item,index) in selectList" >
             <div class="top" >
-                <img :src="item.headimg" alt="">
+                <router-link to="/animal">
+                    <img :src="item.headimg" alt="">
+                </router-link>
+                
                 <h3>{{item.username}}</h3>
                 <h4>{{item.address}}</h4>
                 <!-- <button @click="handleConcern()">{{concerns}}</button> -->
-                <input type="button" :value="concerns" @click="handleConcern($event)" class="button">
+                <input type="button" :value="concerns" @click="handleConcern($event,item.id,flag)" class="button">
+                {{flag}}
             </div>
             <div class="cont">
                 <p>在丑也要过节啊</p>
-            <router-link :to="'/community/dynamic?id='+item.id"><img :src="item.images" class="datu"></router-link>
+                <router-link :to="'/community/dynamic?id='+item.id">
+                    <img :src="item.images" class="datu">
+                </router-link>
             </div>
             <div class="navigation">
                 <img :src="item.smallimg1" alt="">
@@ -20,11 +26,11 @@
                 <span>{{item.zan}}</span>
             </div>
             <div class="laud">
-                <img :src="item.zanimg" alt="" @click="handleZan()">
+                <img :src="item.zanimg" @click="handleZan(item.id)">
                
-                <img :src="item.pinlunimg" alt="">
+                <img :src="item.pinlunimg" @click="handlePin(item.id)">
                
-                <img :src="item.enjoyimg" alt="">
+                <img :src="item.enjoyimg">
             </div>
             <div class="botpin">
                 <span>{{item.twousername}}</span>:<span>{{item.twocontent}}</span><br/>
@@ -37,6 +43,7 @@
     </div>
 </template>
 <script>
+import axios from "axios";
 import Vuex from "vuex";
 export default {
     data(){
@@ -47,7 +54,7 @@ export default {
         }
     },
     methods:{
-        handleConcern(e){
+        handleConcern(e,id,flg){
             this.flag=!this.flag;
             //   console.log(!this.flag);
             if(this.flag==true){
@@ -55,9 +62,28 @@ export default {
             }else(
                 e.target.value="关注"
             )
+            this.Observer.$emit("handleFollow",!flg); 
+             console.log(!flg)
+
+            axios.post("/focus/change",{
+                id:id
+            }).then((data)=>{
+                console.log(data);
+            })
         },
-        handleZan(){
-            // console.log(this.selectList);
+        handleZan(id){
+            axios.post("/like/change",{
+                id:id
+            }).then((data)=>{
+                console.log(data);
+            })
+        },
+        handlePin(id){
+            axios.post("/dynamic/comment",{
+                id:id
+            }).then((data)=>{
+                console.log(data);
+            })
         }
     },
     computed:{
