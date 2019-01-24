@@ -50,5 +50,11 @@ export default {
         .then(({data})=>{
           commit("getPersonalInfoMutations_d",data)
         })
+  },
+  getReceiveList_d({commit}){
+    axios.get("api/mock/5c34ca878fafe728d1f70c7d/getreceive")
+      .then(({data})=>{
+        commit("getReceiveListMutations_d",data.recemsg_d)
+      })
   }
 }

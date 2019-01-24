@@ -23,15 +23,17 @@
       </div>
       <div class="personalPage_petInfo_d" v-if="personalInfo_d.userInfo">
         <p class="personalPage_petInfo_p_d">我的宠物</p>
-        <div class="personalPage_petInfo_div_d">
-          <div class="personalPage_petInfo_div_img_d">
-            <img :src="personalInfo_d.petInfo.petPhoto" alt="">
+        <router-link :to="{name:'petinfo_index_d'}">
+          <div class="personalPage_petInfo_div_d">
+            <div class="personalPage_petInfo_div_img_d">
+              <img :src="personalInfo_d.petInfo.petPhoto" alt="">
+            </div>
+            <div class="personalPage_petInfo_div_info_d">
+              <p>{{personalInfo_d.petInfo.petName}}</p>
+              <p>{{personalInfo_d.petInfo.petKind}}</p>
+            </div>
           </div>
-          <div class="personalPage_petInfo_div_info_d">
-            <p>{{personalInfo_d.petInfo.petName}}</p>
-            <p>{{personalInfo_d.petInfo.petKind}}</p>
-          </div>
-        </div>
+        </router-link>
       </div>
       <div class="personalPage_dynInfo_d" v-if="personalInfo_d.userInfo">
         <p class="personalPage_dynInfo_title_d">
@@ -40,15 +42,17 @@
         <ul class="personalPage_dynInfo_ul_d">
           <li class="personalPage_dynInfo_li_d"
               v-for="(item,index) in personalInfo_d.dynInfo">
-            <div class="personalPage_dynInfo_li_data_d">
-              {{item.dynDate}}
-            </div>
-            <div class="personalPage_dynInfo_li_img_d">
-              <img :src="item.dynPhoto" alt="">
-            </div>
-            <div class="personalPage_dynInfo_li_detail_d">
-              {{item.artTitle}}
-            </div>
+            <router-link :to="{name:'dynamic',params:{id:item.dynId}}">
+              <div class="personalPage_dynInfo_li_data_d">
+                {{item.dynDate}}
+              </div>
+              <div class="personalPage_dynInfo_li_img_d">
+                <img :src="item.dynPhoto" alt="">
+              </div>
+              <div class="personalPage_dynInfo_li_detail_d">
+                {{item.artTitle}}
+              </div>
+            </router-link>
           </li>
         </ul>
       </div>

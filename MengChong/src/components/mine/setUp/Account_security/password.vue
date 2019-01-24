@@ -1,7 +1,7 @@
 <template>
     <div class="password_d">
       <mt-header title="修改密码" class="password_reset_header_d">
-        <router-link :to="{name:'setUp'}" slot="left" class="mine_header_set_up_d">&lt;</router-link>
+        <router-link to="/mine/minesetup/account_security" slot="left" class="mine_header_set_up_d">&lt;</router-link>
       </mt-header>
       <div class="password_reset_content_d">
         <p class="password_old_d">

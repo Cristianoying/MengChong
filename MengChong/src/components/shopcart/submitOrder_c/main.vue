@@ -1,15 +1,15 @@
 <template>
   <keep-alive>
-    <div id="middle">
+    <div id="middle" v-if="receive_info_d.length>0">
       <div class="recemsg">
-        <p class="recename">收货人：<span>王营</span> <span>17865815662</span></p>
+        <p class="recename">收货人：<span>{{receive_info_d[placeIndex_d].name}}</span> <span>{{receive_info_d[placeIndex_d].tel}}</span></p>
 
-        <p class="receplace">收货地址: <span>北京北京市昌平区沙河镇富生路14号振宇公寓办公室</span>
+        <p class="receplace">收货地址: <span>{{receive_info_d[placeIndex_d].province}}{{receive_info_d[placeIndex_d].receplace}}</span>
           <span @click="handlereplace()">&gt;</span>
         </p>
         <p class="lert">(收货不便时，可选择免费代收服务) </p>
       </div>
-      <div v-for="(item,index) in orderlist">
+      <div v-for="(item,index) in orderlist[0].goodsList">
 
         <hr>
         <div class="allgoodsmsg">
@@ -40,15 +40,23 @@
   export default {
     created() {
       this.$store.commit('ShopCart/handleaddorderlist');
+      this.$store.dispatch("mine/getReceiveList_d");
+      this.$store.dispatch("mine/getOrderListActions_d");
     },
     computed: {
       ...Vuex.mapState({
-        orderlist: state => state.ShopCart.orderlist
+        orderlist:state=>{
+          return state.mine.orderlist_d
+        },
+        receive_info_d:state=>{
+          return state.mine.recemg_d
+        },
+        placeIndex_d:state=>state.mine.placeIndex_d
       })
     },
     methods:{
       handlereplace(){
-        this.$router.replace({ name: 'changereceplace'});
+        this.$router.push({ name: 'receive_d'});
       }
     }
 
