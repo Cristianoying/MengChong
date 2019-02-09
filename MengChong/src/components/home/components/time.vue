@@ -4,6 +4,7 @@
 		    <div class="wrapper" ref="tabsWrapper">
 				<ul class="content"> 
 					<li v-for="(item,index) in time_w">
+						<router-link to="/goods_details_b/goods_intro">
 						<div class="goodsImg_w">
 							<img :src="item.foodPhoto"/>
 						</div>
@@ -13,6 +14,7 @@
 							<span class="goods_p2_w">立即抢购</span>
 						</p>
 						<h4>{{item.foodNowPrice}}</h4>
+						</router-link>
 					</li>
 				</ul>	
 			</div>
@@ -85,7 +87,10 @@
 	#time_w ul>li:first-child{
 		margin-left: 0rem;
 	}
-	
+	#time_w ul>li>a{
+		width: 100%;
+		height: 100%;
+	}
 	.goodsImg_w{
 		text-align: center;
 		padding: 0.26rem 0.4rem 0.26rem 0.2rem;
@@ -94,26 +99,26 @@
 		width: 1.46rem;
 		height: 1.3rem;
 	}
-	#time_w ul>li>h3{
+	#time_w ul>li>a>h3{
 		width:2rem;
 		font-size:0.18rem;
 		font-family:PingFang-SC-Medium;
 		font-weight:500;
 		color:rgba(22,22,22,1);
 	}
-	#time_w ul>li>p{
+	#time_w ul>li>a>p{
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
 	}
-	#time_w ul>li>p>.goods_p1_w{
+	#time_w ul>li>a>p>.goods_p1_w{
 		width:0.9rem;
 		font-size:0.28rem;
 		font-family:PingFang-SC-Medium;
 		font-weight:500;
 		color:rgba(237,60,60,1);
 	}
-	#time_w ul>li>p>.goods_p2_w{
+	#time_w ul>li>a>p>.goods_p2_w{
 		display: inline-block;
 		width:0.8rem;
 		height:0.25rem;
@@ -126,7 +131,7 @@
 		line-height:0.25rem ;
 		border-radius:0.04rem;
 	}
-	#time_w ul>li>h4{
+	#time_w ul>li>a>h4{
 		width:100%;
 		font-size:0.14rem;
 		font-family:PingFang-SC-Medium;

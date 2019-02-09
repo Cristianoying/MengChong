@@ -5,6 +5,7 @@
 		<div id="topiclist_w">
 			<ul>
 				<li v-for="(item,index) in topic_list_w">
+					<router-link to="/community/dynamic">
 				  <div class="topiclist_w_p">
 				      <p class="topiclist_p1_w">
 				      	<img :src="item.userInfo.userPhoto" />
@@ -22,6 +23,7 @@
 				       <i>{{item.likeNum}}</i>
 				       <em>{{item.comNum}}</em>
 				  </div>
+					</router-link>
 				</li>
 			</ul>
 		</div>
@@ -77,6 +79,10 @@
 		width: 100%;
 		height:4.3rem ;
 		border-bottom: 0.02rem solid #CCCCCC;
+	}
+	#topiclist_w>ul>li>a{
+		width: 100%;
+		height: 100%;
 	}
 	.topiclist_w_p{
 		width: 100%;
@@ -134,7 +140,7 @@
 		font-weight:bold;
 		color:rgba(252,53,53,1);
 	}
-	#topiclist_w>ul>li>img{
+	#topiclist_w>ul>li>a>img{
 		width: 4.4rem;
 		height: 2.61rem;
 		

@@ -24,11 +24,12 @@ let home = [
       path: "/topicTitle_w/:topicTitleId",
       name: "topicTitle_w",
       component: topicTitle_w,
+      
     },
     {
       //转跳到宠物详情页
       path: "/animal",
-      name: "animal_w",
+      name: "animal",
       component: animal_w,
     }
 ]

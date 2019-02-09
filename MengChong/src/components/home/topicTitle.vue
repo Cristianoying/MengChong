@@ -8,7 +8,7 @@
           <ul>
             <li v-for="(item,index) in topicUserList_w">
               <div class="topicTitle_mainone_w">
-                <router-link to='#'>
+                <router-link to='/animal'>
                   <img :src="item.topicInfo.userInfo.userPhoto">
                 </router-link>
                 <p>
@@ -18,7 +18,7 @@
                 <span>+关注</span>
               </div>
               <div class="topicTitle_maintwo_w">
-                <router-link to="animal">
+                <router-link to="/animal">
                   <img :src="item.topicInfo.topicPhoto">
                   <h1>{{item.topicInfo.topicName}}</h1>
                 </router-link>
