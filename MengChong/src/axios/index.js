@@ -5,7 +5,7 @@ const server=axios.create({
 })
 server.interceptors.request.use((config)=>{
   if(config.method=="post"){
-    //config.data=qs.stringify(config.data)
+    config.data=qs.stringify(config.data)
   }
   else if(config.method=="get"){
     config.params={...config.params}
