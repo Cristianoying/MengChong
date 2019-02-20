@@ -25,7 +25,7 @@
 					"add":"/community/follow"
 					},
 					{
-					"name":"文章",
+					"name":"个人",
 					"add":"/community/article_a"
 					}
 				],

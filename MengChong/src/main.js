@@ -16,11 +16,14 @@ Vue.config.productionTip = false
 import MintUi from 'mint-ui';
 import 'mint-ui/lib/style.css'
 import  'mint-ui/lib/index.js'
-Vue.use(MintUi);
+import oBserver from './observer.js'
+Vue.prototype.Observer = oBserver;
 import axios from 'axios'
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
-import store from './store'
+import store from './store';
+import Observer from "./observer";
+Vue.prototype.Observer=Observer;
 /* eslint-disable no-new */
 new Vue({
     el: '#app',

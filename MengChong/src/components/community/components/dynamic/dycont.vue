@@ -27,11 +27,20 @@
                 <h3>22小时前</h3>
             </div> 
         </div>
+        <div class="kongs">
+
+        </div>
     </div>
 </template>
 <script>
 import Vuex from "vuex";
+import axios from "axios";
 export default {
+    created(){
+        this.Observer.$on("handleSends",(params)=>{
+            this.list.push(params)
+        })
+    },
     computed:{
          ...Vuex.mapState({
            dynamicList:state=>state.select.dynamicList
@@ -42,7 +51,7 @@ export default {
     },
     data(){
         return{
-            contents:""
+            list:[],
         }
     },
      
@@ -56,6 +65,11 @@ export default {
     .kong{
         width:100%;
         height:.18rem;
+        background: #eeeeee;
+    }
+    .kongs{
+        width:100%;
+        height:2rem;
         background: #eeeeee;
     }
     .navs{
