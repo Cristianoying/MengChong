@@ -29,7 +29,7 @@ export default {
 		
 	},
 	created(){
-		this.getBeforHottagAndHisearch()
+		//this.getBeforHottagAndHisearch()
 		
 	},
 	beforeRouteEnter (to, from, next) {

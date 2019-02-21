@@ -1,7 +1,7 @@
 <template>
 	<div id="details_bodyintro_b">
 		<div class="bodyintro_img_b">
-			<img src="../../../../../static/petlish_b_img/20190108155255.jpg" alt="" />
+			<img :src="goodsDetails.img" alt="" />
 		</div>
 		<div class="bodyintro_cont_b">
 			<div class="introcont_title_b">
@@ -14,15 +14,23 @@
 				<li>防疫：<span>3针</span></li>
 			</ul>
 			<div class="introcont_price_b">
-				¥<span>20000</span>
+				¥<span>{{goodsDetails.price}}</span>
 			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+import Vuex from "vuex"
 export default{
-	
+	computed:{
+		...Vuex.mapState({
+			goodsDetails:state=>state.petlist.goodsDetails
+		})
+	},
+	mounted(){
+		console.log(this.goodsDetails)
+	}
 }
 </script>
 

@@ -5,7 +5,7 @@
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
 				<li v-for="(item,index) in petFoodGoodsList" :key="index">
-					<router-link to="/goods_details_b/goods_detailed">
+					<router-link :to="{path:'/goods_details_b/goods_detailed',query:{type:'food',id:item.id}}">
 						<div class="food_left_b">
 							<img v-lazy="item.foodPhoto"/>
 						</div>
@@ -15,7 +15,7 @@
 								<div class="righttitleright_b">{{item.foodName}}</div>
 							</div>
 							<div class="right_bot_b">
-								<p>¥ <span>{{item.foodNowPrice}}</span></p>
+								<p>¥ <span>{{item.foodNewPrice}}</span></p>
 								<p><span>634</span>人购买</p>
 							</div>
 						</div>

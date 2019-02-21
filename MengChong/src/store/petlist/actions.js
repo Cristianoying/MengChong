@@ -14,11 +14,9 @@ export default {
     getDogGoodsList({ commit }) { //查询相关商品列表  狗
         axios({
             method: "post",
-            url: "api/mock/5c37f86a74255b71a6a8cb64/getDogGoodsList"
+            url: "api/getDogGoodsList"
         }).then((data) => {
-            if (data.data.code === 1000) {
-                commit("getDogGoodsList", data.data.data)
-            }
+                commit("getDogGoodsList", data.data)
         })
     },
     getDogGoodsListAgain({ dispatch }) { //无限加载 狗
@@ -27,11 +25,10 @@ export default {
     getCatGoodsList({ commit }) { //查询相关商品列表  猫
         axios({
             method: "post",
-            url: "api/mock/5c37f86a74255b71a6a8cb64/getCatGoodsList"
+            url: "api/getCatGoodsList"
         }).then((data) => {
-            if (data.data.code === 1000) {
-                commit("getCatGoodsList", data.data.data)
-            }
+            console.log(data)
+                commit("getCatGoodsList", data.data)
         })
     },
     getCatGoodsListAgain({ dispatch }) { //无限加载 猫
@@ -40,27 +37,33 @@ export default {
     getPetFoodGoodsList({ commit }) { //查询相关商品列表  食物
         axios({
             method: "post",
-            url: "api/mock/5c37f86a74255b71a6a8cb64/getPetFoodGoodsList"
+            url: "api/getPetFoodGoodsList"
         }).then((data) => {
-            if (data.data.code === 1000) {
-                commit("getPetFoodGoodsList", data.data.data)
-            }
+                commit("getPetFoodGoodsList", data.data)
         })
     },
     getFoodGoodsListAgain({ dispatch }) { //无限加载 食物
         dispatch("getPetFoodGoodsList")
     },
-    getGoodsByName({ commit }) { //搜索列表相关商品
+    getGoodsByName({ commit },params) { //搜索列表相关商品
         axios({
             method: "post",
-            url: "api/mock/5c37f86a74255b71a6a8cb64/getGoodsByName"
+            url: "api/getGoodsByName",
+            data:{search:params}
         }).then((data) => {
-            if (data.data.code === 1000) {
-                commit("getGoodsByName", data.data.data)
-            }
+                commit("getGoodsByName", data.data)
         })
     },
-    getGoodsByNameAgain({ dispatch }) {
-        dispatch("getGoodsByName")
+    // getGoodsByNameAgain({ dispatch }) {
+    //     dispatch("getGoodsByName")
+    // }
+    getPetDetails({commit},params){
+            axios({
+                method:"post",
+                url:"api/getGoods",
+                data:params
+            }).then((data)=>{
+                commit("getPetDetails",data.data)
+            })
     }
 }

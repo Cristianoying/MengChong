@@ -13,12 +13,12 @@ module.exports = {
         //https://www.easy-mock.com/mock/5c348acb571e3a78765765a7/like/getall
         proxyTable: {
             "/api": {
-                target: "https://www.easy-mock.com",
+                target: "http://10.9.31.246:8080",
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': ''
                 }
-            }
+            },
         },
 
         // Various Dev Server settings

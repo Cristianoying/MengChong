@@ -2,8 +2,12 @@
 	<div id="searchhistory_b">
 		<h4>搜索历史</h4>
 		<ul class="searchhistory_b">
-			<router-link :to="{name:'search_list'}" 
+			<!-- <router-link :to="{name:'search_list'}" 
 						 v-for="(item,index) in beforHisearch" 
+						 :key="index"><li>{{item}}</li>
+			</router-link> -->
+			<router-link :to="{name:'search_list',query:{'goods':item}}" 
+						 v-for="(item,index) in beforHisearchNew" 
 						 :key="index"><li>{{item}}</li>
 			</router-link>
 		</ul>
@@ -13,6 +17,11 @@
 <script>
 import Vuex from "vuex"
 export default{
+	data(){
+		return{
+			beforHisearchNew:["猫","狗","犬","猫粮","狗粮","粮"]
+		}
+	},
 	computed: {
 		...Vuex.mapState({
     		beforHisearch:state=>state.petlist.beforHottagAndHisearch.hiSearch

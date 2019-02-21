@@ -2,8 +2,8 @@
 	<div id="searchrecommend_b">
 		<h4>搜索推荐</h4>
 		<ul class="searchrecommend_b">
-			<router-link :to="{name:'search_list'}" 
-						 v-for="(item,index) in beforHottag" 
+			<router-link :to="{name:'search_list',query:{goods:item}}" 
+						 v-for="(item,index) in beforHottagNew" 
 						 :key="index"><li>{{item}}</li>
 			</router-link>
 		</ul>
@@ -13,6 +13,11 @@
 <script>
 import Vuex from "vuex"
 export default{
+	data(){
+		return{
+			beforHottagNew:["猫粮","狗粮","狗","犬","粮","猫"]
+		}
+	},
 	computed: {
 		...Vuex.mapState({
     		beforHottag:state=>state.petlist.beforHottagAndHisearch.hottag
