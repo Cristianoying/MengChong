@@ -8,11 +8,13 @@ export default {
       url:'api/user/register',
       data:{
         userTel:params.username,
-        userPass:params.userpass,
-        vcode:params.verificationCode
+        userPass:params.password,
+        vCode:params.verificationCode
       }
     }).then((data)=>{
-      console.log(data);
+      if(data.code===1000){
+        console.log("注册成功");
+      }
     })
 
   }

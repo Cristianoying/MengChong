@@ -9,7 +9,7 @@
         </p>
         <p class="lert">(收货不便时，可选择免费代收服务) </p>
       </div>
-      <div v-for="(item,index) in orderlist[0].goodsList">
+      <div v-for="(item,index) in orderlist[0].goodsList" :key="index">
 
         <hr>
         <div class="allgoodsmsg">

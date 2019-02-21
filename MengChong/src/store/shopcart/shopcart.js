@@ -16,7 +16,7 @@ let actions = {
   handleGetcartlist({commit}) {
     axios({
       method: 'post',
-      url: '/api/mock/5c36a13f84f3a332095b67d1/cart/getList'
+      url: '/api/cart/getList'
     }).then((data) => {
       data.data.cartGoodsList.map((item) => {
         item.flag = true;
@@ -69,6 +69,22 @@ let actions = {
     }).catch(data => {
       alert('操作失败');
     })
+  },
+  //提交订单
+  submitorder({state,dispatch}){
+        let ids = [];
+        state.orderlist.map((item,index)=>{
+              ids.push(item.goodsId);
+        });
+        axios({
+          url:"/api/order/add",
+          data:{
+            ids:ids,
+            addid:"1"
+          }
+        }).then((data)=>{
+          console.log(data);
+        })
   }
 };
 

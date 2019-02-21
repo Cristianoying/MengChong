@@ -1,7 +1,7 @@
 <template>
   <div id="hd_c">
     <div id="top">
-      <div class="up_c" @click="goback_c()"><</div>
+      <div class="up_c" @click="goback_c()">&lt;</div>
       <div class="pagename_c">
         <i>购物车</i>
       </div>

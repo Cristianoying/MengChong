@@ -14,15 +14,16 @@
         <input type="text" placeholder="输入密码" v-model="password_d">
       </label>
     </p>
-    <router-link :to="{name:'home'}" class="loginuser_login_btn_d">
-      注册
-    </router-link>
-    <div class="loginuser_goback_d" @click="login_goBack_d()"><</div>
+    <div class="loginuser_login_btn_d" @click="loginuser_d()">
+      登陆
+    </div>
+    <div class="loginuser_goback_d" @click="login_goBack_d()">&lt;</div>
 
   </div>
 </template>
 
 <script>
+import axios from "axios"
   export default {
     name: "loginuser",
     data(){
@@ -34,6 +35,19 @@
     methods:{
       login_goBack_d(){
         this.$router.go(-1);
+      },
+      loginuser_d(){
+        console.log(this.username_d,this.password_d)
+         axios({
+           method:"post",
+           url:"/api/user/login",
+           data:{
+                      userTel:this.username_d,
+                      userPass:this.password_d
+           }
+         }).then((data)=>{
+            this.$router.push("/home");
+         })
       }
     }
   }

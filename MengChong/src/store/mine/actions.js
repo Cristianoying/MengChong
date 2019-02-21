@@ -3,38 +3,38 @@ export default {
   getmineInfoActions_d({commit}){
     //获取我的页面的信息==》
     //https://www.easy-mock.com/mock/5c34ca878fafe728d1f70c7d/userinfo
-    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/userinfo")
+    axios.post("/api/getMine")
       .then(({data})=>{
         commit("getmineInfoMutations",data.userInfo)
       })
   },
   getCommentAllActions({commit}){
     //获取我的页面里面的被评论页面的初始信息
-    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/comment/getall").then(({data})=>{
+    axios.post("/api/comment/getAll").then(({data})=>{
       commit("getCommentAllMutations",data.commentList)
     })
   },
   getLikeAllActions({commit}){
     //获取我的页面里面的被赞页面的初始信息
-    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/like/getall").then(({data})=>{
+    axios.post("/api/like/getAll").then(({data})=>{
       commit("getLikeAllMutations",data.likelist)
     })
   },
   getPetInfoActions_d({commit}){
     //获取我的宠物的详细信息
-    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/getpet")
+    axios.post("/api/getPet")
       .then(({data})=>{
         commit("getPetInfoMutations_d",data.petInfo);
       })
   },
   getAllPetFriendListActions_d({commit}){
-    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/friend/getall")
+    axios.post("/api/friend/getAll")
       .then(({data})=>{
         commit('getAllPetFriendListMutations_d',data.userInfoList);
       })
   },
   getOrderListActions_d({commit}){
-    axios.get("/api/mock/5c34ca878fafe728d1f70c7d/order/getlist")
+    axios.post("/api/order/getList")
       .then(({data})=>{
         commit("getOrderListMutations_d",data.orderInfo);
       })
@@ -46,13 +46,13 @@ export default {
   },
   //获取个人主页信息
   getPersonalInfoActions_d({commit}){
-      axios.get("/api/mock/5c34ca878fafe728d1f70c7d/getMineInfo")
+      axios.post("/api/getMineInfo")
         .then(({data})=>{
           commit("getPersonalInfoMutations_d",data)
         })
   },
   getReceiveList_d({commit}){
-    axios.get("api/mock/5c34ca878fafe728d1f70c7d/getreceive")
+    axios.post("api/findreceiveinfo")
       .then(({data})=>{
         commit("getReceiveListMutations_d",data.recemsg_d)
       })

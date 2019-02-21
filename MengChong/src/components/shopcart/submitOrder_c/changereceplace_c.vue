@@ -50,7 +50,7 @@
         console.log(this.$refs.name_c.value);
         axios({
           method:"post",
-          url:"/updateAddress",
+          url:"/api/updateAddress",
           data:{
             id:this.$route.query.id,
             name:this.$refs.name_c.value,

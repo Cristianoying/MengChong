@@ -9,6 +9,7 @@
 
 <script>
   import {Toast} from 'mint-ui';
+  import Vuex from "vuex";
   export default {
     data() {
       return {
@@ -17,8 +18,11 @@
     },
     methods: {
       handlepay() {
-       // console.log( Toast)
-      }
+          this.submitorder();
+      },
+      ...Vuex.mapActions({
+        submitorder:"ShopCart/submitorder"
+      })
     }
   }
 </script>

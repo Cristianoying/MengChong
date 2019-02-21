@@ -7,7 +7,7 @@
       <label>+86
         <input type="text" placeholder="输入手机号"
                v-model="username_d"
-        @blur="missFocus_d()">
+         >
       </label>
     </p>
     <p class="login_input_vcode_d">
@@ -27,9 +27,9 @@
     </p>
     <div class="loginuser_login_btn_d"
          @click="login_d({username:username_d,password:password_d,verificationCode:verificationCode})">
-      登陆
+      注册
     </div>
-    <div class="loginuser_goback_d" @click="login_goBack_d()"><</div>
+    <div class="loginuser_goback_d" @click="login_goBack_d()">&lt;</div>
 
   </div>
 </template>
@@ -47,32 +47,21 @@
       }
     },
     methods:{
-      //当用户名称输入框失去焦点时触发的事件
-      missFocus_d(){
-        //console.log(1234)
-        axios({
-          method:'post',
-          url:'api/phone/ajaxNum',
-          data:{
-            userTel:this.username_d,
-          }
-        }).then((data)=>{
-          console.log(data);
-        })
-      },
       //获取验证码
       getVerificationCode(){
-        // console.log(123456)
+        console.log(this.username_d)
         axios({
-          method:'get',
+          method:'post',
           url:'api/phone/regCode',
+         contentType: 'application/json; charset=UTF-8',
+          dataType:'json',
           data:{
-            params:{
+            // params:{
               userTel:this.username_d
-            }
+            // }
           }
         }).then((data)=>{
-          console.log(data);
+          // console.log(data);
         })
       },
       //返回上一级
