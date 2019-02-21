@@ -29,9 +29,9 @@
 						</div>
 					</router-link>
 				</li>
+				<div>已经到底啦~</div>
 			</ul>
-		</div>
-		
+		</div>	
 	</div>
 </template>
 
@@ -45,7 +45,6 @@ Vue.use(Lazyload);
 export default{
 	data() {
 		return {
-
 		}
 	},
 	components:{
@@ -56,9 +55,10 @@ export default{
 			pullUpLoad:true,
 			probeType:2
 		})
-		this.scroll.on("pullingUp",()=>{
-			this.getGoodsByNameAgain()
-		})
+		// this.scroll.on("pullingUp",()=>{
+		// 	this.getGoodsByNameAgain()
+		// })
+
 	},
 	watch: {
 		goodsList(newVal,oldVal){
@@ -67,7 +67,7 @@ export default{
 		}
 	},
 	created() {
-		this.getGoodsByName()
+		this.getGoodsByName(this.$route.query.goods)
 	},
 	computed: {
 		...Vuex.mapState({
@@ -78,7 +78,7 @@ export default{
 	methods: {
 		...Vuex.mapActions({
 			getGoodsByName:"petlist/getGoodsByName",
-			getGoodsByNameAgain:"petlist/getGoodsByNameAgain"
+			//getGoodsByNameAgain:"petlist/getGoodsByNameAgain"
 		}),
 		searchPage(){
 			this.$router.push("/search_b")
@@ -104,6 +104,7 @@ export default{
 		width: 100%;
 		flex-wrap:wrap;
 		justify-content:center;
+		padding-bottom: 1.2rem;
 		>li{
 			width: 6.98rem;
 			height: 2.3rem;

@@ -136,7 +136,7 @@ export default{
 	.ceiling_tab_b{
 		position:fixed;
 		padding:0 0.26rem;
-		top: 1.06rem;
+		top: 1.04rem;
 		left: 0;
 		width: 100%;
 		z-index: 100;

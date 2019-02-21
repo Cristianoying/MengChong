@@ -5,9 +5,9 @@
 		<slot name="pet_list_tab_b"></slot>
 		<ul class="list_common_ulb">
 			<li v-for="(item,index) in dogGoodsList" :key="index">
-				<router-link to="/goods_details_b">
+				<router-link :to="{path:'/goods_details_b',query:{type:'dog',id:item.id}}">
 					<img class="pet_pic_b" v-lazy="item.dogPhoto"/>
-					<div class="dog_price_b">¥ <span>{{item.dogNowPrice}}</span></div>
+					<div class="dog_price_b">¥ <span>{{item.dogPrice}}</span></div>
 				</router-link>
 				<div class="dog_message_b">
 					<p class="dog_kind_b">种类：<span>{{item.dogName}}</span></p>

@@ -2,7 +2,7 @@
 	<div id="goods_details_b">
 		<div class="details_head_b">
 			<div class="details_back_b" @click="detailsBack()"></div>
-			<span>英国短毛猫</span>
+			<span>{{goodsName.name}}</span>
 		</div>
 		<div class="details_body_b">
 			<!--<div class="details_bodytitle_b">
@@ -48,7 +48,8 @@
 <script>
 import Goods_intro from "./goods_details/goods_intro.vue"
 import Goods_detailed from "./goods_details/goods_detailed.vue"
-import Vue from "vue"
+import Vuex from "vuex";
+import Vue from "vue";
 import { Popup ,MessageBox } from 'mint-ui';
 //Vue.component(Popup.name, Popup);
 
@@ -65,6 +66,14 @@ export default{
 		"goods_detailed-com":Goods_detailed,
 		"mt-popup":Popup,
 		
+	},
+	created(){
+		this.getPetDetails(this.$route.query);
+	},
+	computed:{
+		...Vuex.mapState({
+			goodsName:state=>state.petlist.goodsDetails
+		})
 	},
 	methods:{
 		detailsBack(){
@@ -83,7 +92,10 @@ export default{
 			this.$router.push('/pay_success')
 			this.popupVisible = false
 
-		}
+		},
+		...Vuex.mapActions({
+			getPetDetails:'petlist/getPetDetails'
+		})
 	}
 	
 }

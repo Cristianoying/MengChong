@@ -11,5 +11,10 @@ export default {
     goodsList: [],
     //吸顶tab条的offsetTop
     getOffsetTop: 0,
-    searchPageFromRouter: "/petlist/doglist"
+    searchPageFromRouter: "/petlist/doglist",
+    goodsDetails:{
+        img:'',
+        name:'',
+        price:''
+    }
 }
