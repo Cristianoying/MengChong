@@ -28,7 +28,7 @@ let home = [
     },
     {
       //转跳到宠物详情页
-      path: "/animal",
+      path: "/animal/:userId",
       name: "animal",
       component: animal_w,
     }

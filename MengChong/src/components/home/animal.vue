@@ -1,7 +1,7 @@
 <template>
     <div id="animalDetail">
         <div class="animalHeader">
-            <img src="../../../static/home_w/sy_ht_w/tp_ht_4@3x.png" alt="">
+            <img :src="personInfo.userInfo.userPhoto" alt="">
             <p>
               <img @click="handleBack()" src="../../../static/home_w/sy_slices_w/jian.png" alt="">
               <em @click="handleClick()">分享</em>
@@ -9,44 +9,29 @@
         </div>
         <div class="animakMain_w">
             <div>
-                <img src="../../../static/home_w/sy_ht_w/tp_ht_4@3x.png" alt="">
+                <img :src="personInfo.userInfo.userPhoto" alt="">
             </div> 
-            <h1>阿花</h1>
+            <h1>{{personInfo.userInfo.userName}}</h1>
             <p>
-                <b>赞 30w</b>
-                <strong>关注 1</strong>
-                <span>粉丝 2w</span>
+                <b>赞 {{personInfo.fansNum}}</b>
+                <strong>关注 {{personInfo.focusNum}}</strong>
+                <span>粉丝 {{personInfo.likeNum}}</span>
             </p>
         </div>
         <div class="animakMainKon_w">
             <h2>动态</h2>
             <ul>
-                <li>
+                <li v-for="(item,index) in personInfo.dynInfo">
                     <p>
-                        <i>25</i>
-                        <em>12月</em>
+                        <i>{{item.day}}</i>
+                        <em>{{item.month}} 月</em>
                     </p>
-                    <img src="../../../static/home_w/sy_ht_w/tp_ht_4@3x.png" alt="">
-                    <span>圣诞快乐~~</span>
+                    <img :src="item.dynPhoto" alt="">
+                    <span>{{item.dynContent}}</span>
                 </li>
 
-                <li>
-                    <p>
-                        <i>25</i>
-                        <em>12月</em>
-                    </p>
-                    <img src="../../../static/home_w/sy_ht_w/tp_ht_4@3x.png" alt="">
-                    <span>圣诞快乐~~</span>
-                </li>
-
-                <li>
-                    <p>
-                        <i>25</i>
-                        <em>12月</em>
-                    </p>
-                    <img src="../../../static/home_w/sy_ht_w/tp_ht_4@3x.png" alt="">
-                    <span>圣诞快乐~~</span>
-                </li>
+                
+               
             </ul>
         </div>
         <mt-popup
@@ -77,12 +62,12 @@ import Vuex from "vuex";
         },
 		computed:{
 			...Vuex.mapState({
-				topic_w:state=>state.Home_w.topic_w,
+				personInfo:state=>state.Home_w.personInfo,
 			})
 		},
 		methods:{
 			...Vuex.mapActions({
-				handleTopicList:"Home_w/handleTopicList",
+				personInfoHandle:"Home_w/personInfoHandle",
             }),
             handleBack(){
 				this.$router.back();
@@ -99,7 +84,8 @@ import Vuex from "vuex";
             }
 		},
 		created(){
-			this.handleTopicList();
+            let userId=this.$route.params.userId;
+			this.personInfoHandle(userId);
 		}
 	}
 </script>

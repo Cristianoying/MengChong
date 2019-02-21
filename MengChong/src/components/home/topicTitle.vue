@@ -8,25 +8,25 @@
           <ul>
             <li v-for="(item,index) in topicUserList_w">
               <div class="topicTitle_mainone_w">
-                <router-link to='/animal'>
-                  <img :src="item.topicInfo.userInfo.userPhoto">
+                <router-link :to="{name:'animal',params:{userId:item.userId}}">
+                  <img :src="item.userPicture">
                 </router-link>
                 <p>
-                  <i>{{item.topicInfo.userInfo.userName}}</i>
+                  <i>{{item.userName}}</i>
                   <em>小 主 红 人</em>
                 </p>
                 <span>+关注</span>
               </div>
               <div class="topicTitle_maintwo_w">
-                <router-link to="/animal">
-                  <img :src="item.topicInfo.topicPhoto">
-                  <h1>{{item.topicInfo.topicName}}</h1>
+                <router-link :to="{name:'animal',params:{userId:item.userId}}">
+                  <img :src="item.topicPhoto">
+                  <h1>{{item.topicName}}</h1>
                 </router-link>
               </div>
 
               <p>
-                <b>{{item.topicInfo.topicComNum}}</b>
-                <strong>{{item.topicInfo.topicComNum}}</strong>
+                <b>{{item.likeNum}}</b>
+                <strong>{{item.topicComNum}}</strong>
               </p>
             </li>
 

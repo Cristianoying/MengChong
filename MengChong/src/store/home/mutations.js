@@ -1,17 +1,22 @@
 export default {
-    handleTopicList(state,params){
-        let m1=params.topicList.splice(0,3);
-        state.topic_w=m1;
-        let m2=params.topicList.splice(0,5);
-        state.topic_index_w=m2;
+    handleTopic(state,params){
+        state.topic_w=params;
     },
-    handleTimeList(state,params){
+    handleTimeList(state,params){      
         state.time_w=params.petFoodGoodsList;
+    },
+    handleTopicList(state,params){
+        state.topic_index_w=params;
     },
     handleDongTai(state,params){
         state.topic_list_w=params.dynList;
     },
     topicUserList(state,params){
-        state.topicUserList_w=params.topicTitleTitle;
+        state.topicUserList_w=params.topicComList;
+        console.log(state.topicUserList_w);
     },
+    personInfoHandle(state,params){
+        state.personInfo=params;
+        console.log(state.personInfo);
+    }
 }

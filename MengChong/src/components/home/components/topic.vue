@@ -27,11 +27,11 @@
 		},
 		methods:{
 			...Vuex.mapActions({
-				handleTopicList:"Home_w/handleTopicList",
+				handleTopic:"Home_w/handleTopic",
 			})
 		},
 		created(){
-			this.handleTopicList();
+			this.handleTopic();
 		}
 	}
 </script>

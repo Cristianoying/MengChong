@@ -42,10 +42,11 @@
 		},
 		filters:{
 			tieHot(n){
-				return n*2;
+				let m1=n*2
+				return "热度 "+m1;
 			},
 			tieNum(n){
-				return n;
+				return "帖子"+n;
 			}
 		}
 	}

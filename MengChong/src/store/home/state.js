@@ -37,27 +37,6 @@ export default {
         }, 
     ],
     time_w:[
-	    {
-	    	goodsImg:"static/home_w/sy_center_w/tpc_xs_sy@2x.png",
-	    	goodsTitle:"耐饥是DHKJUHGFFCb比利时鸡肉",
-	    	goodsPrice:331.5,
-	    	goodsTime:"立即抢购",
-	    	goodsOrigin:400,
-	    },
-	    {
-	    	goodsImg:"static/home_w/sy_center_w/tpl_xs_sy@2x.png",
-	    	goodsTitle:"耐饥是DHKJUHGFFCb比利时鸡肉",
-	    	goodsPrice:331.5,
-	    	goodsTime:"立即抢购",
-	    	goodsOrigin:400,
-	    },
-	    {
-	    	goodsImg:"static/home_w/sy_center_w/tpr_xs_sy@2x.png",
-	    	goodsTitle:"耐饥是DHKJUHGFFCb比利时鸡肉",
-	    	goodsPrice:331.5,
-	    	goodsTime:"立即抢购",
-	    	goodsOrigin:400,
-	    }
     ],
     topic_w:[
         // {
@@ -135,4 +114,5 @@ export default {
 	//    },
    ],
    topicUserList_w:[],
+   personInfo:[],
 }

@@ -4,24 +4,24 @@
 		
 		<div id="topiclist_w">
 			<ul>
-				<li v-for="(item,index) in topic_list_w">
+				<li v-for="(item,index) in topicUserList_w">
 					<router-link to="/community/dynamic">
 				  <div class="topiclist_w_p">
 				      <p class="topiclist_p1_w">
-				      	<img :src="item.userInfo.userPhoto" />
+				      	<img :src="item.userPicture" />
 				      </p>
 				      <p class="topiclist_p2_w">
-				       <i>{{item.userInfo.userName}}</i>
-				       <em>{{item.dynDate}}</em>
+				       <i>{{item.userName}}</i>
+				       <em>1小时前</em>
 				      </p>
 				      <p class="topiclist_p3_w">
 				      	+关注
 				      </p>
 				  </div>
-				  <img  :src="item.dynPhoto"/>
+				  <img  :src="item.topicPhoto"/>
 				  <div class="topiclist_w_bot">
 				       <i>{{item.likeNum}}</i>
-				       <em>{{item.comNum}}</em>
+				       <em>{{item.topicComNum}}</em>
 				  </div>
 					</router-link>
 				</li>
@@ -33,18 +33,19 @@
 	import Vuex from "vuex";
 	import BScroll from "better-scroll";
 	export default{
+
+	computed:{
+			...Vuex.mapState({
+				topicUserList_w:state=>state.Home_w.topicUserList_w,
+			})
+		},
 		methods:{
 			...Vuex.mapActions({
-				handleDongTai:"Home_w/handleDongTai",
+				topicUserList:"Home_w/topicUserList",
 			})
 		},
 		created(){
-			this.handleDongTai();
-		},
-		computed:{
-			...Vuex.mapState({
-				topic_list_w:state=>state.Home_w.topic_list_w,
-			})
+			this.topicUserList();
 		}
 	}
 </script>
